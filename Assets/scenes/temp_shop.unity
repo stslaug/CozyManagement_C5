@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.49267197, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68.01752, y: -148.59998}
-  m_SizeDelta: {x: 423.96497, y: 75}
+  m_AnchoredPosition: {x: 49.133667, y: -157.35117}
+  m_SizeDelta: {x: 461.7327, y: 76.9587}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &36366456
 MonoBehaviour:
@@ -291,11 +291,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -338,11 +338,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1490941315}
-  - {fileID: 496895320}
+  - {fileID: 357653491}
   - {fileID: 146800950}
   - {fileID: 1824743380}
   - {fileID: 36366455}
-  - {fileID: 357653491}
+  - {fileID: 496895320}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -481,8 +481,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -813, y: 468}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -712.58136, y: 461.54138}
+  m_SizeDelta: {x: 400.8373, y: 62.9173}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &146800949
 GameObject:
@@ -520,8 +520,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.49267197, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68.01752, y: -47.099976}
-  m_SizeDelta: {x: 423.96497, y: 75}
+  m_AnchoredPosition: {x: 49.133667, y: -53.2005}
+  m_SizeDelta: {x: 461.7327, y: 76.9587}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &146800951
 MonoBehaviour:
@@ -642,8 +642,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.49267197, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68.017456, y: 149}
-  m_SizeDelta: {x: 423.9651, y: 75}
+  m_AnchoredPosition: {x: 49.133606, y: 148.02069}
+  m_SizeDelta: {x: 461.7328, y: 76.9587}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &357653492
 MonoBehaviour:
@@ -787,11 +787,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -880,8 +880,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.49267197, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68.01752, y: -248.79999}
-  m_SizeDelta: {x: 423.96497, y: 75}
+  m_AnchoredPosition: {x: 49.133667, y: -260.1679}
+  m_SizeDelta: {x: 461.7327, y: 76.9587}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496895321
 MonoBehaviour:
@@ -1183,8 +1183,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34
-  m_fontSizeBase: 34
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -1884,8 +1884,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6, y: -1}
-  m_SizeDelta: {x: -71.92523, y: -32.4799}
+  m_AnchoredPosition: {x: 0.0002593994, y: 0.0000038146973}
+  m_SizeDelta: {x: -0.00048828, y: -0.0000076294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1175137942
 MonoBehaviour:
@@ -2177,8 +2177,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34
-  m_fontSizeBase: 34
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -2395,8 +2395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -28.2, y: -14.2}
-  m_SizeDelta: {x: -71.92523, y: -32.4799}
+  m_AnchoredPosition: {x: -41.457703, y: 0.000011444092}
+  m_SizeDelta: {x: -82.9164, y: 0.000015259}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1653377097
 MonoBehaviour:
@@ -2579,8 +2579,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34
-  m_fontSizeBase: 34
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -2665,8 +2665,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.49267197, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68.01752, y: 52}
-  m_SizeDelta: {x: 423.96497, y: 75}
+  m_AnchoredPosition: {x: 49.133667, y: 48.4875}
+  m_SizeDelta: {x: 461.7327, y: 76.9587}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1824743381
 MonoBehaviour:
@@ -2867,8 +2867,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34
-  m_fontSizeBase: 34
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -3054,8 +3054,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34
-  m_fontSizeBase: 34
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -3130,8 +3130,8 @@ Transform:
   m_GameObject: {fileID: 2065031949}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 211.6, y: 116, z: 0}
-  m_LocalScale: {x: 70, y: 70, z: 1}
+  m_LocalPosition: {x: 215.8597, y: 122.0857, z: 0}
+  m_LocalScale: {x: 67.327614, y: 67.823, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1396559534}
