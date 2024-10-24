@@ -1,0 +1,4 @@
+repository "CozyManagement_C5@stslaug@cloud"
+  path "/"
+    br "/main"
+    co "/main"
