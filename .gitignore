@@ -50,6 +50,7 @@ sysinfo.txt
 *.crash
 *.log
 *.mdmp
+./plastic
 
 # Crashlytics generated files
 crashlytics-build.properties
