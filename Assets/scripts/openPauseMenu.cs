@@ -1,50 +1,60 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public delegate void ButtonAction();
-public class openPauseMenu : MonoBehaviour
+public class PauseMenuController : MonoBehaviour
 {
-    public static bool isGamePaused;
-    // Start is called before the first frame update
+    public GameObject PauseMenuUI; // Reference to the pause menu UI
+    private static bool isPaused;
+    public Vector3 OriginalScale = Vector3.one;
+    public Vector3 hidden = Vector3.zero;
 
-    public GameObject PauseMenuBehaviour;
 
-    void Start()
+    private void Awake()
     {
-        PauseMenuBehaviour = GameObject.Find("MenuComponents_Canvas");
-        PauseMenuBehaviour.SetActive(false);
-        Time.timeScale = 1;
-
+    
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-       
-        if (Input.GetKeyDown("escape"))
+        OriginalScale = Vector3.one;
+        hidden = Vector3.zero;
+        if (PauseMenuUI == null)
         {
-            if (!PauseMenuBehaviour.activeSelf) PauseGame();
-            else ResumeGame();
+            PauseMenuUI = GameObject.Find("PauseMenu");
+        }
+
+        if (PauseMenuUI != null)
+        {
+            isPaused = false;
+            PauseMenuUI.transform.localScale = hidden;
+        }
+        else if (SceneManager.GetActiveScene().name != "mainMenu")
+        {
+            Debug.LogError("PauseMenu GameObject not found in the scene!");
         }
     }
 
-
-    public void PauseGame()
+    private void Update()
     {
-        Time.timeScale = 0; // Stop Time
-        PauseMenuBehaviour.SetActive(true);
+        // Toggle the menu with the escape key
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePauseMenu();
+        }
+       
     }
 
-    public void ResumeGame()
+    // Toggles the position between visible and off-screen
+    public void TogglePauseMenu()
     {
-        Debug.Log("Resuming Session");
-        // If Game is already paused
-        Time.timeScale = 1;
-        isGamePaused = false;
-        PauseMenuBehaviour.SetActive(false);
+        if (PauseMenuUI == null)
+        {
+            PauseMenuUI = GameObject.Find("PauseMenu");
+        }
+
+        isPaused = !isPaused;
+        if (isPaused) PauseMenuUI.transform.localScale = OriginalScale;
+        else PauseMenuUI.transform.localScale = hidden;
+
     }
 }
-
-
