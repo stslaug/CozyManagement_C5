@@ -13,11 +13,20 @@ public class openPauseMenu : MonoBehaviour
 
     void Start()
     {
-        PauseMenuBehaviour = GameObject.Find("MenuComponents_Canvas");
-        PauseMenuBehaviour.SetActive(false);
-        Time.timeScale = 1;
+        PauseMenuBehaviour = GameObject.Find("PauseMenu");
 
+        if (PauseMenuBehaviour != null)
+        {
+            PauseMenuBehaviour.SetActive(false); 
+        }
+        else
+        {
+            Debug.LogError("PauseMenu GameObject not found in the scene!");
+        }
+
+        Time.timeScale = 1;
     }
+
 
     // Update is called once per frame
     void Update()
