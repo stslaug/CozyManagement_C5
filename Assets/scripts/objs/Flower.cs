@@ -2,25 +2,20 @@ using UnityEngine;
 
 public class Flower : MonoBehaviour
 {
-   
-    public int maxGrowthStage = 3;
+    public int maxGrowthStage = 10;
     public int growthStep = 1;
-    public Sprite[] growthSprites;
+    public FlowerData flowerData;
+    bool canInteract = false;
 
-    
-    public Vector3 initialScale = Vector3.one * 0.5f;
+    public Vector3 initialScale = Vector3.one * 0.6f;
     public Vector3 maxScale = Vector3.one * 1.5f;
-    private SpriteRenderer spriteRenderer;
+
+    private Animator animator;
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        UpdateAppearance();
-    }
-
-    public void SetGrowthStep(int step)
-    {
-        growthStep = Mathf.Clamp(step, 1, maxGrowthStage);
+        maxScale = initialScale * 1.5f;
+        animator = GetComponent<Animator>();
         UpdateAppearance();
     }
 
@@ -33,15 +28,13 @@ public class Flower : MonoBehaviour
         }
     }
 
-    private void UpdateAppearance()
+    public void UpdateAppearance()
     {
-        if (growthSprites != null && growthSprites.Length >= growthStep)
-        {
-            spriteRenderer.sprite = growthSprites[growthStep - 1];
-        }
-
         float scaleProgress = (float)growthStep / maxGrowthStage;
         transform.localScale = Vector3.Lerp(initialScale, maxScale, scaleProgress);
+
+        // Set the growth step on the Animator to trigger the corresponding animation
+        animator.SetInteger("GrowthStep", growthStep);
     }
 
     public void Interact()

@@ -1,58 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\",
+  "WorkspaceRootPath": "C:\\Users\\tyler\\Unity\\Project Files\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\assets\\scripts\\gamestate\\saveselectionmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\saveselectionmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\onedrive - clemson university\\school\\cpsc\\4820 f2024\\project files\\assets\\scripts\\gamestate\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\onedrive - clemson university\\school\\cpsc\\4820 f2024\\project files\\assets\\scripts\\gamestate\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\onedrive - clemson university\\school\\cpsc\\4820 f2024\\project files\\assets\\textmesh pro\\examples \u0026 extras\\scripts\\benchmark01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\textmesh pro\\examples \u0026 extras\\scripts\\benchmark01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\assets\\scripts\\switchscenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\switchscenes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\assets\\scripts\\ui\\mainmenu\\maintoselect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\mainmenu\\maintoselect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\assets\\scripts\\gamestate\\saveloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\saveloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\assets\\scripts\\currencytracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\currencytracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\assets\\scripts\\gamestate\\datamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\datamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\assets\\scripts\\openpausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\openpausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\openpausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\assets\\scripts\\resumegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\resumegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\gamestate\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\assets\\scripts\\objs\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\gamestate\\currencytracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\currencytracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\nextScene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\nextScene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tyler\\OneDrive - Clemson University\\Documents\\My Games\\CozyManagement\\save.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\objs\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objs\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\onclickandhover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\onclickandhover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\gamestate\\datamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\datamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,173 +41,109 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Button.cs",
-              "DocumentMoniker": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Button.cs",
-              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Button.cs",
-              "ToolTip": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Button.cs",
-              "RelativeToolTip": "Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Button.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAlwEUAAAAfAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\GameManager.cs",
+              "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\GameManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\gameState\\GameManager.cs",
+              "ViewState": "AgIAACABAAAAAAAAAAAwwEABAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T01:57:08.277Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Benchmark01.cs",
-              "DocumentMoniker": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\TextMesh Pro\\Examples \u0026 Extras\\Scripts\\Benchmark01.cs",
-              "RelativeDocumentMoniker": "Assets\\TextMesh Pro\\Examples \u0026 Extras\\Scripts\\Benchmark01.cs",
-              "ToolTip": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\TextMesh Pro\\Examples \u0026 Extras\\Scripts\\Benchmark01.cs",
-              "RelativeToolTip": "Assets\\TextMesh Pro\\Examples \u0026 Extras\\Scripts\\Benchmark01.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T01:27:27.445Z",
+              "WhenOpened": "2024-11-06T04:12:20.654Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\gameState\\GameManager.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\GameManager.cs",
-              "ToolTip": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\gameState\\GameManager.cs",
-              "RelativeToolTip": "Assets\\scripts\\gameState\\GameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAFAAAAAAAAAA==",
+              "Title": "currencyTracking.cs",
+              "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\currencyTracking.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\currencyTracking.cs",
+              "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\currencyTracking.cs",
+              "RelativeToolTip": "Assets\\scripts\\gameState\\currencyTracking.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAcwHsAAABuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T01:12:05.072Z",
+              "WhenOpened": "2024-11-06T04:14:16.283Z",
+              "IsPinned": true,
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SaveManager.cs",
-              "DocumentMoniker": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\gameState\\SaveManager.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\SaveManager.cs",
-              "ToolTip": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\gameState\\SaveManager.cs",
-              "RelativeToolTip": "Assets\\scripts\\gameState\\SaveManager.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T21:10:05.947Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SaveSelectionMenu.cs",
-              "DocumentMoniker": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\gameState\\SaveSelectionMenu.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\SaveSelectionMenu.cs",
-              "ToolTip": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\gameState\\SaveSelectionMenu.cs",
-              "RelativeToolTip": "Assets\\scripts\\gameState\\SaveSelectionMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T21:10:06.593Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "mainToSelect.cs",
-              "DocumentMoniker": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\UI\\mainMenu\\mainToSelect.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\UI\\mainMenu\\mainToSelect.cs",
-              "ToolTip": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\UI\\mainMenu\\mainToSelect.cs",
-              "RelativeToolTip": "Assets\\scripts\\UI\\mainMenu\\mainToSelect.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T00:34:47.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Flower.cs",
-              "DocumentMoniker": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\objs\\Flower.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\objs\\Flower.cs",
-              "ToolTip": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\objs\\Flower.cs",
-              "RelativeToolTip": "Assets\\scripts\\objs\\Flower.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwDAAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T00:19:44.498Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "openPauseMenu.cs",
-              "DocumentMoniker": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\openPauseMenu.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\openPauseMenu.cs",
-              "ToolTip": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\openPauseMenu.cs",
-              "RelativeToolTip": "Assets\\scripts\\openPauseMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T00:08:38.258Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "resumeGame.cs",
-              "DocumentMoniker": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\resumeGame.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\resumeGame.cs",
-              "ToolTip": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\resumeGame.cs",
-              "RelativeToolTip": "Assets\\scripts\\resumeGame.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T00:08:29.326Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "SaveLoader.cs",
-              "DocumentMoniker": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\gameState\\SaveLoader.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\SaveLoader.cs",
-              "ToolTip": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\gameState\\SaveLoader.cs",
-              "RelativeToolTip": "Assets\\scripts\\gameState\\SaveLoader.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAowEoAAAAAAAAAAAAAAA==",
+              "Title": "DataModels.cs",
+              "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\DataModels.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\DataModels.cs",
+              "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\DataModels.cs",
+              "RelativeToolTip": "Assets\\scripts\\gameState\\DataModels.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAcwCgAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T00:05:37.066Z",
+              "WhenOpened": "2024-11-06T04:12:19.976Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "openPauseMenu.cs",
+              "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\openPauseMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\openPauseMenu.cs",
+              "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\openPauseMenu.cs",
+              "RelativeToolTip": "Assets\\scripts\\openPauseMenu.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAIwF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T20:36:12.348Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "currencyTracking.cs",
-              "DocumentMoniker": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\currencyTracking.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\currencyTracking.cs",
-              "ToolTip": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\currencyTracking.cs",
-              "RelativeToolTip": "Assets\\scripts\\currencyTracking.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAzwCMAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "nextScene.cs",
+              "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\nextScene.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\nextScene.cs",
+              "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\nextScene.cs",
+              "RelativeToolTip": "Assets\\scripts\\nextScene.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T00:02:04.721Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T20:28:47.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "save.json",
+              "DocumentMoniker": "C:\\Users\\tyler\\OneDrive - Clemson University\\Documents\\My Games\\CozyManagement\\save.json",
+              "RelativeDocumentMoniker": "..\\..\\OneDrive - Clemson University\\Documents\\My Games\\CozyManagement\\save.json",
+              "ToolTip": "C:\\Users\\tyler\\OneDrive - Clemson University\\Documents\\My Games\\CozyManagement\\save.json",
+              "RelativeToolTip": "..\\..\\OneDrive - Clemson University\\Documents\\My Games\\CozyManagement\\save.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-06T21:03:24.512Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "switchScenes.cs",
-              "DocumentMoniker": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\switchScenes.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\switchScenes.cs",
-              "ToolTip": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\switchScenes.cs",
-              "RelativeToolTip": "Assets\\scripts\\switchScenes.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBoAAAAmAAAAAAAAAA==",
+              "Title": "Flower.cs",
+              "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\objs\\Flower.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\objs\\Flower.cs",
+              "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\objs\\Flower.cs",
+              "RelativeToolTip": "Assets\\scripts\\objs\\Flower.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwB4AAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T23:52:17.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T20:39:30.192Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DataModels.cs",
-              "DocumentMoniker": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\gameState\\DataModels.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\DataModels.cs",
-              "ToolTip": "C:\\Users\\tyler\\OneDrive - Clemson University\\School\\CPSC\\4820 F2024\\Project Files\\Assets\\scripts\\gameState\\DataModels.cs",
-              "RelativeToolTip": "Assets\\scripts\\gameState\\DataModels.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAbAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "onClickandHover.cs",
+              "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\onClickandHover.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\onClickandHover.cs",
+              "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\onClickandHover.cs",
+              "RelativeToolTip": "Assets\\scripts\\onClickandHover.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAD0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T21:10:04.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T19:12:09.354Z"
             }
           ]
         }

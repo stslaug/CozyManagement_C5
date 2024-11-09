@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,26 +25,22 @@ public class NPCData
 [System.Serializable]
 public class FlowerData
 {
-    public float positionX;
-    public float positionY;
+    public Vector3 position;
     public string scene_name;
     public int growthStep = 1;
+    public float growthRate = 1;
+    public string flowerType;
 
  
-    public GameObject flowerPrefab; 
-    public FlowerData(float x, float y, GameObject prefab)
-    {
-        positionX = x;
-        positionY = y;
-        flowerPrefab = prefab;
-    }
 }
+
+
+
 
 [System.Serializable]
 public class SaveData
 {
-    public PlayerData playerData = new PlayerData();
-    public List<NPCData> npcData = new List<NPCData>();
-    public List<FlowerData> flowerData = new List<FlowerData>();
-    public int saveSlot;
+    public PlayerData playerData;
+    public List<NPCData> npcData;
+    public List<FlowerData> flowerData;
 }

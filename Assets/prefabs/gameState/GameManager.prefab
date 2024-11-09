@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2716956397720141188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 526085409621101053}
+  - component: {fileID: 632024237389615984}
+  - component: {fileID: 2078370022913902088}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &526085409621101053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716956397720141188}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 442.93433, y: 492.14447, z: -105.09059}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &632024237389615984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716956397720141188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 644b3a367aaf7f248ab3a5e05d760116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
+  playerData:
+    goldCount: 0
+    currentDay: 0
+    lastTimePlayed: 2024-11-08 18:15:43
+    creationDate: 2024-11-08 18:15:43
+    lastScene: temp_rooftop
+    saveSlot: 0
+  saveData:
+    playerData:
+      goldCount: 0
+      currentDay: 0
+      lastTimePlayed: 2024-11-08 18:15:43
+      creationDate: 2024-11-08 18:15:43
+      lastScene: mainMenu
+      saveSlot: 0
+    npcData: []
+    flowerData: []
+  npcData: []
+  flowerData: []
+  flowerPrefab: {fileID: 1942529968254713105, guid: 491ec9bd75ea23b4892c217aec4c1230, type: 3}
+--- !u!114 &2078370022913902088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716956397720141188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ba761e127d9674b977ef4f110466af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverCursor: {fileID: 0}
+  flowerPrefab: {fileID: 1942529968254713105, guid: 491ec9bd75ea23b4892c217aec4c1230, type: 3}
+  gameManager: {fileID: 632024237389615984}
+  pauseMenu: {fileID: 0}
