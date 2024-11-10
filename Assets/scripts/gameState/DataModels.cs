@@ -35,7 +35,27 @@ public class FlowerData
 }
 
 
+[System.Serializable]
+public class InventoryData
+{ // These are sort of like seeds.
+    public int fireFlowerCount = 0;
+    public int windFlowerCount = 0;
+    public int iceFlowerCount = 0;
+    public int waterFlowerCount = 0;
+    public override bool Equals(object obj)
+    {
+        if (obj == null || !(obj is InventoryData))
+            return false;
 
+        InventoryData other = (InventoryData)obj;
+        return this.fireFlowerCount == other.fireFlowerCount 
+            && this.windFlowerCount == other.windFlowerCount
+            && this.iceFlowerCount == other.iceFlowerCount
+            && this.waterFlowerCount == other.waterFlowerCount;
+    }
+
+    //We will add more.
+}
 
 [System.Serializable]
 public class SaveData
@@ -43,4 +63,5 @@ public class SaveData
     public PlayerData playerData;
     public List<NPCData> npcData;
     public List<FlowerData> flowerData;
+    public InventoryData inventoryData;
 }
