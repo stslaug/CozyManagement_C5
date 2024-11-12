@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public SaveData saveData;
     public List<NPCData> npcData;
     public List<FlowerData> flowerData;
+    public InventoryData inventoryData;
     public GameObject flowerPrefab;
 
     void Awake()
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
         playerData = null;
         npcData = null;
         flowerData = null;
+        inventoryData = null;
 
         try
         {
@@ -74,6 +76,7 @@ public class GameManager : MonoBehaviour
                 playerData = loadedSaveData.playerData;
                 npcData = loadedSaveData.npcData;
                 flowerData = loadedSaveData.flowerData;
+                inventoryData = loadedSaveData.inventoryData;
 
                 if (playerData == null)
                 {
@@ -120,6 +123,7 @@ public class GameManager : MonoBehaviour
                 saveData.playerData = playerData;
                 saveData.npcData = npcData;
                 saveData.flowerData = flowerData;
+                saveData.inventoryData = inventoryData;
 
                 Debug.Log("Loading default scene: " + playerData.lastScene);
 
@@ -231,6 +235,9 @@ public class GameManager : MonoBehaviour
 
         if (flowerData == null)
             flowerData = new List<FlowerData>();
+        
+        if (inventoryData == null)
+            inventoryData = new InventoryData();
 
         playerData.lastTimePlayed = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         playerData.lastScene = SceneManager.GetActiveScene().name;
@@ -258,6 +265,7 @@ public class GameManager : MonoBehaviour
         saveData.playerData = playerData;
         saveData.npcData = npcData;
         saveData.flowerData = flowerData;
+        saveData.inventoryData = inventoryData;
 
         // Convert the SaveData object to a JSON string
         string json = JsonUtility.ToJson(saveData);
@@ -308,6 +316,7 @@ public class GameManager : MonoBehaviour
             playerData = null;
             npcData = null;
             flowerData = null;
+            inventoryData = null;
         }
         else
         {

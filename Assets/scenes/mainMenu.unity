@@ -580,8 +580,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 632024237389615984, guid: 5b978ca47dd8b9443a23c9792e5c6ccc, type: 3}
-      propertyPath: playerData.lastScene
-      value: temp_rooftop
+      propertyPath: pauseMenu
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2716956397720141188, guid: 5b978ca47dd8b9443a23c9792e5c6ccc, type: 3}
       propertyPath: m_Name

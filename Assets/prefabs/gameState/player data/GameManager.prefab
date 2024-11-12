@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 526085409621101053}
   - component: {fileID: 632024237389615984}
-  - component: {fileID: 2078370022913902088}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,7 +48,7 @@ MonoBehaviour:
   playerData:
     goldCount: 0
     currentDay: 0
-    lastTimePlayed: 2024-11-08 18:15:43
+    lastTimePlayed: 2024-11-09 23:03:08
     creationDate: 2024-11-08 18:15:43
     lastScene: temp_rooftop
     saveSlot: 0
@@ -57,28 +56,42 @@ MonoBehaviour:
     playerData:
       goldCount: 0
       currentDay: 0
-      lastTimePlayed: 2024-11-08 18:15:43
+      lastTimePlayed: 2024-11-09 23:03:08
       creationDate: 2024-11-08 18:15:43
-      lastScene: mainMenu
+      lastScene: temp_shop
       saveSlot: 0
     npcData: []
-    flowerData: []
+    flowerData:
+    - position: {x: 0, y: 0, z: 0}
+      scene_name: 
+      growthStep: 0
+      growthRate: 0
+      flowerType: 
+    - position: {x: 0, y: 0, z: 0}
+      scene_name: 
+      growthStep: 0
+      growthRate: 0
+      flowerType: 
+    inventoryData:
+      fireFlowerCount: 0
+      windFlowerCount: 0
+      iceFlowerCount: 0
+      waterFlowerCount: 0
   npcData: []
-  flowerData: []
+  flowerData:
+  - position: {x: 0, y: 0, z: 0}
+    scene_name: 
+    growthStep: 0
+    growthRate: 0
+    flowerType: 
+  - position: {x: 0, y: 0, z: 0}
+    scene_name: 
+    growthStep: 0
+    growthRate: 0
+    flowerType: 
+  inventoryData:
+    fireFlowerCount: 0
+    windFlowerCount: 0
+    iceFlowerCount: 0
+    waterFlowerCount: 0
   flowerPrefab: {fileID: 1942529968254713105, guid: 491ec9bd75ea23b4892c217aec4c1230, type: 3}
---- !u!114 &2078370022913902088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2716956397720141188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8ba761e127d9674b977ef4f110466af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoverCursor: {fileID: 0}
-  flowerPrefab: {fileID: 1942529968254713105, guid: 491ec9bd75ea23b4892c217aec4c1230, type: 3}
-  gameManager: {fileID: 632024237389615984}
-  pauseMenu: {fileID: 0}
