@@ -5,7 +5,6 @@ public class Flower : MonoBehaviour
     public int maxGrowthStage = 10;
     public int growthStep = 1;
     public FlowerData flowerData;
-    bool canInteract = false;
 
     public Vector3 initialScale = Vector3.one * 0.6f;
     public Vector3 maxScale = Vector3.one * 1.5f;
