@@ -340,6 +340,11 @@ public class GameManager : MonoBehaviour
             // Check if the scene can be loaded
             if (Application.CanStreamedLevelBeLoaded(sceneNames[nextSceneIndex]))
             {
+                if(sceneNames[nextSceneIndex] == "temp_rooftop")
+                {
+                    Debug.Log("Ending Day...");
+                    playerData.currentDay += 1;
+                }
                 // Subscribe to the sceneLoaded event
                 SceneManager.sceneLoaded += OnSceneLoaded;
                 SceneManager.LoadScene(sceneNames[nextSceneIndex]);
