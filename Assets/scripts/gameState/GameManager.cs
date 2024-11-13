@@ -257,11 +257,25 @@ public class GameManager : MonoBehaviour
 
             
             }
+
+            if (Instance.playerData.currentDay == 4)
+            {
+                Debug.Log("Activating Granny");
+                ActivateGrannyRequest();
+
+            
+            }
            
             if (Instance.playerData.currentDay == 3 && sceneName == "temp_rooftop")
             {
                 Debug.Log("Deactivating Yeti");
                 DeactivateYetiRequest();
+            }
+
+            if (Instance.playerData.currentDay == 4 && sceneName == "temp_rooftop")
+            {
+                Debug.Log("Deactivating Granny");
+                DeactivateGrannyRequest();
             }
         }
 
@@ -341,6 +355,83 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogError("Yeti GameObject not found.");
+        }
+    }
+
+        private void ActivateGrannyRequest()
+    {
+        GameObject GrannyRequest = GameObject.Find("Granny_Request");
+
+        if (GrannyRequest == null)
+        {
+            GameObject playerUI = GameObject.Find("Player_UI");
+
+            if (playerUI != null)
+            {
+                Transform GrannyTransform = playerUI.transform.Find("Granny_Request");
+
+                if (GrannyTransform != null)
+                {
+                    GrannyRequest = GrannyTransform.gameObject;
+                }
+                else
+                {
+                    Debug.LogError("Granny_Request GameObject not found under Player_UI.");
+                }
+            }
+            else
+            {
+                Debug.LogError("Player_UI GameObject not found.");
+            }
+        }
+
+        if (GrannyRequest != null)
+        {
+            GrannyRequest.SetActive(true);
+            Debug.Log("Granny has appeared!");
+        }
+        else
+        {
+            Debug.LogError("Granny GameObject not found.");
+        }
+    }
+
+
+    private void DeactivateGrannyRequest()
+    {
+        GameObject GrannyRequest = GameObject.Find("Granny_Request");
+
+        if (GrannyRequest == null)
+        {
+            GameObject playerUI = GameObject.Find("Player_UI");
+
+            if (playerUI != null)
+            {
+                Transform GrannyTransform = playerUI.transform.Find("Granny_Request");
+
+                if (GrannyTransform != null)
+                {
+                    GrannyRequest = GrannyTransform.gameObject;
+                }
+                else
+                {
+                    Debug.LogError("Granny_Request GameObject not found under Player_UI.");
+                }
+            }
+            else
+            {
+                Debug.LogError("Player_UI GameObject not found.");
+            }
+        }
+
+        if (GrannyRequest != null)
+        {
+            GrannyRequest.SetActive(false);
+            Debug.Log("Granny has left!");
+        }
+        else
+        {
+            Debug.LogError("GrannyGameObject not found.");
         }
     }
 
