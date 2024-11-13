@@ -387,7 +387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -70.811874, y: 184.742}
+  m_AnchoredPosition: {x: -70.81189, y: 184.742}
   m_SizeDelta: {x: -861.62, y: -827.756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &284656300
@@ -1041,7 +1041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &928251231
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1516,7 +1516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -70.811874, y: 184.742}
+  m_AnchoredPosition: {x: -70.81189, y: 184.742}
   m_SizeDelta: {x: -861.6199, y: -827.756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1407178064
@@ -1541,7 +1541,7 @@ MonoBehaviour:
     fresh mountain air. But down here, the snow just ain\u2019t right."
   - I need something special to really freeze the flavor in, like the snow back home.
   textSpeed: 0.05
-  playerDialogue: {fileID: 1600012566}
+  playerDialogue: {fileID: 1796022581}
 --- !u!114 &1407178065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1691,7 +1691,7 @@ GameObject:
   - component: {fileID: 1610554272}
   - component: {fileID: 1610554271}
   m_Layer: 5
-  m_Name: Granny Encounter
+  m_Name: Granny_Request
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2020,7 +2020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4d810015811a9499a668893ac5d87d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 0}
+  textComponent: {fileID: 1254458688}
   lines:
   - "Hmm, not sure I have that lying around, but I think I can make it happen! Give
     me a bit of time, and I\u2019ll have something ready for you by Monday!"

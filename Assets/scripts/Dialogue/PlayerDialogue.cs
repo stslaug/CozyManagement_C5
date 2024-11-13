@@ -9,7 +9,10 @@ public class PlayerDialogue : MonoBehaviour
     public string[] lines; // Shop owner’s response line
     public float textSpeed;
 
+    public bool finishedDialogue = false;
+
     private bool isTriggered = false;
+
 
     private int index;
 
@@ -33,8 +36,6 @@ public class PlayerDialogue : MonoBehaviour
     //start dialogue
     public void TriggerResponse()
     {
-
-        gameObject.SetActive(false);
 
         textComponent.text = string.Empty;
         isTriggered = true;
@@ -68,6 +69,7 @@ public class PlayerDialogue : MonoBehaviour
         else
         {
             gameObject.SetActive(false); //hide shop owner dialgoue    
+            finishedDialogue = true;
         }
     }
 }
