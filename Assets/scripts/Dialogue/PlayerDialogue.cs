@@ -14,7 +14,6 @@ public class PlayerDialogue : MonoBehaviour
     private int index;
 
 
-
     void Update()
     {
         if (isTriggered && Input.GetMouseButtonDown(0))
@@ -34,12 +33,18 @@ public class PlayerDialogue : MonoBehaviour
     //start dialogue
     public void TriggerResponse()
     {
+
+        gameObject.SetActive(false);
+
+        textComponent.text = string.Empty;
         isTriggered = true;
         StartPlayerDialogue();
     }
 
     void StartPlayerDialogue()
     {   
+        index = 0;
+        gameObject.SetActive(true);
         StartCoroutine(TypePlayerLines());
     }
 
