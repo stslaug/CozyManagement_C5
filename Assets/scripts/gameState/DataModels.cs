@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerData
 {
     public int goldCount;
-    public int currentDay;
+    public int currentDay = 1;
     public string lastTimePlayed;
     public string creationDate;
     public string lastScene;
