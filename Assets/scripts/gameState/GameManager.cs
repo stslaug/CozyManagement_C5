@@ -145,6 +145,8 @@ public class GameManager : MonoBehaviour
             Debug.LogError($"Error loading save file from {filePath}: {e.Message}\n{e.StackTrace}");
         }
     }
+private GameObject yeti;
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // Instantiate flowers from saved data
@@ -179,7 +181,7 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("No flower data found to instantiate.");
         }
 
-         //Update currency tracker
+        // Update currency tracker
         if (currencyTracker == null)
         {
             currencyTracker = GameObject.Find("currencyTracker")?.GetComponent<CurrencyTracker>();
@@ -194,7 +196,7 @@ public class GameManager : MonoBehaviour
             Debug.LogError("CurrencyTracker component not found. UpdateGoldDisplay could not be called.");
         }
 
-        //Update Days tracker
+        // Update Days tracker
         if (daysTracker == null)
         {
             daysTracker = GameObject.Find("daysTracker")?.GetComponent<DaysTracker>();
@@ -229,9 +231,62 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // Check if the Yeti should be activated (day 2)
+        if (scene.name == "temp_shop" && Instance.playerData.currentDay == 2)
+        {
+            Debug.Log("In yeti activation");
+            ActivateYeti();
+        }
+
         // Unsubscribe from the event to prevent multiple calls
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+
+    private void ActivateYeti()
+    {
+        GameObject yeti = null;
+
+        // First, try finding it with GameObject.Find() if it's active
+        yeti = GameObject.Find("Yeti_Request");
+
+        if (yeti == null)
+        {
+            // If the object is not found, search as a child of Player_UI including inactive objects
+            GameObject playerUI = GameObject.Find("Player_UI");
+
+            if (playerUI != null)
+            {
+                // Search for the Yeti_Request child under Player_UI, including inactive objects
+                Transform yetiTransform = playerUI.transform.Find("Yeti_Request");
+
+                if (yetiTransform != null)
+                {
+                    // Activate the Yeti_Request object
+                    yeti = yetiTransform.gameObject;
+                }
+                else
+                {
+                    Debug.LogError("Yeti_Request GameObject not found as a child of Player_UI.");
+                }
+            }
+            else
+            {
+                Debug.LogError("Player_UI GameObject not found in the scene.");
+            }
+        }
+
+        if (yeti != null)
+        {
+            // Enable the Yeti GameObject so it appears in the scene
+            yeti.SetActive(true);
+            Debug.Log("Yeti has appeared!");
+        }
+        else
+        {
+            Debug.LogError("Yeti GameObject not found in the scene.");
+        }
+    }
+
 
     // This method is called when the player decides to save the game
     public void SaveGame()
