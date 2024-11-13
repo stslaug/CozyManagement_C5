@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public static CurrencyTracker currencyTracker;
+    public static DaysTracker daysTracker;
     public GameObject pauseMenu;
     string saveDirectory;
     private string[] sceneNames = { "temp_rooftop", "temp_shop" };
@@ -118,9 +119,10 @@ public class GameManager : MonoBehaviour
                 flowerData = new List<FlowerData>();
 
                 playerData.creationDate = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                playerData.lastScene = "temp_rooftop";
+                playerData.lastScene = "temp_shop";
 
                 saveData.playerData = playerData;
+                saveData.playerData.currentDay = 1;
                 saveData.npcData = npcData;
                 saveData.flowerData = flowerData;
                 saveData.inventoryData = inventoryData;
@@ -177,7 +179,7 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("No flower data found to instantiate.");
         }
 
-        // Update currency tracker
+         //Update currency tracker
         if (currencyTracker == null)
         {
             currencyTracker = GameObject.Find("currencyTracker")?.GetComponent<CurrencyTracker>();
@@ -190,6 +192,21 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogError("CurrencyTracker component not found. UpdateGoldDisplay could not be called.");
+        }
+
+        //Update Days tracker
+        if (daysTracker == null)
+        {
+            daysTracker = GameObject.Find("daysTracker")?.GetComponent<DaysTracker>();
+        }
+
+        if (daysTracker != null)
+        {
+            daysTracker.UpdateDayDisplay();
+        }
+        else
+        {
+            Debug.LogError("daysTracker component not found. UpdateGoldDisplay could not be called.");
         }
 
         // Handle pauseMenu
@@ -291,6 +308,7 @@ public class GameManager : MonoBehaviour
             try
             {
                 File.Delete(filePath);
+                
                 Debug.Log($"Save file {filePath} deleted.");
             }
             catch (System.Exception e)
@@ -340,10 +358,16 @@ public class GameManager : MonoBehaviour
             // Check if the scene can be loaded
             if (Application.CanStreamedLevelBeLoaded(sceneNames[nextSceneIndex]))
             {
-                if(sceneNames[nextSceneIndex] == "temp_rooftop")
+                if(sceneNames[nextSceneIndex] == "temp_shop")
                 {
                     Debug.Log("Ending Day...");
-                    playerData.currentDay += 1;
+                    Instance.playerData.currentDay += 1;
+
+                    DaysTracker.Instance.UpdateDayDisplay();
+                }
+                else
+                {
+                    Debug.Log("Scene '" + sceneNames[nextSceneIndex]);
                 }
                 // Subscribe to the sceneLoaded event
                 SceneManager.sceneLoaded += OnSceneLoaded;
