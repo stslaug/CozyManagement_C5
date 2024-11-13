@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
         {
             creationDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
             lastScene = "temp_shop",
-            currentDay = 1
+           // currentDay = 1
         };
         npcData = new List<NPCData>();
         flowerData = new List<FlowerData>();
@@ -249,12 +249,12 @@ public class GameManager : MonoBehaviour
     {
         if (sceneName == "temp_shop")
         {
-            if (playerData.currentDay == 3)
+            if (Instance.playerData.currentDay == 3)
             {
                 Debug.Log("Activating Yeti");
                 ActivateYetiRequest();
             }
-            if (playerData.currentDay == 0 || playerData.currentDay == 5)
+            if (Instance.playerData.currentDay == 0 || Instance.playerData.currentDay == 5)
             {
                 Debug.Log("Deactivating Yeti");
                 DeactivateYetiRequest();
@@ -460,7 +460,7 @@ public class GameManager : MonoBehaviour
                 if (sceneNames[nextSceneIndex] == "temp_shop")
                 {
                     Debug.Log("Ending Day...");
-                    playerData.currentDay += 1;
+                    Instance.playerData.currentDay += 1;
 
                     if (daysTracker != null)
                         daysTracker.UpdateDayDisplay();
