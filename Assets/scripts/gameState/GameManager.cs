@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private GameObject yeti;
+    
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -231,22 +231,29 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // Activate Yeti on day 2 in temp_shop
-        if (scene.name == "temp_shop" && Instance.playerData.currentDay == 2)
+        // Activate Yeti on day 3 in temp_shop
+        if (scene.name == "temp_shop" && Instance.playerData.currentDay == 3)
         {
             Debug.Log("In yeti activation");
-            ActivateYeti();
+            ActivateYetiRequest();
+    
+        }
+        if (scene.name == "temp_shop" && Instance.playerData.currentDay == 0 || scene.name == "temp_shop" && Instance.playerData.currentDay == 5)
+        {
+            Debug.Log("In yeti activation");
+            DeactivateYetiRequest();
+    
         }
 
         // Unsubscribe to prevent multiple calls
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    private void ActivateYeti()
+    private void ActivateYetiRequest()
     {
-        GameObject yeti = GameObject.Find("Yeti_Request");
+        GameObject yetiRequest = GameObject.Find("Yeti_Request");
 
-        if (yeti == null)
+        if (yetiRequest == null)
         {
             GameObject playerUI = GameObject.Find("Player_UI");
 
@@ -256,7 +263,7 @@ public class GameManager : MonoBehaviour
 
                 if (yetiTransform != null)
                 {
-                    yeti = yetiTransform.gameObject;
+                    yetiRequest = yetiTransform.gameObject;
                 }
                 else
                 {
@@ -269,9 +276,9 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (yeti != null)
+        if (yetiRequest!= null)
         {
-            yeti.SetActive(true);
+            yetiRequest.SetActive(true);
             Debug.Log("Yeti has appeared!");
         }
         else
@@ -280,6 +287,43 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void DeactivateYetiRequest()
+    {
+        GameObject yetiRequest = GameObject.Find("Yeti_Request");
+
+        if (yetiRequest == null)
+        {
+            GameObject playerUI = GameObject.Find("Player_UI");
+
+            if (playerUI != null)
+            {
+                Transform yetiTransform = playerUI.transform.Find("Yeti_Request");
+
+                if (yetiTransform != null)
+                {
+                    yetiRequest = yetiTransform.gameObject;
+                }
+                else
+                {
+                    Debug.LogError("Yeti_Request GameObject not found under Player_UI.");
+                }
+            }
+            else
+            {
+                Debug.LogError("Player_UI GameObject not found.");
+            }
+        }
+
+        if (yetiRequest!= null)
+        {
+            yetiRequest.SetActive(false);
+            Debug.Log("Yeti has left!");
+        }
+        else
+        {
+            Debug.LogError("Yeti GameObject not found.");
+        }
+    }
     // Save the game
     public void SaveGame()
     {
