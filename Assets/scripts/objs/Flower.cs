@@ -1,11 +1,12 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Flower : MonoBehaviour
 {
-    public int maxGrowthStage = 10;
+    [Header("Flower Configuration")]
     public FlowerData flowerData;
 
+    [Header("Growth Settings")]
+    public int maxGrowthStage = 10;
     public Vector3 initialScale = Vector3.one * 0.6f;
     public Vector3 maxScale = Vector3.one * 1.5f;
 
@@ -14,65 +15,88 @@ public class Flower : MonoBehaviour
 
     private void Awake()
     {
+        // Initialize components
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        // Validate FlowerData assignment
         if (flowerData == null)
         {
-            flowerData = new FlowerData
-            {
-                position = transform.position,
-                scene_name = SceneManager.GetActiveScene().name,
-                growthStep = 1,
-                growthRate = 1f,
-                flowerType = "FireFlower",
-                canGrowYearRound = true,
-                canGrowWinter = false,
-                canGrowSummer = true,
-                canGrowFall = true,
-                canGrowSpring = true,
-                needWater = true,
-                needSun = true
-            };
+            Debug.LogError($"FlowerData is not assigned to {gameObject.name}");
+            return;
         }
 
+        
         maxScale = initialScale * 1.5f;
+
+       
         UpdateAppearance();
     }
 
     private void Start()
     {
+        
         ApplyFlowerDataChanges();
     }
 
     private void Update()
     {
-        if (flowerData.growthStep < maxGrowthStage)
+        
+        Season currentSeason = SeasonManager.Instance.currentSeason;
+
+        // Determine if the flower can grow based on season and needs
+        if (CanGrowInSeason(currentSeason) && MeetsNeeds())
         {
-            flowerData.growthStep += Mathf.FloorToInt(Time.deltaTime * flowerData.growthRate * 0.1f);
+            // Increment growth step based on growth rate and deltaTime
+            flowerData.growthStep += Mathf.FloorToInt(Time.deltaTime * flowerData.growthRate);
             flowerData.growthStep = Mathf.Clamp(flowerData.growthStep, 1, maxGrowthStage);
+
+            // Update appearance after growth
             UpdateAppearance();
         }
     }
 
+    public bool CanGrowInSeason(Season currentSeason)
+    {
+        return flowerData.seasonsAllowed.Contains(currentSeason);
+    }
+
+
+    public bool MeetsNeeds()
+    {
+        return false;
+    }
+
     public void UpdateAppearance()
     {
+        if (flowerData == null)
+            return;
+
+        // Scale the flower based on growth progress
         float scaleProgress = (float)flowerData.growthStep / maxGrowthStage;
         transform.localScale = Vector3.Lerp(initialScale, maxScale, scaleProgress);
 
-        animator.SetInteger("GrowthStep", flowerData.growthStep);
-
-        if (flowerData.needWater && flowerData.needSun)
+        // Update animation parameter if Animator is present
+        if (animator != null)
         {
-            spriteRenderer.color = Color.green;
+            animator.SetInteger("GrowthStep", flowerData.growthStep);
         }
-        else if (flowerData.needWater || flowerData.needSun)
+
+        // Update color based on current needs
+        if (!flowerData.currentNeeds.Contains(Need.Water) && !flowerData.currentNeeds.Contains(Need.Sunlight))
         {
-            spriteRenderer.color = Color.yellow;
+            spriteRenderer.color = Color.green; // Healthy
         }
         else
         {
-            spriteRenderer.color = Color.red;
+            if (flowerData.currentNeeds.Contains(Need.Water) && flowerData.currentNeeds.Contains(Need.Sunlight))
+                spriteRenderer.color = Color.yellow; // Needs water and sunlight
+            else if (flowerData.currentNeeds.Contains(Need.Water))
+                spriteRenderer.color = Color.blue; // Needs water
+            else if (flowerData.currentNeeds.Contains(Need.Sunlight))
+                spriteRenderer.color = Color.cyan;// Needs sunlight
+            else
+                spriteRenderer.color = Color.red; // Severe condition
         }
     }
 
@@ -81,23 +105,28 @@ public class Flower : MonoBehaviour
         UpdateAppearance();
     }
 
+
     public void Interact()
     {
         Harvest();
     }
 
+
     private void Harvest()
     {
+        // Increment the inventory count for the flower type
         GameManager.Instance.inventoryData.fireFlowerCount += 1;
 
+        // Remove the flower's data from the GameManager's list
         GameManager.Instance.flowerData.RemoveAll(fd =>
             fd.position == flowerData.position &&
             fd.scene_name == flowerData.scene_name &&
             fd.flowerType == flowerData.flowerType
         );
 
+        // Destroy the flower GameObject
         Destroy(gameObject);
 
-        Debug.Log("Flower harvested and FireFlower seed added to inventory.");
+        Debug.Log($"Flower '{flowerData.flowerType}' harvested and FireFlower seed added to inventory.");
     }
 }

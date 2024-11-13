@@ -29,17 +29,26 @@ public class FlowerData
     public Vector3 position;
     public string scene_name;
     public int growthStep = 1;
-    public float growthRate = 1;
+    public float growthRate = 1f;
     public string flowerType;
-    public bool canGrowYearRound = true;
-    public bool canGrowWinter = true;
-    public bool canGrowSummer = true;
-    public bool canGrowFall = true;
-    public bool canGrowSpring = true;
-    public bool needWater = true;
-    public bool needSun = false;
-
+    public List<Season> seasonsAllowed; // Allows multiple seasons
+    public List<Need> currentNeeds;      // Allows multiple needs
 }
+
+public enum Season
+{
+    Spring,
+    Summer,
+    Fall,
+    Winter
+}
+
+public enum Need
+{
+    Water,
+    Sunlight,
+}
+
 
 [System.Serializable]
 public class InventoryData

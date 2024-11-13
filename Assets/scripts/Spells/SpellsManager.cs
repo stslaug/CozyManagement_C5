@@ -8,12 +8,13 @@ using Image = UnityEngine.UI.Image;
 public class SpellsManager : MonoBehaviour
 {
     public static GameManager gameManager;
+    public static SeasonManager seasonManager;
 
     public static SpellsManager Instance;
 
     private GameObject seasonPanel;
 
-    public int seasonTimeRemaining; // Put remaining time. At 0 reset panel and update all flowers.
+    public static int seasonTimeRemaining; // Put remaining time. At 0 reset panel and update all flowers.
 
     private void Awake()
     {
@@ -43,33 +44,7 @@ public class SpellsManager : MonoBehaviour
     {
         
     }
-    public void ChangeSeason()
-    {
-        // Find the season panel by name
-        GameObject panel = GameObject.Find("SeasonPanel"); // Ensure the name matches exactly
 
-        if (panel != null)
-        {
-   
-            // Get the Image component
-            Image panelImage = panel.GetComponent<Image>();
-            if (panelImage != null)
-            {
-               
-                panelImage.color = new Vector4(0.4f, 0.3f, 0.9f, 0.2f);
-                
-                Debug.Log("SeasonPanel color changed to blue.");
-            }
-            else
-            {
-                Debug.LogError("Image component not found on SeasonPanel.");
-            }
-        }
-        else
-        {
-            Debug.LogError("SeasonPanel GameObject not found.");
-        }
-    }
     /*
  * ex.
  * GameManager.Instance.UpdateAllFlowers(flowerData => flowerData.growthStep = 1);
@@ -77,10 +52,21 @@ public class SpellsManager : MonoBehaviour
     public void setWinterBiome()
     {
 
-            Debug.Log("Setting Wintertime");
-           gameManager.playerData.spellCast = true;
-            gameManager.UpdateAllFlowers(flowerData => flowerData.growthStep = 100);
-        ChangeSeason();
+        if (seasonManager == null) seasonManager = GameObject.Find("SeasonManager").GetComponent<SeasonManager>();
+        Debug.Log("Setting Wintertime");
+        gameManager.playerData.spellCast = true;
+        seasonManager.ChangeSeason(Season.Winter);
        
+       
+    }
+
+    public void growAllFlowers()
+    {
+
+        Debug.Log("Growing All Flowers");
+        gameManager.playerData.spellCast = true;
+        gameManager.UpdateAllFlowers(flowerData => flowerData.growthStep = 10);
+        
+
     }
 }
