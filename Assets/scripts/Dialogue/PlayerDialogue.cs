@@ -77,6 +77,6 @@ public class PlayerDialogue : MonoBehaviour
     void LoadNextScene()
     {
         // Replace "NextScene" with the name of your next scene
-        SceneManager.LoadScene("temp_rooftop"); 
+        SceneManager.LoadScene("temp_shop"); 
     }
 }

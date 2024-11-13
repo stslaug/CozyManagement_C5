@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     public InventoryData inventoryData;
     public GameObject flowerPrefab;                         // Assign via Inspector
     public PlayerDialogue playerDialogue;
+
+
     void Awake()
     {
         // Singleton Pattern Enforcement
@@ -265,7 +267,23 @@ public class GameManager : MonoBehaviour
 
             
             }
-           
+
+            if (Instance.playerData.currentDay == 8)
+            {
+                Debug.Log("Activating Yeti");
+                ActivateYetiCompletion();
+
+            
+            }
+            
+            if (Instance.playerData.currentDay == 10)
+            {
+                Debug.Log("Activating Granny");
+                ActivateGrannyCompletion();
+
+            
+            }
+
             if (Instance.playerData.currentDay == 3 && sceneName == "temp_rooftop")
             {
                 Debug.Log("Deactivating Yeti");
@@ -276,7 +294,20 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Deactivating Granny");
                 DeactivateGrannyRequest();
+            }    
+
+            if (Instance.playerData.currentDay == 8 && sceneName == "temp_rooftop")
+            {
+                Debug.Log("Deactivating Yeti");
+                DeactivateYetiCompletion();
             }
+              if (Instance.playerData.currentDay == 10 && sceneName == "temp_rooftop")
+            {
+                Debug.Log("Deactivating Granny");
+                DeactivateGrannyCompletion();
+            }
+
+           
         }
 
         // Add more special event handlers as needed
@@ -313,6 +344,84 @@ public class GameManager : MonoBehaviour
         {
             yetiRequest.SetActive(true);
             Debug.Log("Yeti has appeared!");
+        }
+        else
+        {
+            Debug.LogError("Yeti GameObject not found.");
+        }
+    }
+
+
+       private void ActivateYetiCompletion()
+    {
+        GameObject yetiRequest = GameObject.Find("Yeti_Completion");
+
+        if (yetiRequest == null)
+        {
+            GameObject playerUI = GameObject.Find("Player_UI");
+
+            if (playerUI != null)
+            {
+                Transform yetiTransform = playerUI.transform.Find("Yeti_Completion");
+
+                if (yetiTransform != null)
+                {
+                    yetiRequest = yetiTransform.gameObject;
+                }
+                else
+                {
+                    Debug.LogError("Yeti_Completion GameObject not found under Player_UI.");
+                }
+            }
+            else
+            {
+                Debug.LogError("Player_UI GameObject not found.");
+            }
+        }
+
+        if (yetiRequest != null)
+        {
+            yetiRequest.SetActive(true);
+            Debug.Log("Yeti has appeared!");
+        }
+        else
+        {
+            Debug.LogError("Yeti GameObject not found.");
+        }
+    }
+
+    
+    private void DeactivateYetiCompletion()
+    {
+        GameObject yetiRequest = GameObject.Find("Granny_Completion");
+
+        if (yetiRequest == null)
+        {
+            GameObject playerUI = GameObject.Find("Player_UI");
+
+            if (playerUI != null)
+            {
+                Transform yetiTransform = playerUI.transform.Find("Granny_Completion");
+
+                if (yetiTransform != null)
+                {
+                    yetiRequest = yetiTransform.gameObject;
+                }
+                else
+                {
+                    Debug.LogError("Yeti_CompletionGameObject not found under Player_UI.");
+                }
+            }
+            else
+            {
+                Debug.LogError("Player_UI GameObject not found.");
+            }
+        }
+
+        if (yetiRequest != null)
+        {
+            yetiRequest.SetActive(false);
+            Debug.Log("Yeti has left!");
         }
         else
         {
@@ -396,6 +505,43 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void ActivateGrannyCompletion()
+        {
+            GameObject GrannyRequest = GameObject.Find("Granny_Completion");
+
+            if (GrannyRequest == null)
+            {
+                GameObject playerUI = GameObject.Find("Player_UI");
+
+                if (playerUI != null)
+                {
+                    Transform GrannyTransform = playerUI.transform.Find("Granny_Completion");
+
+                    if (GrannyTransform != null)
+                    {
+                        GrannyRequest = GrannyTransform.gameObject;
+                    }
+                    else
+                    {
+                        Debug.LogError("Granny_Request GameObject not found under Player_UI.");
+                    }
+                }
+                else
+                {
+                    Debug.LogError("Player_UI GameObject not found.");
+                }
+            }
+
+            if (GrannyRequest != null)
+            {
+                GrannyRequest.SetActive(true);
+                Debug.Log("Granny has appeared!");
+            }
+            else
+            {
+                Debug.LogError("Granny GameObject not found.");
+            }
+        }
 
     private void DeactivateGrannyRequest()
     {
@@ -434,6 +580,45 @@ public class GameManager : MonoBehaviour
             Debug.LogError("GrannyGameObject not found.");
         }
     }
+
+     private void DeactivateGrannyCompletion()
+    {
+        GameObject GrannyRequest = GameObject.Find("Granny_Completion");
+
+        if (GrannyRequest == null)
+        {
+            GameObject playerUI = GameObject.Find("Player_UI");
+
+            if (playerUI != null)
+            {
+                Transform GrannyTransform = playerUI.transform.Find("Granny_Completion");
+
+                if (GrannyTransform != null)
+                {
+                    GrannyRequest = GrannyTransform.gameObject;
+                }
+                else
+                {
+                    Debug.LogError("Granny_Request GameObject not found under Player_UI.");
+                }
+            }
+            else
+            {
+                Debug.LogError("Player_UI GameObject not found.");
+            }
+        }
+
+        if (GrannyRequest != null)
+        {
+            GrannyRequest.SetActive(false);
+            Debug.Log("Granny has left!");
+        }
+        else
+        {
+            Debug.LogError("GrannyGameObject not found.");
+        }
+    }
+
 
     public void SaveGame()
     {
