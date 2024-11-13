@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     // References to other trackers
     public CurrencyTracker currencyTracker;
     public DaysTracker daysTracker;
+    
 
     // UI Components
     [SerializeField] private GameObject pauseMenu;          // Assign via Inspector
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
     public List<FlowerData> flowerData = new List<FlowerData>();
     public InventoryData inventoryData;
     public GameObject flowerPrefab;                         // Assign via Inspector
-
+    public PlayerDialogue playerDialogue;
     void Awake()
     {
         // Singleton Pattern Enforcement
@@ -253,8 +254,11 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Activating Yeti");
                 ActivateYetiRequest();
+
+            
             }
-            if (Instance.playerData.currentDay == 0 || Instance.playerData.currentDay == 5)
+           
+            if (Instance.playerData.currentDay == 3 && sceneName == "temp_rooftop")
             {
                 Debug.Log("Deactivating Yeti");
                 DeactivateYetiRequest();

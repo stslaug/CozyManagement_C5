@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement; 
 
 public class PlayerDialogue : MonoBehaviour
 {
@@ -68,8 +69,14 @@ public class PlayerDialogue : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false); //hide shop owner dialgoue    
+           // gameObject.SetActive(false); //hide shop owner dialgoue    
             finishedDialogue = true;
+            LoadNextScene();
         }
+    }
+    void LoadNextScene()
+    {
+        // Replace "NextScene" with the name of your next scene
+        SceneManager.LoadScene("temp_rooftop"); 
     }
 }

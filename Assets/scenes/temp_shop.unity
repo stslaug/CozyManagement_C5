@@ -1041,7 +1041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &928251231
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1621,7 +1621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 188.6001, y: -157}
+  m_AnchoredPosition: {x: 188.6001, y: -157.00002}
   m_SizeDelta: {x: -442.8048, y: -839.31006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1600012566
@@ -1641,6 +1641,7 @@ MonoBehaviour:
   - "A plant with a bit of heat, you say?  I think I have something laying around
     that will work. I\u2019ll make sure to have it for you by Wednesday!"
   textSpeed: 0.05
+  finishedDialogue: 0
 --- !u!114 &1600012567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2005,7 +2006,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 188.59998, y: -157}
+  m_AnchoredPosition: {x: 188.59998, y: -157.00002}
   m_SizeDelta: {x: -442.80493, y: -839.31006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796022581
@@ -2025,6 +2026,7 @@ MonoBehaviour:
   - "Hmm, not sure I have that lying around, but I think I can make it happen! Give
     me a bit of time, and I\u2019ll have something ready for you by Monday!"
   textSpeed: 0.05
+  finishedDialogue: 0
 --- !u!114 &1796022582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2153,6 +2155,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 632024237389615984, guid: 5b978ca47dd8b9443a23c9792e5c6ccc, type: 3}
+      propertyPath: playerDialogue
+      value: 
+      objectReference: {fileID: 1796022581}
     - target: {fileID: 2716956397720141188, guid: 5b978ca47dd8b9443a23c9792e5c6ccc, type: 3}
       propertyPath: m_Name
       value: GameManager
