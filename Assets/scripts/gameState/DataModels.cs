@@ -11,6 +11,7 @@ public class PlayerData
     public string creationDate;
     public string lastScene;
     public int saveSlot;
+    public bool spellCast;
 }
 
 [System.Serializable]
@@ -30,10 +31,15 @@ public class FlowerData
     public int growthStep = 1;
     public float growthRate = 1;
     public string flowerType;
+    public bool canGrowYearRound = true;
+    public bool canGrowWinter = true;
+    public bool canGrowSummer = true;
+    public bool canGrowFall = true;
+    public bool canGrowSpring = true;
+    public bool needWater = true;
+    public bool needSun = false;
 
- 
 }
-
 
 [System.Serializable]
 public class InventoryData

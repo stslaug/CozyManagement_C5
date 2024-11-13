@@ -44,10 +44,6 @@ public class DaysTracker : MonoBehaviour
         if (dayText == null)
         {
             dayText = GameObject.Find("dayText").GetComponent<TextMeshProUGUI>();
-            if (dayText == null)
-            {
-                Debug.LogWarning("dayText not found in the scene. Make sure the TextMeshProUGUI component is assigned.");
-            }
         }
 
 
@@ -63,6 +59,10 @@ public class DaysTracker : MonoBehaviour
     // Update the UI Text with the current gold amount
     public void UpdateDayDisplay()
     {
+        if (dayText == null)
+        {
+            dayText = GameObject.Find("dayText").GetComponent<TextMeshProUGUI>();
+        }
         if (dayText != null)
         {
             dayText.text = "Day: " + GameManager.Instance.playerData.currentDay; // Update the displayed text

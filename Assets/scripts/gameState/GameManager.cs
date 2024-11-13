@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +19,10 @@ public class GameManager : MonoBehaviour
     public List<FlowerData> flowerData;
     public InventoryData inventoryData;
     public GameObject flowerPrefab;
+
+    // Reference to the season panel and its Image component
+    private GameObject seasonPanel;
+    
 
     void Awake()
     {
@@ -46,7 +52,6 @@ public class GameManager : MonoBehaviour
     // Call this method to load save data into the GameManager
     public void LoadGame()
     {
-        // Ensure saveDirectory is initialized
         if (string.IsNullOrEmpty(saveDirectory))
         {
             saveDirectory = Path.Combine(Application.persistentDataPath, "Saves");
@@ -87,26 +92,23 @@ public class GameManager : MonoBehaviour
 
                 Debug.Log("Game loaded successfully. Switching scenes...");
 
-                // Check if playerData.lastScene is valid
                 if (!string.IsNullOrEmpty(playerData.lastScene))
                 {
                     Debug.Log("Attempting to load scene: " + playerData.lastScene);
 
-                    // Check if the scene can be loaded
                     if (Application.CanStreamedLevelBeLoaded(playerData.lastScene))
                     {
-                        // Subscribe to the sceneLoaded event
                         SceneManager.sceneLoaded += OnSceneLoaded;
                         SceneManager.LoadScene(playerData.lastScene);
                     }
                     else
                     {
-                        Debug.LogError("Scene '" + playerData.lastScene + "' cannot be loaded. Check if it's added to the build settings and the name is correct.");
+                        Debug.LogError("Scene '" + playerData.lastScene + "' cannot be loaded.");
                     }
                 }
                 else
                 {
-                    Debug.LogError("playerData.lastScene is null or empty. Cannot load scene.");
+                    Debug.LogError("playerData.lastScene is null or empty.");
                 }
             }
             else
@@ -136,25 +138,24 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("Default scene '" + playerData.lastScene + "' cannot be loaded. Check if it's added to the build settings and the name is correct.");
+                    Debug.LogError("Default scene '" + playerData.lastScene + "' cannot be loaded.");
                 }
             }
         }
-        catch (System.Exception e)
+        catch (Exception e)
         {
             Debug.LogError($"Error loading save file from {filePath}: {e.Message}\n{e.StackTrace}");
         }
     }
-private GameObject yeti;
+
+    private GameObject yeti;
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Instantiate flowers from saved data
         if (flowerData != null)
         {
             foreach (FlowerData data in flowerData)
             {
-                // Ensure we only instantiate flowers for the current scene
                 if (data.scene_name == scene.name)
                 {
                     if (flowerPrefab != null)
@@ -164,8 +165,7 @@ private GameObject yeti;
 
                         if (flower != null)
                         {
-                            flower.growthStep = data.growthStep;
-                            flower.flowerData.flowerType = data.flowerType;
+                            flower.flowerData = data;
                             flower.UpdateAppearance();
                         }
                     }
@@ -193,7 +193,7 @@ private GameObject yeti;
         }
         else
         {
-            Debug.LogError("CurrencyTracker component not found. UpdateGoldDisplay could not be called.");
+            Debug.LogError("CurrencyTracker component not found.");
         }
 
         // Update Days tracker
@@ -208,7 +208,7 @@ private GameObject yeti;
         }
         else
         {
-            Debug.LogError("daysTracker component not found. UpdateGoldDisplay could not be called.");
+            Debug.LogError("daysTracker component not found.");
         }
 
         // Handle pauseMenu
@@ -227,68 +227,60 @@ private GameObject yeti;
             }
             else
             {
-                Debug.LogWarning("PauseMenu GameObject not found in the scene.");
+                Debug.LogWarning("PauseMenu GameObject not found.");
             }
         }
 
-        // Check if the Yeti should be activated (day 2)
+        // Activate Yeti on day 2 in temp_shop
         if (scene.name == "temp_shop" && Instance.playerData.currentDay == 2)
         {
             Debug.Log("In yeti activation");
             ActivateYeti();
         }
 
-        // Unsubscribe from the event to prevent multiple calls
+        // Unsubscribe to prevent multiple calls
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void ActivateYeti()
     {
-        GameObject yeti = null;
-
-        // First, try finding it with GameObject.Find() if it's active
-        yeti = GameObject.Find("Yeti_Request");
+        GameObject yeti = GameObject.Find("Yeti_Request");
 
         if (yeti == null)
         {
-            // If the object is not found, search as a child of Player_UI including inactive objects
             GameObject playerUI = GameObject.Find("Player_UI");
 
             if (playerUI != null)
             {
-                // Search for the Yeti_Request child under Player_UI, including inactive objects
                 Transform yetiTransform = playerUI.transform.Find("Yeti_Request");
 
                 if (yetiTransform != null)
                 {
-                    // Activate the Yeti_Request object
                     yeti = yetiTransform.gameObject;
                 }
                 else
                 {
-                    Debug.LogError("Yeti_Request GameObject not found as a child of Player_UI.");
+                    Debug.LogError("Yeti_Request GameObject not found under Player_UI.");
                 }
             }
             else
             {
-                Debug.LogError("Player_UI GameObject not found in the scene.");
+                Debug.LogError("Player_UI GameObject not found.");
             }
         }
 
         if (yeti != null)
         {
-            // Enable the Yeti GameObject so it appears in the scene
             yeti.SetActive(true);
             Debug.Log("Yeti has appeared!");
         }
         else
         {
-            Debug.LogError("Yeti GameObject not found in the scene.");
+            Debug.LogError("Yeti GameObject not found.");
         }
     }
 
-
-    // This method is called when the player decides to save the game
+    // Save the game
     public void SaveGame()
     {
         string filePath = Path.Combine(saveDirectory, "save.json");
@@ -307,31 +299,36 @@ private GameObject yeti;
 
         if (flowerData == null)
             flowerData = new List<FlowerData>();
-        
+
         if (inventoryData == null)
             inventoryData = new InventoryData();
 
         playerData.lastTimePlayed = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         playerData.lastScene = SceneManager.GetActiveScene().name;
 
-        // Remove existing flower data for the current scene
         string currentSceneName = SceneManager.GetActiveScene().name;
         flowerData.RemoveAll(data => data.scene_name == currentSceneName);
 
-        // Collect flower data from the current scene
-        Flower[] flowers = FindObjectsOfType<Flower>();  // Find all flowers in the current scene
+        Flower[] flowers = FindObjectsOfType<Flower>();
         foreach (Flower flower in flowers)
         {
             FlowerData data = new FlowerData
             {
                 position = flower.transform.position,
                 scene_name = currentSceneName,
-                growthStep = flower.growthStep,
-                growthRate = flower.growthStep / (float)flower.maxGrowthStage,
-                flowerType = flower.flowerData.flowerType
+                growthStep = flower.flowerData.growthStep,
+                growthRate = flower.flowerData.growthRate,
+                flowerType = flower.flowerData.flowerType,
+                canGrowYearRound = flower.flowerData.canGrowYearRound,
+                canGrowWinter = flower.flowerData.canGrowWinter,
+                canGrowSummer = flower.flowerData.canGrowSummer,
+                canGrowFall = flower.flowerData.canGrowFall,
+                canGrowSpring = flower.flowerData.canGrowSpring,
+                needWater = flower.flowerData.needWater,
+                needSun = flower.flowerData.needSun
             };
 
-            flowerData.Add(data);  // Add to the save list
+            flowerData.Add(data);
         }
 
         saveData.playerData = playerData;
@@ -339,21 +336,20 @@ private GameObject yeti;
         saveData.flowerData = flowerData;
         saveData.inventoryData = inventoryData;
 
-        // Convert the SaveData object to a JSON string
         string json = JsonUtility.ToJson(saveData);
 
         try
         {
-            // Write the JSON to the file
             File.WriteAllText(filePath, json);
             Debug.Log($"Save successful. File Path: {filePath}");
         }
-        catch (System.Exception e)
+        catch (Exception e)
         {
             Debug.LogError($"Error saving to {filePath}: {e.Message}");
         }
     }
 
+    // Delete the save file
     public void DeleteSave()
     {
         string filePath = Path.Combine(saveDirectory, $"save.json");
@@ -363,10 +359,9 @@ private GameObject yeti;
             try
             {
                 File.Delete(filePath);
-                
                 Debug.Log($"Save file {filePath} deleted.");
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 Debug.LogError($"Error deleting save file {filePath}: {e.Message}");
             }
@@ -377,11 +372,11 @@ private GameObject yeti;
         }
     }
 
+    // Exit or return to main menu
     public void ExitFunction()
     {
         if (SceneManager.GetSceneByName("mainMenu") != SceneManager.GetActiveScene())
         {
-            // If we are not in the main menu, load the main menu scene
             Debug.Log("Loading Main Menu");
             SceneManager.LoadScene("mainMenu");
 
@@ -393,15 +388,15 @@ private GameObject yeti;
         }
         else
         {
-            // If we are already in the main menu, quit the game
             Debug.Log("User has initiated exiting the game");
             Application.Quit();
         }
     }
 
+    // Change to the next scene
     public void ChangeScene()
     {
-        int currentSceneIndex = System.Array.IndexOf(sceneNames, SceneManager.GetActiveScene().name);
+        int currentSceneIndex = Array.IndexOf(sceneNames, SceneManager.GetActiveScene().name);
         int nextSceneIndex = (currentSceneIndex + 1) % sceneNames.Length;
 
         Instance.SaveGame();
@@ -410,10 +405,9 @@ private GameObject yeti;
         {
             Debug.Log("Attempting to load scene: " + sceneNames[nextSceneIndex]);
 
-            // Check if the scene can be loaded
             if (Application.CanStreamedLevelBeLoaded(sceneNames[nextSceneIndex]))
             {
-                if(sceneNames[nextSceneIndex] == "temp_shop")
+                if (sceneNames[nextSceneIndex] == "temp_shop")
                 {
                     Debug.Log("Ending Day...");
                     Instance.playerData.currentDay += 1;
@@ -422,20 +416,54 @@ private GameObject yeti;
                 }
                 else
                 {
-                    Debug.Log("Scene '" + sceneNames[nextSceneIndex]);
+                    Debug.Log("Scene '" + sceneNames[nextSceneIndex] + "' loaded.");
                 }
-                // Subscribe to the sceneLoaded event
+
                 SceneManager.sceneLoaded += OnSceneLoaded;
                 SceneManager.LoadScene(sceneNames[nextSceneIndex]);
             }
             else
             {
-                Debug.LogError("Scene '" + sceneNames[nextSceneIndex] + "' cannot be loaded. Check if it's added to the build settings and the name is correct.");
+                Debug.LogError("Scene '" + sceneNames[nextSceneIndex] + "' cannot be loaded.");
             }
         }
         else
         {
-            Debug.LogError("sceneNames[nextSceneIndex] is null or empty. Cannot load scene.");
+            Debug.LogError("sceneNames[nextSceneIndex] is null or empty.");
         }
     }
+
+    /*
+     * ex.
+     * GameManager.Instance.UpdateAllFlowers(flowerData => flowerData.growthStep = 1);
+    */
+    public void UpdateAllFlowers(Action<FlowerData> updateAction)
+    {
+        if (updateAction == null)
+        {
+            Debug.LogError("Update action is null.");
+            return;
+        }
+
+        Flower[] allFlowers = FindObjectsOfType<Flower>();
+
+        if (allFlowers.Length == 0)
+        {
+            Debug.LogWarning("No Flower objects found in the scene.");
+            return;
+        }
+
+        foreach (Flower flower in allFlowers)
+        {
+            if (flower != null && flower.flowerData != null)
+            {
+                updateAction(flower.flowerData);
+                flower.UpdateAppearance();
+            }
+        }
+
+        Debug.Log($"Updated FlowerData for {allFlowers.Length} flowers.");
+    }
+
+
 }
