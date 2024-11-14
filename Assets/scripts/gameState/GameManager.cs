@@ -608,17 +608,17 @@ public class GameManager : MonoBehaviour
         string filePath = Path.Combine(saveDirectory, "save.json");
 
         // Initialize saveData if null
-        if (saveData == null)
-            saveData = new SaveData();
+        if (GameManager.Instance.saveData == null)
+            GameManager.Instance.saveData = new SaveData();
 
 
         // Update playerData with current time and scene
-        saveData.playerData.lastTimePlayed = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-        saveData.playerData.lastScene = SceneManager.GetActiveScene().name;
+        GameManager.Instance.saveData.playerData.lastTimePlayed = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        GameManager.Instance.saveData.playerData.lastScene = SceneManager.GetActiveScene().name;
 
         // Remove existing flowers in the current scene from flowerData
         string currentSceneName = SceneManager.GetActiveScene().name;
-        saveData.flowerData.RemoveAll(data => data.scene_name == currentSceneName);
+        GameManager.Instance.saveData.flowerData.RemoveAll(data => data.scene_name == currentSceneName);
 
         // Find all Flower instances in the scene and add their data
         Flower[] flowers = FindObjectsOfType<Flower>();
@@ -637,7 +637,7 @@ public class GameManager : MonoBehaviour
                     currentNeeds = new List<Need>(flower.flowerData.currentNeeds)
                 };
 
-                saveData.flowerData.Add(data);
+                GameManager.Instance.saveData.flowerData.Add(data);
             }
             else
             {
@@ -646,7 +646,7 @@ public class GameManager : MonoBehaviour
         }
 
         // Serialize saveData to JSON
-        string json = JsonUtility.ToJson(saveData, true); // 'true' for pretty print
+        string json = JsonUtility.ToJson(GameManager.Instance.saveData, true); // 'true' for pretty print
 
         try
         {
@@ -718,7 +718,8 @@ public class GameManager : MonoBehaviour
                 if (sceneNames[nextSceneIndex] == "temp_shop")
                 {
                     Debug.Log("Ending Day...");
-                    Instance.saveData.playerData.currentDay += 1;
+                    GameManager.Instance.saveData.playerData.currentDay += 1;
+                    GameManager.Instance.growAllFlowers();
 
                     if (daysTracker != null)
                         daysTracker.UpdateDayDisplay();
@@ -742,6 +743,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void growAllFlowers()
+    {
+        Debug.Log("[GrowAllFlowers]");
+        Flower[] allFlowers = FindObjectsOfType<Flower>();
+
+        if (allFlowers.Length == 0)
+        {
+            Debug.LogWarning("No Flower objects found in the scene.");
+            return;
+        }
+
+        foreach (Flower flower in allFlowers)
+        {
+            if (flower != null && flower.flowerData != null)
+            {
+                flower.flowerData.growthStep += 1;
+                flower.ApplyFlowerDataChanges();
+            }
+        }
+        Debug.Log($"Grew FlowerData for {allFlowers.Length} flowers.");
+    }
     public void UpdateAllFlowers(Action<FlowerData> updateAction)
     {
         if (updateAction == null)

@@ -114,19 +114,19 @@ public class Flower : MonoBehaviour
 
     private void Harvest()
     {
-        // Increment the inventory count for the flower type
-        GameManager.Instance.saveData.inventoryData.fireFlowerCount += 1;
+        //// Increment the inventory count for the flower type
+        //GameManager.Instance.saveData.inventoryData.fireFlowerCount += 1;
 
-        // Remove the flower's data from the GameManager's list
-        GameManager.Instance.saveData.flowerData.RemoveAll(fd =>
-            fd.position == flowerData.position &&
-            fd.scene_name == flowerData.scene_name &&
-            fd.flowerType == flowerData.flowerType
-        );
+        //// Remove the flower's data from the GameManager's list
+        //GameManager.Instance.saveData.flowerData.RemoveAll(fd =>
+        //    fd.position == flowerData.position &&
+        //    fd.scene_name == flowerData.scene_name &&
+        //    fd.flowerType == flowerData.flowerType
+        //);
 
-        // Destroy the flower GameObject
-        Destroy(gameObject);
+        //// Destroy the flower GameObject
+        //Destroy(gameObject);
 
-        Debug.Log($"Flower '{flowerData.flowerType}' harvested and FireFlower seed added to inventory.");
+        //Debug.Log($"Flower '{flowerData.flowerType}' harvested and FireFlower seed added to inventory.");
     }
 }

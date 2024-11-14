@@ -6,6 +6,7 @@ public class DaysTracker : MonoBehaviour
 {
     public static DaysTracker Instance; // Singleton instance
     public TextMeshProUGUI dayText; // Reference to the gold display text box
+ 
     public GameManager gameManager;
 
     private void Awake()
