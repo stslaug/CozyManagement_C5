@@ -4199,7 +4199,7 @@ PrefabInstance:
     - target: {fileID: 5970132997483941136, guid: 5b978ca47dd8b9443a23c9792e5c6ccc, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 632024237389615984, guid: 5b978ca47dd8b9443a23c9792e5c6ccc, type: 3}
+      objectReference: {fileID: 7843979259828759803}
     - target: {fileID: 9117673826592324415, guid: 5b978ca47dd8b9443a23c9792e5c6ccc, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -4209,6 +4209,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b978ca47dd8b9443a23c9792e5c6ccc, type: 3}
+--- !u!114 &7843979259828759803 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 91361448593467220, guid: 5b978ca47dd8b9443a23c9792e5c6ccc, type: 3}
+  m_PrefabInstance: {fileID: 7843979259828759802}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 644b3a367aaf7f248ab3a5e05d760116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &8691344152352581729
 CanvasRenderer:
   m_ObjectHideFlags: 0

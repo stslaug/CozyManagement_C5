@@ -13,13 +13,7 @@ MonoBehaviour:
   m_Name: WindFlowerConfig
   m_EditorClassIdentifier: 
   flowerType: WindFlower
-  growthStep: 0
-  growthRate: 1
-  canGrowYearRound: 1
-  canGrowWinter: 1
-  canGrowSummer: 1
-  canGrowFall: 1
-  canGrowSpring: 1
-  needWater: 1
-  needSun: 1
   maxGrowthStage: 3
+  growthRate: 1
+  diesIfWinter: 0
+  cost: 10

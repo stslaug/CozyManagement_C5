@@ -13,13 +13,7 @@ MonoBehaviour:
   m_Name: FireFlowerConfig
   m_EditorClassIdentifier: 
   flowerType: FireFlower
-  growthStep: 0
-  growthRate: 1
-  canGrowYearRound: 0
-  canGrowWinter: 0
-  canGrowSummer: 1
-  canGrowFall: 1
-  canGrowSpring: 1
-  needWater: 1
-  needSun: 1
   maxGrowthStage: 3
+  growthRate: 1
+  diesIfWinter: 1
+  cost: 5

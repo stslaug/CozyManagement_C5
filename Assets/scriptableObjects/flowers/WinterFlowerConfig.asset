@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18bf97ed167d8d94f9b23a2e6a17c0a1, type: 3}
-  m_Name: WaterFlowerConfig
+  m_Name: WinterFlowerConfig
   m_EditorClassIdentifier: 
-  flowerType: WaterFlower
-  maxGrowthStage: 3
+  flowerType: WinterFlower
+  maxGrowthStage: 1
   growthRate: 1
   diesIfWinter: 0
-  cost: 5
+  cost: 20
