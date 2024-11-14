@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2567734891188919238
+--- !u!1 &1648174881823417646
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2356685287742604072}
+  - component: {fileID: 627084606918463757}
+  m_Layer: 0
+  m_Name: inventoryData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &627084606918463757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648174881823417646}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2510623310618405648}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3839383888645386287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2510623310618405648}
   m_Layer: 0
   m_Name: Data
   m_TagString: Untagged
@@ -16,22 +47,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2356685287742604072
+--- !u!4 &2510623310618405648
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2567734891188919238}
+  m_GameObject: {fileID: 3839383888645386287}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -228.43433, y: -371.64447, z: 6.0905914}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 526085409621101053}
+  m_Children:
+  - {fileID: 627084606918463757}
+  m_Father: {fileID: 2038169243057512303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2716956397720141188
+--- !u!1 &5385538101894430002
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,8 +71,100 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 526085409621101053}
-  - component: {fileID: 632024237389615984}
+  - component: {fileID: 4128411348112841698}
+  - component: {fileID: 5970132997483941136}
+  m_Layer: 0
+  m_Name: currencyTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4128411348112841698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5385538101894430002}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -217.05098, y: -401.78326, z: -0.8560486}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038169243057512303}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5970132997483941136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5385538101894430002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5e8d15de5e3094e950f6ea85faa6cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldText: {fileID: 0}
+  gameManager: {fileID: 0}
+--- !u!1 &7022659777822278171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4052801729551011177}
+  - component: {fileID: 16625118620884979}
+  m_Layer: 0
+  m_Name: daysTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4052801729551011177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7022659777822278171}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -217.05098, y: -401.78326, z: -0.8560486}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038169243057512303}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &16625118620884979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7022659777822278171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e0d34cbbaac8349928b8788632e7f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayText: {fileID: 0}
+  gameManager: {fileID: 91361448593467220}
+--- !u!1 &9117673826592324415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2038169243057512303}
+  - component: {fileID: 91361448593467220}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,29 +172,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &526085409621101053
+--- !u!4 &2038169243057512303
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2716956397720141188}
+  m_GameObject: {fileID: 9117673826592324415}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 442.93433, y: 492.14447, z: -105.09059}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2356685287742604072}
+  - {fileID: 2510623310618405648}
+  - {fileID: 4128411348112841698}
+  - {fileID: 4052801729551011177}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &632024237389615984
+--- !u!114 &91361448593467220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2716956397720141188}
+  m_GameObject: {fileID: 9117673826592324415}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 644b3a367aaf7f248ab3a5e05d760116, type: 3}
@@ -95,65 +221,17 @@ MonoBehaviour:
       saveSlot: 0
       spellCast: 0
     npcData: []
-    flowerData:
-    - position: {x: 0, y: 0, z: 0}
-      scene_name: 
-      growthStep: 0
-      growthRate: 0
-      flowerType: 
-      canGrowYearRound: 1
-      canGrowWinter: 1
-      canGrowSummer: 1
-      canGrowFall: 1
-      canGrowSpring: 1
-      needWater: 1
-      needSun: 0
-    - position: {x: 0, y: 0, z: 0}
-      scene_name: 
-      growthStep: 0
-      growthRate: 0
-      flowerType: 
-      canGrowYearRound: 1
-      canGrowWinter: 1
-      canGrowSummer: 1
-      canGrowFall: 1
-      canGrowSpring: 1
-      needWater: 1
-      needSun: 0
+    allFlowerData: []
     inventoryData:
       fireFlowerCount: 0
       windFlowerCount: 0
       iceFlowerCount: 0
       waterFlowerCount: 0
   npcData: []
-  flowerData:
-  - position: {x: 0, y: 0, z: 0}
-    scene_name: 
-    growthStep: 0
-    growthRate: 0
-    flowerType: 
-    canGrowYearRound: 1
-    canGrowWinter: 1
-    canGrowSummer: 1
-    canGrowFall: 1
-    canGrowSpring: 1
-    needWater: 1
-    needSun: 0
-  - position: {x: 0, y: 0, z: 0}
-    scene_name: 
-    growthStep: 0
-    growthRate: 0
-    flowerType: 
-    canGrowYearRound: 1
-    canGrowWinter: 1
-    canGrowSummer: 1
-    canGrowFall: 1
-    canGrowSpring: 1
-    needWater: 1
-    needSun: 0
   inventoryData:
     fireFlowerCount: 0
     windFlowerCount: 0
     iceFlowerCount: 0
     waterFlowerCount: 0
   flowerPrefab: {fileID: 1942529968254713105, guid: 491ec9bd75ea23b4892c217aec4c1230, type: 3}
+  allFlowerData: []
