@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\tyler\\Unity\\Project Files\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\unity\\project files\\assets\\scripts\\gamestate\\seasonsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\seasonsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\gamestate\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\unity\\project files\\assets\\scripts\\spells\\spellsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\spells\\spellsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spells\\spellsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,24 +15,24 @@
       "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\daystracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\unity\\project files\\assets\\scripts\\objs\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objs\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\gamestate\\inventoryandplacing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\inventoryandplacing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\gamestate\\datamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\datamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\objs\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objs\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\unity\\project files\\assets\\scripts\\gamestate\\seasonsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\seasonsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\gamestate\\currencytracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\currencytracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\gamestate\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\unity\\project files\\assets\\scripts\\gamestate\\inventoryandplacing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\inventoryandplacing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,17 +42,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\GameManager.cs",
               "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\GameManager.cs",
               "RelativeToolTip": "Assets\\scripts\\gameState\\GameManager.cs",
-              "ViewState": "AgIAALgCAAAAAAAAAADwv78CAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAN8CAAAAAAAAAAArwPgCAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T04:12:20.654Z",
               "IsPinned": true,
@@ -66,7 +66,7 @@
               "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\DataModels.cs",
               "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\DataModels.cs",
               "RelativeToolTip": "Assets\\scripts\\gameState\\DataModels.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwE8AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T04:12:19.976Z",
               "IsPinned": true,
@@ -74,7 +74,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "currencyTracking.cs",
               "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\currencyTracking.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\currencyTracking.cs",
@@ -83,25 +83,24 @@
               "ViewState": "AgIAAGMAAAAAAAAAAADwv3MAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T04:14:16.283Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Flower.cs",
               "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\objs\\Flower.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\objs\\Flower.cs",
               "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\objs\\Flower.cs",
               "RelativeToolTip": "Assets\\scripts\\objs\\Flower.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAkwHcAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowHEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T01:07:56.009Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "SeasonsManager.cs",
               "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\SeasonsManager.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\SeasonsManager.cs",
@@ -114,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "InventoryAndPlacing.cs",
               "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\InventoryAndPlacing.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\InventoryAndPlacing.cs",
@@ -133,7 +132,7 @@
               "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\daysTracking.cs",
               "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\daysTracking.cs",
               "RelativeToolTip": "Assets\\scripts\\gameState\\daysTracking.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAswEMAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAuwEEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T03:56:51.253Z",
               "EditorCaption": ""
@@ -146,7 +145,7 @@
               "RelativeDocumentMoniker": "Assets\\scripts\\Spells\\SpellsManager.cs",
               "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\Spells\\SpellsManager.cs",
               "RelativeToolTip": "Assets\\scripts\\Spells\\SpellsManager.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAA5wDIAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwEAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T03:39:08.953Z",
               "EditorCaption": ""

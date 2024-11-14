@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\tyler\\Unity\\Project Files\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\gamestate\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\unity\\project files\\assets\\scripts\\gamestate\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -27,7 +27,7 @@
       "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objs\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\unity\\project files\\assets\\scripts\\gamestate\\seasonsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\gamestate\\seasonsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\seasonsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\GameManager.cs",
               "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\GameManager.cs",
               "RelativeToolTip": "Assets\\scripts\\gameState\\GameManager.cs",
-              "ViewState": "AgIAAN8CAAAAAAAAAAArwPgCAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T04:12:20.654Z",
               "IsPinned": true,
@@ -69,8 +69,7 @@
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwE8AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T04:12:19.976Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -95,8 +94,7 @@
               "RelativeToolTip": "Assets\\scripts\\objs\\Flower.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAowHEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T01:07:56.009Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T01:07:56.009Z"
             },
             {
               "$type": "Document",
@@ -108,8 +106,7 @@
               "RelativeToolTip": "Assets\\scripts\\gameState\\SeasonsManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T01:06:39.792Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T01:06:39.792Z"
             },
             {
               "$type": "Document",
@@ -121,8 +118,7 @@
               "RelativeToolTip": "Assets\\scripts\\gameState\\InventoryAndPlacing.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAcwGIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T01:06:15.201Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T01:06:15.201Z"
             },
             {
               "$type": "Document",
@@ -134,8 +130,7 @@
               "RelativeToolTip": "Assets\\scripts\\gameState\\daysTracking.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAuwEEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T03:56:51.253Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-13T03:56:51.253Z"
             },
             {
               "$type": "Document",
@@ -147,8 +142,7 @@
               "RelativeToolTip": "Assets\\scripts\\Spells\\SpellsManager.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAgwEAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T03:39:08.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-13T03:39:08.953Z"
             }
           ]
         }
