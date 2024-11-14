@@ -2,6 +2,8 @@ using JetBrains.Annotations;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace DataModels
+{
 [System.Serializable]
 public class PlayerData
 {
@@ -26,19 +28,14 @@ public class NPCData
 [System.Serializable]
 public class FlowerData
 {
+    public FlowerConfig flowerConfig; // Referencing the ScriptableObject for shared properties
     public Vector3 position;
-    public string scene_name;
-    public int growthStep = 1;
-    public float growthRate = 1;
-    public string flowerType;
-    public bool canGrowYearRound = true;
-    public bool canGrowWinter = true;
-    public bool canGrowSummer = true;
-    public bool canGrowFall = true;
-    public bool canGrowSpring = true;
-    public bool needWater = true;
+    public int growthStep = 1; // Tracks the growth step for each flower instance
+    public Vector3 initialScale = Vector3.one * 0.6f;
+    public Vector3 maxScale = Vector3.one * 1.5f;
     public bool needSun = false;
-
+    public bool needWater = false;
+    public string scene_name;
 }
 
 [System.Serializable]
@@ -68,6 +65,7 @@ public class SaveData
 {
     public PlayerData playerData;
     public List<NPCData> npcData;
-    public List<FlowerData> flowerData;
+    public List<FlowerData> allFlowerData;
     public InventoryData inventoryData;
+}
 }

@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DataModels;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,12 +17,14 @@ public class GameManager : MonoBehaviour
     public PlayerData playerData;
     public SaveData saveData;
     public List<NPCData> npcData;
-    public List<FlowerData> flowerData;
     public InventoryData inventoryData;
+
     public GameObject flowerPrefab;
+    public List<FlowerData> allFlowerData = new List<FlowerData>();
 
     // Reference to the season panel and its Image component
     private GameObject seasonPanel;
+    
     
 
     void Awake()
@@ -62,7 +65,7 @@ public class GameManager : MonoBehaviour
         saveData = null;
         playerData = null;
         npcData = null;
-        flowerData = null;
+        flowerPrefab = null;
         inventoryData = null;
 
         try
@@ -81,7 +84,7 @@ public class GameManager : MonoBehaviour
                 saveData = loadedSaveData;
                 playerData = loadedSaveData.playerData;
                 npcData = loadedSaveData.npcData;
-                flowerData = loadedSaveData.flowerData;
+                allFlowerData = loadedSaveData.allFlowerData;
                 inventoryData = loadedSaveData.inventoryData;
 
                 if (playerData == null)
@@ -118,7 +121,7 @@ public class GameManager : MonoBehaviour
                 saveData = new SaveData();
                 playerData = new PlayerData();
                 npcData = new List<NPCData>();
-                flowerData = new List<FlowerData>();
+                allFlowerData = new List<FlowerData>();
 
                 playerData.creationDate = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 playerData.lastScene = "temp_shop";
@@ -126,7 +129,7 @@ public class GameManager : MonoBehaviour
                 saveData.playerData = playerData;
                 saveData.playerData.currentDay = 1;
                 saveData.npcData = npcData;
-                saveData.flowerData = flowerData;
+                saveData.allFlowerData = allFlowerData;
                 saveData.inventoryData = inventoryData;
 
                 Debug.Log("Loading default scene: " + playerData.lastScene);
@@ -152,16 +155,16 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (flowerData != null)
+        if (allFlowerData != null)
         {
-            foreach (FlowerData data in flowerData)
+            foreach (FlowerData data in allFlowerData)
             {
                 if (data.scene_name == scene.name)
                 {
                     if (flowerPrefab != null)
                     {
                         GameObject flowerObject = Instantiate(flowerPrefab, data.position, Quaternion.identity);
-                        Flower flower = flowerObject.GetComponent<Flower>();
+                        FlowerManager flower = flowerObject.GetComponent<FlowerManager>();
 
                         if (flower != null)
                         {
@@ -294,11 +297,11 @@ public class GameManager : MonoBehaviour
         if (saveData.npcData == null)
             saveData.npcData = new List<NPCData>();
 
-        if (saveData.flowerData == null)
-            saveData.flowerData = new List<FlowerData>();
+        if (saveData.allFlowerData == null)
+            saveData.allFlowerData = new List<FlowerData>();
 
-        if (flowerData == null)
-            flowerData = new List<FlowerData>();
+        if (allFlowerData == null)
+            allFlowerData = new List<FlowerData>();
 
         if (inventoryData == null)
             inventoryData = new InventoryData();
@@ -307,33 +310,27 @@ public class GameManager : MonoBehaviour
         playerData.lastScene = SceneManager.GetActiveScene().name;
 
         string currentSceneName = SceneManager.GetActiveScene().name;
-        flowerData.RemoveAll(data => data.scene_name == currentSceneName);
+        allFlowerData.RemoveAll(data => data.scene_name == currentSceneName);
 
-        Flower[] flowers = FindObjectsOfType<Flower>();
-        foreach (Flower flower in flowers)
+        FlowerManager[] flowers = FindObjectsOfType<FlowerManager>();
+        foreach (FlowerManager flower in flowers)
         {
             FlowerData data = new FlowerData
             {
                 position = flower.transform.position,
                 scene_name = currentSceneName,
                 growthStep = flower.flowerData.growthStep,
-                growthRate = flower.flowerData.growthRate,
-                flowerType = flower.flowerData.flowerType,
-                canGrowYearRound = flower.flowerData.canGrowYearRound,
-                canGrowWinter = flower.flowerData.canGrowWinter,
-                canGrowSummer = flower.flowerData.canGrowSummer,
-                canGrowFall = flower.flowerData.canGrowFall,
-                canGrowSpring = flower.flowerData.canGrowSpring,
+                flowerConfig = flower.flowerData.flowerConfig,
                 needWater = flower.flowerData.needWater,
                 needSun = flower.flowerData.needSun
             };
 
-            flowerData.Add(data);
+            allFlowerData.Add(data);
         }
 
         saveData.playerData = playerData;
         saveData.npcData = npcData;
-        saveData.flowerData = flowerData;
+        saveData.allFlowerData = allFlowerData;
         saveData.inventoryData = inventoryData;
 
         string json = JsonUtility.ToJson(saveData);
@@ -383,7 +380,7 @@ public class GameManager : MonoBehaviour
             saveData = null;
             playerData = null;
             npcData = null;
-            flowerData = null;
+            allFlowerData = null;
             inventoryData = null;
         }
         else
@@ -433,6 +430,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void SpawnFlower(Vector3 position, FlowerConfig flowerConfig)
+    {
+        //Create a flower instance
+        FlowerData data = new FlowerData()
+        {
+            flowerConfig = flowerConfig,
+            position = position,
+            growthStep = 1,  // Initial growth step
+            needWater = true,
+            needSun = true
+        };
+
+        allFlowerData.Add(data);
+    }
     /*
      * ex.
      * GameManager.Instance.UpdateAllFlowers(flowerData => flowerData.growthStep = 1);
@@ -445,7 +456,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        Flower[] allFlowers = FindObjectsOfType<Flower>();
+        FlowerManager[] allFlowers = FindObjectsOfType<FlowerManager>();
 
         if (allFlowers.Length == 0)
         {
@@ -453,7 +464,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        foreach (Flower flower in allFlowers)
+        foreach (FlowerManager flower in allFlowers)
         {
             if (flower != null && flower.flowerData != null)
             {
@@ -465,5 +476,17 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Updated FlowerData for {allFlowers.Length} flowers.");
     }
 
+    public void AddFlowerData(FlowerData flowerData)
+    {
+        allFlowerData.Add(flowerData);
+        Debug.Log("Flower added to the garden.");
+    }
+
+    public void RemoveFlower(FlowerData flower)
+    {
+        // Find the flower in the list and remove it
+        allFlowerData.Remove(flower);
+        Debug.Log("Flower removed from the garden.");
+    }
 
 }
