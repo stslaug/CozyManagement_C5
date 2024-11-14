@@ -42,7 +42,7 @@ public class Flower : MonoBehaviour
     private void Update()
     {
         
-        Season currentSeason = SeasonManager.Instance.currentSeason;
+        Season currentSeason = GameManager.Instance.saveData.playerData.rooftopSeason;
 
         // Determine if the flower can grow based on season and needs
         if (CanGrowInSeason(currentSeason) && MeetsNeeds())
@@ -82,22 +82,22 @@ public class Flower : MonoBehaviour
             animator.SetInteger("GrowthStep", flowerData.growthStep);
         }
 
-        // Update color based on current needs
-        if (!flowerData.currentNeeds.Contains(Need.Water) && !flowerData.currentNeeds.Contains(Need.Sunlight))
-        {
-            spriteRenderer.color = Color.green; // Healthy
-        }
-        else
-        {
-            if (flowerData.currentNeeds.Contains(Need.Water) && flowerData.currentNeeds.Contains(Need.Sunlight))
-                spriteRenderer.color = Color.yellow; // Needs water and sunlight
-            else if (flowerData.currentNeeds.Contains(Need.Water))
-                spriteRenderer.color = Color.blue; // Needs water
-            else if (flowerData.currentNeeds.Contains(Need.Sunlight))
-                spriteRenderer.color = Color.cyan;// Needs sunlight
-            else
-                spriteRenderer.color = Color.red; // Severe condition
-        }
+        //// Update color based on current needs
+        //if (!flowerData.currentNeeds.Contains(Need.Water) && !flowerData.currentNeeds.Contains(Need.Sunlight))
+        //{
+        //    //spriteRenderer.color = Color.green; // Healthy
+        //}
+        //else
+        //{
+        //    if (flowerData.currentNeeds.Contains(Need.Water) && flowerData.currentNeeds.Contains(Need.Sunlight))
+        //        spriteRenderer.color = Color.yellow; // Needs water and sunlight
+        //    else if (flowerData.currentNeeds.Contains(Need.Water))
+        //        spriteRenderer.color = Color.blue; // Needs water
+        //    else if (flowerData.currentNeeds.Contains(Need.Sunlight))
+        //        spriteRenderer.color = Color.cyan;// Needs sunlight
+        //    else
+        //        spriteRenderer.color = Color.red; // Severe condition
+        //}
     }
 
     public void ApplyFlowerDataChanges()
@@ -115,10 +115,10 @@ public class Flower : MonoBehaviour
     private void Harvest()
     {
         // Increment the inventory count for the flower type
-        GameManager.Instance.inventoryData.fireFlowerCount += 1;
+        GameManager.Instance.saveData.inventoryData.fireFlowerCount += 1;
 
         // Remove the flower's data from the GameManager's list
-        GameManager.Instance.flowerData.RemoveAll(fd =>
+        GameManager.Instance.saveData.flowerData.RemoveAll(fd =>
             fd.position == flowerData.position &&
             fd.scene_name == flowerData.scene_name &&
             fd.flowerType == flowerData.flowerType

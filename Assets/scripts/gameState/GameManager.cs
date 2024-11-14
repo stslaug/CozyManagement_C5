@@ -25,12 +25,8 @@ public class GameManager : MonoBehaviour
     private readonly string[] sceneNames = { "temp_rooftop", "temp_shop" };
 
     // Game Data
-    public PlayerData playerData;
     public SaveData saveData;
-    public List<NPCData> npcData = new List<NPCData>();
-    public List<FlowerData> flowerData = new List<FlowerData>();
-    public InventoryData inventoryData;
-    public GameObject flowerPrefab;                         // Assign via Inspector
+    public GameObject flowerPrefab;
     public PlayerDialogue playerDialogue;
 
 
@@ -63,9 +59,6 @@ public class GameManager : MonoBehaviour
 
         // Reset current data
         saveData = null;
-        playerData = null;
-        npcData.Clear();
-        flowerData.Clear();
         // Initialize inventoryData if needed
 
         try
@@ -82,13 +75,8 @@ public class GameManager : MonoBehaviour
                     return;
                 }
 
-                // Assign loaded data
-                playerData = saveData.playerData;
-                npcData = saveData.npcData;
-                flowerData = saveData.flowerData;
-                inventoryData = saveData.inventoryData;
 
-                if (playerData == null)
+                if (saveData.playerData == null)
                 {
                     Debug.LogError("playerData is null in loaded SaveData.");
                     InitializeDefaultData();
@@ -98,18 +86,18 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Game loaded successfully. Switching scenes...");
 
                 // Load the last scene
-                if (!string.IsNullOrEmpty(playerData.lastScene))
+                if (!string.IsNullOrEmpty(saveData.playerData.lastScene))
                 {
-                    Debug.Log($"Attempting to load scene: {playerData.lastScene}");
+                    Debug.Log($"Attempting to load scene: {saveData.playerData.lastScene}");
 
-                    if (Application.CanStreamedLevelBeLoaded(playerData.lastScene))
+                    if (Application.CanStreamedLevelBeLoaded(saveData.playerData.lastScene))
                     {
                         SceneManager.sceneLoaded += OnSceneLoaded;
-                        SceneManager.LoadScene(playerData.lastScene);
+                        SceneManager.LoadScene(saveData.playerData.lastScene);
                     }
                     else
                     {
-                        Debug.LogError($"Scene '{playerData.lastScene}' cannot be loaded.");
+                        Debug.LogError($"Scene '{saveData.playerData.lastScene}' cannot be loaded.");
                         InitializeDefaultData();
                     }
                 }
@@ -136,31 +124,26 @@ public class GameManager : MonoBehaviour
     {
         // Initialize default data
         saveData = new SaveData();
-        playerData = new PlayerData
+        saveData.playerData = new PlayerData
         {
             creationDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
             lastScene = "temp_shop",
            // currentDay = 1
         };
-        npcData = new List<NPCData>();
-        flowerData = new List<FlowerData>();
-        inventoryData = new InventoryData(); // Ensure InventoryData has a default constructor
+        saveData.npcData = new List<NPCData>();
+        saveData.flowerData = new List<FlowerData>();
+        saveData.inventoryData = new InventoryData(); // Ensure InventoryData has a default constructor
 
-        saveData.playerData = playerData;
-        saveData.npcData = npcData;
-        saveData.flowerData = flowerData;
-        saveData.inventoryData = inventoryData;
+        Debug.Log($"Loading default scene: {saveData.playerData.lastScene}");
 
-        Debug.Log($"Loading default scene: {playerData.lastScene}");
-
-        if (Application.CanStreamedLevelBeLoaded(playerData.lastScene))
+        if (Application.CanStreamedLevelBeLoaded(saveData.playerData.lastScene))
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
-            SceneManager.LoadScene(playerData.lastScene);
+            SceneManager.LoadScene(saveData.playerData.lastScene);
         }
         else
         {
-            Debug.LogError($"Default scene '{playerData.lastScene}' cannot be loaded.");
+            Debug.LogError($"Default scene '{saveData.playerData.lastScene}' cannot be loaded.");
         }
     }
 
@@ -181,9 +164,9 @@ public class GameManager : MonoBehaviour
 
     private void InstantiateFlowersInScene(string sceneName)
     {
-        if (flowerData != null)
+        if (saveData.flowerData != null)
         {
-            foreach (FlowerData data in flowerData)
+            foreach (FlowerData data in saveData.flowerData)
             {
                 if (data.scene_name == sceneName)
                 {
@@ -252,7 +235,7 @@ public class GameManager : MonoBehaviour
     {
         if (sceneName == "temp_shop")
         {
-            if (Instance.playerData.currentDay == 3)
+            if (Instance.saveData.playerData.currentDay == 3)
             {
                 Debug.Log("Activating Yeti");
                 ActivateYetiRequest();
@@ -260,7 +243,7 @@ public class GameManager : MonoBehaviour
             
             }
 
-            if (Instance.playerData.currentDay == 4)
+            if (Instance.saveData.playerData.currentDay == 4)
             {
                 Debug.Log("Activating Granny");
                 ActivateGrannyRequest();
@@ -268,7 +251,7 @@ public class GameManager : MonoBehaviour
             
             }
 
-            if (Instance.playerData.currentDay == 8)
+            if (Instance.saveData.playerData.currentDay == 8)
             {
                 Debug.Log("Activating Yeti");
                 ActivateYetiCompletion();
@@ -276,7 +259,7 @@ public class GameManager : MonoBehaviour
             
             }
             
-            if (Instance.playerData.currentDay == 10)
+            if (Instance.saveData.playerData.currentDay == 10)
             {
                 Debug.Log("Activating Granny");
                 ActivateGrannyCompletion();
@@ -284,24 +267,24 @@ public class GameManager : MonoBehaviour
             
             }
 
-            if (Instance.playerData.currentDay == 3 && sceneName == "temp_rooftop")
+            if (Instance.saveData.playerData.currentDay == 3 && sceneName == "temp_rooftop")
             {
                 Debug.Log("Deactivating Yeti");
                 DeactivateYetiRequest();
             }
 
-            if (Instance.playerData.currentDay == 4 && sceneName == "temp_rooftop")
+            if (Instance.saveData.playerData.currentDay == 4 && sceneName == "temp_rooftop")
             {
                 Debug.Log("Deactivating Granny");
                 DeactivateGrannyRequest();
             }    
 
-            if (Instance.playerData.currentDay == 8 && sceneName == "temp_rooftop")
+            if (Instance.saveData.playerData.currentDay == 8 && sceneName == "temp_rooftop")
             {
                 Debug.Log("Deactivating Yeti");
                 DeactivateYetiCompletion();
             }
-              if (Instance.playerData.currentDay == 10 && sceneName == "temp_rooftop")
+              if (Instance.saveData.playerData.currentDay == 10 && sceneName == "temp_rooftop")
             {
                 Debug.Log("Deactivating Granny");
                 DeactivateGrannyCompletion();
@@ -628,19 +611,14 @@ public class GameManager : MonoBehaviour
         if (saveData == null)
             saveData = new SaveData();
 
-        // Assign playerData, npcData, flowerData, and inventoryData to saveData
-        saveData.playerData = playerData;
-        saveData.npcData = npcData;
-        saveData.flowerData = flowerData;
-        saveData.inventoryData = inventoryData;
 
         // Update playerData with current time and scene
-        playerData.lastTimePlayed = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-        playerData.lastScene = SceneManager.GetActiveScene().name;
+        saveData.playerData.lastTimePlayed = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        saveData.playerData.lastScene = SceneManager.GetActiveScene().name;
 
         // Remove existing flowers in the current scene from flowerData
         string currentSceneName = SceneManager.GetActiveScene().name;
-        flowerData.RemoveAll(data => data.scene_name == currentSceneName);
+        saveData.flowerData.RemoveAll(data => data.scene_name == currentSceneName);
 
         // Find all Flower instances in the scene and add their data
         Flower[] flowers = FindObjectsOfType<Flower>();
@@ -659,7 +637,7 @@ public class GameManager : MonoBehaviour
                     currentNeeds = new List<Need>(flower.flowerData.currentNeeds)
                 };
 
-                flowerData.Add(data);
+                saveData.flowerData.Add(data);
             }
             else
             {
@@ -740,7 +718,7 @@ public class GameManager : MonoBehaviour
                 if (sceneNames[nextSceneIndex] == "temp_shop")
                 {
                     Debug.Log("Ending Day...");
-                    Instance.playerData.currentDay += 1;
+                    Instance.saveData.playerData.currentDay += 1;
 
                     if (daysTracker != null)
                         daysTracker.UpdateDayDisplay();

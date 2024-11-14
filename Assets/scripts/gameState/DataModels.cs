@@ -12,6 +12,7 @@ public class PlayerData
     public string lastScene;
     public int saveSlot;
     public bool spellCast;
+    public Season rooftopSeason;
 }
 
 [System.Serializable]

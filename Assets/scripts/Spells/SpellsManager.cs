@@ -7,8 +7,6 @@ using Image = UnityEngine.UI.Image;
 
 public class SpellsManager : MonoBehaviour
 {
-    public static GameManager gameManager;
-    public static SeasonManager seasonManager;
 
     public static SpellsManager Instance;
 
@@ -32,17 +30,14 @@ public class SpellsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (gameManager == null)
-        {
-            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        }
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     /*
@@ -51,22 +46,24 @@ public class SpellsManager : MonoBehaviour
 */
     public void setWinterBiome()
     {
-
-        if (seasonManager == null) seasonManager = GameObject.Find("SeasonManager").GetComponent<SeasonManager>();
         Debug.Log("Setting Wintertime");
-        gameManager.playerData.spellCast = true;
-        seasonManager.ChangeSeason(Season.Winter);
-       
-       
+        GameManager.Instance.saveData.playerData.spellCast = true;
+        SeasonManager.Instance.ChangeSeason(Season.Winter);
+
+        Image UIPanel = GameObject.Find("SeasonPanel").GetComponent<Image>();
+        UIPanel.color = new Color(0.4f, 0.1f, 0.9f, 0.2f);
+
+
+
     }
 
     public void growAllFlowers()
     {
 
         Debug.Log("Growing All Flowers");
-        gameManager.playerData.spellCast = true;
-        gameManager.UpdateAllFlowers(flowerData => flowerData.growthStep = 10);
-        
+        GameManager.Instance.saveData.playerData.spellCast = true;
+        GameManager.Instance.UpdateAllFlowers(flowerData => flowerData.growthStep = 10);
+
 
     }
 }

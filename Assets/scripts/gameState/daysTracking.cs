@@ -65,7 +65,7 @@ public class DaysTracker : MonoBehaviour
         }
         if (dayText != null)
         {
-            dayText.text = "Day: " + GameManager.Instance.playerData.currentDay; // Update the displayed text
+            dayText.text = "Day: " + GameManager.Instance.saveData.playerData.currentDay; // Update the displayed text
             Debug.Log("in update Day Display");
         }
         else

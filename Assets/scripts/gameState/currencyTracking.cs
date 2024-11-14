@@ -77,7 +77,7 @@ public class CurrencyTracker : MonoBehaviour
         }
         if (gameManager != null)
         {
-            GameManager.Instance.playerData.goldCount += amount; // Save gold to GameManager
+            GameManager.Instance.saveData.playerData.goldCount += amount; // Save gold to GameManager
         }
         UpdateGoldDisplay();
     }
@@ -99,10 +99,10 @@ public class CurrencyTracker : MonoBehaviour
         }
         if (gameManager != null)
         {
-            if (GameManager.Instance.playerData.goldCount >= amount)
+            if (GameManager.Instance.saveData.playerData.goldCount >= amount)
             {
 
-                GameManager.Instance.playerData.goldCount -= amount; // Save gold to GameManager
+                GameManager.Instance.saveData.playerData.goldCount -= amount; // Save gold to GameManager
 
                 UpdateGoldDisplay();
                
@@ -121,7 +121,7 @@ public class CurrencyTracker : MonoBehaviour
     {
         if (goldText != null)
         {
-            goldText.text = "Gold: " + GameManager.Instance.playerData.goldCount; // Update the displayed text
+            goldText.text = "Gold: " + GameManager.Instance.saveData.playerData.goldCount; // Update the displayed text
         }
         else
         {

@@ -5,8 +5,6 @@ public class SeasonManager : MonoBehaviour
 {
     public static SeasonManager Instance;
 
-    public Season currentSeason = Season.Spring;
-
     public event Action<Season> OnSeasonChanged;
 
     void Awake()
@@ -24,15 +22,15 @@ public class SeasonManager : MonoBehaviour
 
     public void ChangeSeason(Season newSeason)
     {
-        if (currentSeason != newSeason)
+        if (GameManager.Instance.saveData.playerData.rooftopSeason != newSeason)
         {
-            currentSeason = newSeason;
-            Debug.Log($"Season changed to: {currentSeason}");
-            OnSeasonChanged?.Invoke(currentSeason);
+            GameManager.Instance.saveData.playerData.rooftopSeason = newSeason;
+            Debug.Log($"Season changed to: {GameManager.Instance.saveData.playerData.rooftopSeason}");
+            OnSeasonChanged?.Invoke(GameManager.Instance.saveData.playerData.rooftopSeason);
         }
         else
         {
-            Debug.Log("Season is already: " + currentSeason);
+            Debug.Log("Season is already: " + GameManager.Instance.saveData.playerData.rooftopSeason);
         }
     }
 }
