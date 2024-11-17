@@ -10,8 +10,6 @@ public class SpellsManager : MonoBehaviour
 
     public static SpellsManager Instance;
 
-    private GameObject seasonPanel;
-
     public static int seasonTimeRemaining; // Put remaining time. At 0 reset panel and update all flowers.
 
     private void Awake()

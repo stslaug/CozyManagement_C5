@@ -20,6 +20,7 @@ public class SeasonManager : MonoBehaviour
         }
     }
 
+
     public void ChangeSeason(Season newSeason)
     {
         if (GameManager.Instance.saveData.playerData.rooftopSeason != newSeason)

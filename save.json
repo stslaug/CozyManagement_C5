@@ -1,58 +1,96 @@
 {
     "playerData": {
-        "goldCount": 0,
-        "currentDay": 6,
-        "lastTimePlayed": "2024-11-13 21:06:25",
-        "creationDate": "2024-11-13 21:01:34",
-        "lastScene": "temp_shop",
-        "saveSlot": 0,
-        "spellCast": true,
+        "goldCount": 560,
+        "currentDay": 1,
+        "lastTimePlayed": "2024-11-17 02:31:26",
+        "creationDate": "11/17/2024 12:00:00 AM",
+        "lastScene": "temp_rooftop",
+        "spellCast": false,
         "rooftopSeason": 0
     },
     "npcData": [],
     "flowerData": [
         {
             "position": {
-                "x": 185.1877899169922,
-                "y": 63.79483413696289,
-                "z": -0.05000000074505806
+                "x": 304.8236083984375,
+                "y": 54.85783386230469,
+                "z": 0.0
             },
             "scene_name": "temp_rooftop",
-            "growthStep": 3,
+            "growthStep": 1,
             "growthRate": 1.0,
-            "flowerType": "",
+            "flowerType": 0,
             "seasonsAllowed": [],
             "currentNeeds": []
         },
         {
             "position": {
-                "x": 210.3125457763672,
-                "y": 65.53961181640625,
-                "z": -0.05000000074505806
+                "x": 243.20751953125,
+                "y": 76.21342468261719,
+                "z": 0.0
             },
             "scene_name": "temp_rooftop",
-            "growthStep": 3,
+            "growthStep": 1,
             "growthRate": 1.0,
-            "flowerType": "",
+            "flowerType": 0,
             "seasonsAllowed": [],
             "currentNeeds": []
         },
         {
             "position": {
-                "x": 242.4163818359375,
-                "y": 64.84170532226563,
-                "z": -0.05000000074505806
+                "x": 209.9488067626953,
+                "y": 34.202430725097659,
+                "z": 0.0
             },
             "scene_name": "temp_rooftop",
-            "growthStep": 3,
+            "growthStep": 1,
             "growthRate": 1.0,
-            "flowerType": "",
+            "flowerType": 0,
+            "seasonsAllowed": [],
+            "currentNeeds": []
+        },
+        {
+            "position": {
+                "x": 103.52098846435547,
+                "y": 45.405364990234378,
+                "z": 0.0
+            },
+            "scene_name": "temp_rooftop",
+            "growthStep": 10,
+            "growthRate": 1.0,
+            "flowerType": 0,
+            "seasonsAllowed": [],
+            "currentNeeds": []
+        },
+        {
+            "position": {
+                "x": 258.1193542480469,
+                "y": 27.50353240966797,
+                "z": 0.0
+            },
+            "scene_name": "temp_rooftop",
+            "growthStep": 10,
+            "growthRate": 1.0,
+            "flowerType": 0,
+            "seasonsAllowed": [],
+            "currentNeeds": []
+        },
+        {
+            "position": {
+                "x": 166.34422302246095,
+                "y": 47.74290466308594,
+                "z": 0.0
+            },
+            "scene_name": "temp_rooftop",
+            "growthStep": 10,
+            "growthRate": 1.0,
+            "flowerType": 0,
             "seasonsAllowed": [],
             "currentNeeds": []
         }
     ],
     "inventoryData": {
-        "fireFlowerCount": 9,
+        "fireFlowerCount": 0,
         "windFlowerCount": 0,
         "iceFlowerCount": 0,
         "waterFlowerCount": 0

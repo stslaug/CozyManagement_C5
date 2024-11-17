@@ -26,7 +26,7 @@ namespace TMPro.Examples
         private Material m_material01;
         private Material m_material02;
 
-
+        public TextContainer TextContainer { get => m_textContainer; set => m_textContainer = value; }
 
         IEnumerator Start()
         {

@@ -6,12 +6,13 @@ public class DaysTracker : MonoBehaviour
 {
     public static DaysTracker Instance; // Singleton instance
     public TextMeshProUGUI dayText; // Reference to the gold display text box
- 
+
+
+    private int currDay;
     public GameManager gameManager;
 
     private void Awake()
     {
-
         if(Instance == null)
         {
             Instance = this;
@@ -46,32 +47,35 @@ public class DaysTracker : MonoBehaviour
         {
             dayText = GameObject.Find("dayText").GetComponent<TextMeshProUGUI>();
         }
-
-
-        UpdateDayDisplay();
+        currDay = 0;
     }
 
     private void Update()
     {
-       
-
+        UpdateDayDisplay();
     }
 
     // Update the UI Text with the current gold amount
     public void UpdateDayDisplay()
     {
-        if (dayText == null)
+        if (gameManager == null)
         {
-            dayText = GameObject.Find("dayText").GetComponent<TextMeshProUGUI>();
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
-        if (dayText != null)
+        if (currDay != gameManager.saveData.playerData.goldCount)
         {
-            dayText.text = "Day: " + GameManager.Instance.saveData.playerData.currentDay; // Update the displayed text
-            Debug.Log("in update Day Display");
-        }
-        else
-        {
-            Debug.Log("dayText reference is not assigned!");
+            if (dayText == null)
+            {
+                dayText = GameObject.Find("dayText").GetComponent<TextMeshProUGUI>();
+            }
+            if (dayText != null)
+            {
+                dayText.text = "Day: " + gameManager.saveData.playerData.currentDay; // Update the displayed text
+            }
+            else
+            {
+                Debug.Log("dayText reference is not assigned!");
+            }
         }
     }
 

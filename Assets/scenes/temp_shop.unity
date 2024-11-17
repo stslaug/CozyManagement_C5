@@ -305,12 +305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8a24976d40d9244ae951686a58ac2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 1417721674}
-  lines:
-  - "Whoa! This is exactly what I needed! I can practically feel the chill in the
-    air just looking at it. You really know your stuff, don\u2019t ya?"
-  - "This will make the best snowcones I\u2019ve ever made. Thanks, little plant
-    wizard!"
+  requestLines: []
+  completionLines: []
   textSpeed: 0.05
   playerDialogue: {fileID: 2100658222}
 --- !u!114 &28896462
@@ -2037,15 +2033,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8a24976d40d9244ae951686a58ac2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 655741905}
-  lines:
-  - "Hey there, tiny human ! Your sign says you work with magical plants, right?
-    Well, I\u2019ve got myself a bit of a... chilly issue"
-  - "See, I\u2019m from up north, far from here, where the snow's crisp and the air\u2019s
-    sharp."
-  - "I\u2019ve been tryin' to make the perfect snowcones, the kind that taste like
-    fresh mountain air. But down here, the snow just ain\u2019t right."
-  - I need something special to really freeze the flavor in, like the snow back home.
+  requestLines: []
+  completionLines: []
   textSpeed: 0.05
   playerDialogue: {fileID: 1796022581}
 --- !u!114 &1407178065
@@ -3482,7 +3471,7 @@ Transform:
   m_GameObject: {fileID: 2065031949}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 215.4291, y: 121.4398, z: 0}
+  m_LocalPosition: {x: 215.4291, y: 121.4398, z: 116.38}
   m_LocalScale: {x: 67.462265, y: 68.182465, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

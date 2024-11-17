@@ -120,7 +120,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 51.648903, y: 282.1719}
+  m_AnchoredPosition: {x: 56, y: 287}
   m_SizeDelta: {x: 40.134, y: 42.185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3414098692527754534
@@ -182,10 +182,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 0.100138426, g: 1, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.512856, g: 1, b: 0.4575472, a: 1}
+    m_PressedColor: {r: 0.075989544, g: 0.745283, b: 0, a: 1}
+    m_SelectedColor: {r: 0.07450981, g: 0.74509805, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -206,25 +206,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3290665904654809887, guid: f5638f6f1b4a2b547b1b4e03384cdd53, type: 3}
-        m_TargetAssemblyTypeName: InventoryAndPlacing, Assembly-CSharp
-        m_MethodName: addFireFlowerSeed
-        m_Mode: 3
+        m_TargetAssemblyTypeName: InventoryAndPlacingManager, Assembly-CSharp
+        m_MethodName: addFireFlower
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3290665904654809887, guid: f5638f6f1b4a2b547b1b4e03384cdd53, type: 3}
-        m_TargetAssemblyTypeName: InventoryAndPlacing, Assembly-CSharp
-        m_MethodName: updateFireTextDisplay
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6677199298859929786}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -266,8 +254,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -259}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -23.398, y: -259}
+  m_SizeDelta: {x: 117.2, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9163929512215413836
 CanvasRenderer:
@@ -388,8 +376,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -23.001, y: 0.573}
+  m_SizeDelta: {x: 116.41, y: 101.146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8263952208823448890
 CanvasRenderer:
@@ -510,7 +498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27.696, y: 258.5}
+  m_AnchoredPosition: {x: -23, y: 258.5}
   m_SizeDelta: {x: 116.408, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &311906986392934965
@@ -595,28 +583,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3290665904654809887, guid: f5638f6f1b4a2b547b1b4e03384cdd53, type: 3}
-        m_TargetAssemblyTypeName: InventoryAndPlacing, Assembly-CSharp
-        m_MethodName: FireFlowerPlanter
-        m_Mode: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: itemPlacement, Assembly-CSharp
+        m_MethodName: PrepareToPlaceItem
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3290665904654809887, guid: f5638f6f1b4a2b547b1b4e03384cdd53, type: 3}
-        m_TargetAssemblyTypeName: InventoryAndPlacing, Assembly-CSharp
-        m_MethodName: updateFireTextDisplay
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6677199298859929786}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: FIreFlower
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &4357441386518525077
@@ -875,7 +851,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.16781488}
   m_AnchorMax: {x: 0.08368752, y: 0.81100005}
-  m_AnchoredPosition: {x: -0.18896484, y: -3.2319946}
+  m_AnchoredPosition: {x: -0.18896484, y: -3.2319336}
   m_SizeDelta: {x: -0.37805176, y: 1.977005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8691344152936928776
@@ -966,7 +942,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -990,11 +966,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1044,7 +1020,7 @@ Transform:
   m_GameObject: {fileID: 6521637568947089567}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6, y: -3.4, z: -1}
+  m_LocalPosition: {x: -5, y: -3.4, z: -1}
   m_LocalScale: {x: 1.9739836, y: 1.9739836, z: 1.9739836}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1498,7 +1474,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 2.035883, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

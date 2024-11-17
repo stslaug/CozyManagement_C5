@@ -12,7 +12,7 @@ public class YetiDialogue : MonoBehaviour
     public PlayerDialogue playerDialogue; // reference to players own script
 
     private int index;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -71,4 +71,3 @@ public class YetiDialogue : MonoBehaviour
         }
     }
 }
-

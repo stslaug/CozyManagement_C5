@@ -7,7 +7,7 @@ public class CurrencyTracker : MonoBehaviour
     public static CurrencyTracker Instance; // Singleton instance
     public TextMeshProUGUI goldText; // Reference to the gold display text box
     public GameManager gameManager;
-
+    private int currGold;
     private void Awake()
     {
 
@@ -31,7 +31,7 @@ public class CurrencyTracker : MonoBehaviour
         {
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
-        UpdateGoldDisplay();
+        
     }
 
     private void Start()
@@ -49,14 +49,14 @@ public class CurrencyTracker : MonoBehaviour
                 Debug.LogWarning("goldText not found in the scene. Make sure the TextMeshProUGUI component is assigned.");
             }
         }
+        currGold = 0;
 
-
-        UpdateGoldDisplay();
+        
     }
 
     private void Update()
     {
-       
+        UpdateGoldDisplay();
 
     }
 
@@ -77,7 +77,7 @@ public class CurrencyTracker : MonoBehaviour
         }
         if (gameManager != null)
         {
-            GameManager.Instance.saveData.playerData.goldCount += amount; // Save gold to GameManager
+            gameManager.saveData.playerData.goldCount += amount; // Save gold to GameManager
         }
         UpdateGoldDisplay();
     }
@@ -99,10 +99,10 @@ public class CurrencyTracker : MonoBehaviour
         }
         if (gameManager != null)
         {
-            if (GameManager.Instance.saveData.playerData.goldCount >= amount)
+            if (gameManager.saveData.playerData.goldCount >= amount)
             {
 
-                GameManager.Instance.saveData.playerData.goldCount -= amount; // Save gold to GameManager
+                gameManager.saveData.playerData.goldCount -= amount; // Save gold to GameManager
 
                 UpdateGoldDisplay();
                
@@ -119,13 +119,20 @@ public class CurrencyTracker : MonoBehaviour
     // Update the UI Text with the current gold amount
     public void UpdateGoldDisplay()
     {
-        if (goldText != null)
+        if (gameManager != null)
         {
-            goldText.text = "Gold: " + GameManager.Instance.saveData.playerData.goldCount; // Update the displayed text
-        }
-        else
-        {
-            Debug.Log("goldText reference is not assigned!");
+            if (gameManager.saveData.playerData.goldCount != currGold)
+            {
+                currGold = gameManager.saveData.playerData.goldCount;
+                if (goldText != null)
+                {
+                    goldText.text = "Gold: " + gameManager.saveData.playerData.goldCount; // Update the displayed text
+                }
+                else
+                {
+                    Debug.Log("goldText reference is not assigned!");
+                }
+            }
         }
     }
 
