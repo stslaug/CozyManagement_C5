@@ -38,12 +38,8 @@ public class playerInteraction : MonoBehaviour
                     RaycastHit2D hit = Physics2D.Raycast(spawnPosition, Vector2.zero);
                     if (hit.collider != null)
                     {
-                        FlowerManager flower = hit.collider.GetComponent<FlowerManager>();
-                        if (flower != null)
-                        {
-                            flower.Interact(); // Grow the flower
-                            return;
-                        }
+                        //Clicked a flower!!!
+                        Debug.Log("Clicked a flower!!!");
                     }
             }
         }

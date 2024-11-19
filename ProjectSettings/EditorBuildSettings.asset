@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/scenes/mainMenu.unity
     guid: 329f064e219195044b63e09bc3194a26
   - enabled: 1
-    path: Assets/scenes/temp_rooftop.unity
+    path: Assets/scenes/rooftop_garden.unity
     guid: 40036815d89782d41aea30a7653ee5bd
   - enabled: 1
-    path: Assets/scenes/temp_shop.unity
+    path: Assets/scenes/morning_shop.unity
     guid: bd0f6f6e09fb45a40a5021f842b717df
   m_configObjects: {}

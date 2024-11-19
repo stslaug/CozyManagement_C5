@@ -28,14 +28,9 @@ public class NPCData
 [System.Serializable]
 public class FlowerData
 {
-    public FlowerConfig flowerConfig; // Referencing the ScriptableObject for shared properties
     public Vector3 position;
     public int growthStep = 1; // Tracks the growth step for each flower instance
-    public Vector3 initialScale = Vector3.one * 0.6f;
-    public Vector3 maxScale = Vector3.one * 1.5f;
-    public bool needSun = false;
-    public bool needWater = false;
-    public string scene_name;
+    public string flowerType = "";
 }
 
 [System.Serializable]
@@ -65,7 +60,7 @@ public class SaveData
 {
     public PlayerData playerData;
     public List<NPCData> npcData;
-    public List<FlowerData> allFlowerData;
+    public List<GameObject> allFlowers;
     public InventoryData inventoryData;
 }
 }

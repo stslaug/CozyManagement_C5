@@ -1,84 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using DataModels;
 
+//Instantiates, Removes, and Updates all flower instances 
 public class FlowerManager : MonoBehaviour
 {
-    public FlowerData flowerData; //holds instance specific data
-    public FlowerConfig flowerConfig; //flower type configuration
+    public GameManager gameManager;
 
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
-
-    private void Awake()
+    //add a new first stage flower of specified type at specified position
+    public GameObject SpawnFlower(Vector3 position, FlowerConfig flowerConfig)
     {
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
-    }
-
-    private void Start()
-    {
-        if (flowerData == null)
+        if (flowerConfig.prefab != null)
         {
-            flowerData = new FlowerData();
-        }
-        flowerData.flowerConfig = flowerConfig;
-        UpdateAppearance();
-    }
 
-    private void Update()
-    {
-        if (flowerData.growthStep < flowerData.flowerConfig.maxGrowthStage)
-        {
-            flowerData.growthStep += Mathf.FloorToInt(Time.deltaTime * flowerConfig.growthRate * 0.1f);
-            flowerData.growthStep = Mathf.Clamp(flowerData.growthStep, 1, flowerData.flowerConfig.maxGrowthStage);
-            UpdateAppearance();
-        }
-    }
+            GameObject newFlower = Instantiate(flowerConfig.prefab, position, Quaternion.identity);
 
-    public void UpdateAppearance()
-    {
-        if (flowerData == null) return;
-
-        float scaleProgress = (float)flowerData.growthStep / flowerData.flowerConfig.maxGrowthStage;
-        transform.localScale = Vector3.Lerp(flowerData.initialScale, flowerData.maxScale, scaleProgress);
-
-        animator.SetInteger("GrowthStep", flowerData.growthStep);
-
-        if (flowerData.needWater && flowerData.needSun)
-        {
-            spriteRenderer.color = Color.green;
-        }
-        else if (flowerData.needWater || flowerData.needSun)
-        {
-            spriteRenderer.color = Color.yellow;
+            // Initialize the FlowerDataManager with the FlowerConfig
+            FlowerDataManager flowerDataManager = newFlower.GetComponent<FlowerDataManager>();
+            if (flowerDataManager != null)
+            {
+                flowerDataManager.flowerConfig = flowerConfig;  // Assign the shared config data
+                flowerDataManager.Initialize();
+            }
+            gameManager.AddFlower(newFlower);
+            return newFlower;
         }
         else
         {
-            spriteRenderer.color = Color.red;
+            Debug.LogWarning("FlowerConfig does not have a prefab assigned.");
+            return null;
         }
     }
 
-
-    public void Interact()
+    public void RemoveFlower(GameObject flower)
     {
-        Harvest();
-    }
-
-    private void Harvest()
-    {
-        if (flowerData != null && flowerData.flowerConfig.flowerType == "FireFlower")
+        if (flower != null)
         {
-           GameManager.Instance.inventoryData.fireFlowerCount += 1; 
+            gameManager.RemoveFlower(flower);
+            Destroy(flower);
+        }
+        else
+        {
+            Debug.LogWarning("Attempted to remove null flower.");
+        }
+    }
+
+    public void UpdateAllFlowers()
+    {
+        foreach (GameObject flower in gameManager.allFlowers)
+        {
+            FlowerDataManager flowerDataManager = flower.GetComponent<FlowerDataManager>();
+            if (flower != null)
+            {
+                //update flower growth stage
+                flowerDataManager.GrowFlower();
+            }
         }
 
-        GameManager.Instance.RemoveFlower(flowerData);
-
-        Destroy(gameObject);
-
-        Debug.Log("Flower harvested and FireFlower seed added to inventory.");
+        Debug.Log($"Updated FlowerData for {gameManager.allFlowers} flowers.");
     }
 }

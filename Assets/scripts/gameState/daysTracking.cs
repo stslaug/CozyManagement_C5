@@ -59,19 +59,7 @@ public class DaysTracker : MonoBehaviour
     // Update the UI Text with the current gold amount
     public void UpdateDayDisplay()
     {
-        if (dayText == null)
-        {
-            dayText = GameObject.Find("dayText").GetComponent<TextMeshProUGUI>();
-        }
-        if (dayText != null)
-        {
-            dayText.text = "Day: " + GameManager.Instance.playerData.currentDay; // Update the displayed text
-            Debug.Log("in update Day Display");
-        }
-        else
-        {
-            Debug.Log("dayText reference is not assigned!");
-        }
+        
     }
 
 }

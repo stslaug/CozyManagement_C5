@@ -77,9 +77,9 @@ public class SpellsManager : MonoBehaviour
     public void setWinterBiome()
     {
 
-            Debug.Log("Setting Wintertime");
-           gameManager.playerData.spellCast = true;
-            gameManager.UpdateAllFlowers(flowerData => flowerData.growthStep = 100);
+        Debug.Log("Setting Wintertime");
+        //gameManager.playerData.spellCast = true;
+        //gameManager.UpdateAllFlowers(flowerData => flowerData.growthStep = 100);
         ChangeSeason();
        
     }
