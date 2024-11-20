@@ -6,11 +6,13 @@ public class DaysTracker : MonoBehaviour
 {
     public static DaysTracker Instance; // Singleton instance
     public TextMeshProUGUI dayText; // Reference to the gold display text box
+
+
+    private int currDay;
     public GameManager gameManager;
 
     private void Awake()
     {
-
         if(Instance == null)
         {
             Instance = this;
@@ -45,15 +47,12 @@ public class DaysTracker : MonoBehaviour
         {
             dayText = GameObject.Find("dayText").GetComponent<TextMeshProUGUI>();
         }
-
-
-        UpdateDayDisplay();
+        currDay = 0;
     }
 
     private void Update()
     {
-       
-
+        UpdateDayDisplay();
     }
 
     // Update the UI Text with the current gold amount

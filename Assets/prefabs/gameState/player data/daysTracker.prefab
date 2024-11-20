@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &232448504378493821
+--- !u!1 &8535438191418334611
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7114992431317895473}
+  - component: {fileID: 5271102209489235119}
+  - component: {fileID: 6504790519377088541}
   m_Layer: 0
-  m_Name: InventoryAndPlacementController
+  m_Name: daysTracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7114992431317895473
+--- !u!4 &5271102209489235119
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232448504378493821}
+  m_GameObject: {fileID: 8535438191418334611}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.023144, y: 65.96763, z: -0.39419872}
+  m_LocalPosition: {x: 225.88335, y: 90.36122, z: -105.94664}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3290665904654809887
+--- !u!114 &6504790519377088541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232448504378493821}
+  m_GameObject: {fileID: 8535438191418334611}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3ed5eb6765cec64d9d794879a2a9a29, type: 3}
+  m_Script: {fileID: 11500000, guid: 19e0d34cbbaac8349928b8788632e7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FireFlowerText: {fileID: 0}
-  FireFlowerPrefab: {fileID: 1942529968254713105, guid: 491ec9bd75ea23b4892c217aec4c1230, type: 3}
+  dayText: {fileID: 0}
+  gameManager: {fileID: 0}

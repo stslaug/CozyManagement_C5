@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,8 +13,19 @@ public class PlayerData
     public string lastTimePlayed;
     public string creationDate;
     public string lastScene;
-    public int saveSlot;
     public bool spellCast;
+    public Season rooftopSeason;
+
+    public PlayerData()
+    {
+        this.goldCount = 500;
+        this.currentDay = 1;
+        this.lastTimePlayed = DateTime.Today.ToString();
+        this.creationDate = DateTime.Today.ToString();
+        this.lastScene = "temp_shop";
+        this.spellCast = false;
+        this.rooftopSeason = Season.Spring;
+    }
 }
 
 [System.Serializable]
@@ -40,6 +52,15 @@ public class InventoryData
     public int windFlowerCount = 0;
     public int iceFlowerCount = 0;
     public int waterFlowerCount = 0;
+
+    public InventoryData()
+    {
+        this.fireFlowerCount = 0;
+        this.windFlowerCount = 0;
+        this.iceFlowerCount = 0;
+        this.waterFlowerCount = 0;
+    }
+
     public override bool Equals(object obj)
     {
         if (obj == null || !(obj is InventoryData))
@@ -50,6 +71,11 @@ public class InventoryData
             && this.windFlowerCount == other.windFlowerCount
             && this.iceFlowerCount == other.iceFlowerCount
             && this.waterFlowerCount == other.waterFlowerCount;
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(fireFlowerCount, windFlowerCount, iceFlowerCount, waterFlowerCount);
     }
 
     //We will add more.

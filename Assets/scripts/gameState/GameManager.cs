@@ -8,6 +8,7 @@ using DataModels;
 
 public class GameManager : MonoBehaviour
 {
+    // Singleton Instance
     public static GameManager Instance;
     public GameObject pauseMenu;
 
@@ -21,8 +22,13 @@ public class GameManager : MonoBehaviour
     private GameObject seasonPanel;
       
 
+    private void Start()
+    {
+       
+    }
     void Awake()
     {
+        // Singleton Pattern Enforcement
         if (Instance == null)
         {
             Instance = this;
@@ -38,7 +44,7 @@ public class GameManager : MonoBehaviour
     // Exit or return to main menu
     public void ExitFunction()
     {
-        if (SceneManager.GetSceneByName("mainMenu") != SceneManager.GetActiveScene())
+        if (!SceneManager.GetActiveScene().name.Equals("mainMenu", StringComparison.OrdinalIgnoreCase))
         {
             Debug.Log("Loading Main Menu");
             SceneManager.LoadScene("mainMenu");

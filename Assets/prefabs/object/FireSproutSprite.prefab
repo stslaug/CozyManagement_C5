@@ -120,13 +120,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c362edfc1a9cc4ba5df840dc658850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxGrowthStage: 10
-  growthStep: 1
   flowerData:
     position: {x: 0, y: 0, z: 0}
+    position: {x: 0, y: 0, z: 0}
     scene_name: 
-    growthStep: 0
-    growthRate: 0
+    growthStep: 1
+    growthRate: 1
     flowerType: 
   initialScale: {x: 0.5, y: 0.5, z: 0.5}
   maxScale: {x: 1.5, y: 1.5, z: 1.5}

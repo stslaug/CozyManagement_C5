@@ -16,7 +16,7 @@ public class CurrencyTracker : MonoBehaviour
 
     private void Update()
     {
-       
+        UpdateGoldDisplay();
 
     }
 
