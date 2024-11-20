@@ -6,7 +6,7 @@ using UnityEngine;
 public class InventoryManagement : MonoBehaviour
 {
     private GameManager gameManager;
-    // Start is called before the first frame update
+
 
     public int fireFlowerCount;
     public int waterFlowerCount; 
