@@ -44,24 +44,11 @@ public class SpellsManager : MonoBehaviour
 */
     public void setWinterBiome()
     {
+
         Debug.Log("Setting Wintertime");
-        GameManager.Instance.saveData.playerData.spellCast = true;
-        SeasonManager.Instance.ChangeSeason(Season.Winter);
-
-        Image UIPanel = GameObject.Find("SeasonPanel").GetComponent<Image>();
-        UIPanel.color = new Color(0.4f, 0.1f, 0.9f, 0.2f);
-
-
-
-    }
-
-    public void growAllFlowers()
-    {
-
-        Debug.Log("Growing All Flowers");
-        GameManager.Instance.saveData.playerData.spellCast = true;
-        GameManager.Instance.UpdateAllFlowers(flowerData => flowerData.growthStep = 10);
-
-
+        //gameManager.playerData.spellCast = true;
+        //gameManager.UpdateAllFlowers(flowerData => flowerData.growthStep = 100);
+        ChangeSeason();
+       
     }
 }

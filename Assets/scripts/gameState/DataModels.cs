@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace DataModels
+{
 [System.Serializable]
 public class PlayerData
 {
@@ -39,61 +41,9 @@ public class NPCData
 public class FlowerData
 {
     public Vector3 position;
-    public string scene_name;
-    public int growthStep = 1;
-    public float growthRate = 1f;
-    public FlowerType flowerType;
-    public List<Season> seasonsAllowed; // Allows multiple seasons
-    public List<Need> currentNeeds;      // Allows multiple needs
-
-    public FlowerData()
-    { }
-    
-
-    public FlowerData(Vector3 position, string scene_name, FlowerType flowerType)
-    {
-        this.position = position;
-        this.scene_name = scene_name;
-        this.growthStep = 1;
-        this.growthRate = 1f;
-        this.flowerType = flowerType;
-        this.seasonsAllowed = new List<Season>();
-        this.currentNeeds = new List<Need>();
-    }
-
-    public FlowerData(Vector3 position, string scene_name, int growthStep, float growthRate, FlowerType flowerType, List<Season> seasonsAllowed, List<Need> currentNeeds)
-    {
-        this.position = position;
-        this.scene_name = scene_name;
-        this.growthStep = growthStep;
-        this.growthRate = growthRate;
-        this.flowerType = flowerType;
-        this.seasonsAllowed = seasonsAllowed;
-        this.currentNeeds = currentNeeds;
-    }
+    public int growthStep = 1; // Tracks the growth step for each flower instance
+    public string flowerType = "";
 }
-
-public enum Season
-{
-    Spring,
-    Summer,
-    Fall,
-    Winter
-}
-
-public enum Need
-{
-    Water,
-    Sunlight,
-}
-
-public enum FlowerType
-{
-    Fire, // 0
-    Water, // 1
-    Wind // 2
-}
-
 
 [System.Serializable]
 public class InventoryData
@@ -136,14 +86,7 @@ public class SaveData
 {
     public PlayerData playerData;
     public List<NPCData> npcData;
-    public List<FlowerData> flowerData;
+    public List<GameObject> allFlowers;
     public InventoryData inventoryData;
-
-    public SaveData()
-    {
-        this.playerData = new PlayerData();
-        this.npcData = new List<NPCData>();
-        this.flowerData = new List<FlowerData>();
-        this.inventoryData = new InventoryData();
-    }
+}
 }

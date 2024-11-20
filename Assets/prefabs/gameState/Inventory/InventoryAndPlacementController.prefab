@@ -31,3 +31,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3290665904654809887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232448504378493821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ed5eb6765cec64d9d794879a2a9a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireFlowerText: {fileID: 0}
+  FireFlowerPrefab: {fileID: 1942529968254713105, guid: 491ec9bd75ea23b4892c217aec4c1230, type: 3}

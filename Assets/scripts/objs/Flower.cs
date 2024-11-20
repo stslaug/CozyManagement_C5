@@ -133,3 +133,4 @@ public class Flower : MonoBehaviour
         //Debug.Log($"Flower '{flowerData.flowerType}' harvested and FireFlower seed added to inventory.");
     }
 }
+

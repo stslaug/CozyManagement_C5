@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/scripts/gameState/inventoryManagement.cs.meta
+guid: 41828b2345ae7a8428197e71a5e0c6a7
+========
+guid: 8edaec256f1f64c46b18ab42e10b2e4b
+>>>>>>>> main:Assets/scripts/gameState/InventoryManagement.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
