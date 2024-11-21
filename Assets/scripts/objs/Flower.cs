@@ -42,34 +42,12 @@ public class Flower : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance != null)
+        if(animator.GetInteger("GrowthStep") != flowerData.growthStep)
         {
-
-            Season currentSeason = GameManager.Instance.saveData.playerData.rooftopSeason;
-
-            // Determine if the flower can grow based on season and needs
-            if (CanGrowInSeason(currentSeason) && MeetsNeeds())
-            {
-                // Increment growth step based on growth rate and deltaTime
-                flowerData.growthStep += Mathf.FloorToInt(Time.deltaTime * flowerData.growthRate);
-                flowerData.growthStep = Mathf.Clamp(flowerData.growthStep, 1, maxGrowthStage);
-
-                // Update appearance after growth
-                UpdateAppearance();
-            }
+            UpdateAppearance();
         }
     }
 
-    public bool CanGrowInSeason(Season currentSeason)
-    {
-        return flowerData.seasonsAllowed.Contains(currentSeason);
-    }
-
-
-    public bool MeetsNeeds()
-    {
-        return false;
-    }
 
     public void UpdateAppearance()
     {

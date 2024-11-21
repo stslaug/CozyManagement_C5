@@ -48,7 +48,7 @@ public class SpellsManager : MonoBehaviour
         Debug.Log("Setting Wintertime");
         //gameManager.playerData.spellCast = true;
         //gameManager.UpdateAllFlowers(flowerData => flowerData.growthStep = 100);
-        ChangeSeason();
+       
        
     }
 }

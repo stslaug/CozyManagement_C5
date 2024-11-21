@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 218018624284861123}
   - component: {fileID: 5317362671643897070}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PlanterPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,7 +524,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.16781488}
   m_AnchorMax: {x: 0.08368752, y: 0.81100005}
-  m_AnchoredPosition: {x: -0.18896484, y: -3.2319946}
+  m_AnchoredPosition: {x: -0.18896484, y: -3.2319336}
   m_SizeDelta: {x: -0.37805176, y: 1.977005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &218018624284861123
@@ -905,28 +905,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3290665904654809887, guid: f5638f6f1b4a2b547b1b4e03384cdd53, type: 3}
-        m_TargetAssemblyTypeName: InventoryAndPlacing, Assembly-CSharp
-        m_MethodName: FireFlowerPlanter
-        m_Mode: 1
+      - m_Target: {fileID: 4319373635759458500, guid: a3a1d3661eb995e478d48534a3c36474, type: 3}
+        m_TargetAssemblyTypeName: itemPlacement, Assembly-CSharp
+        m_MethodName: PrepareToPlaceItem
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3290665904654809887, guid: f5638f6f1b4a2b547b1b4e03384cdd53, type: 3}
-        m_TargetAssemblyTypeName: InventoryAndPlacing, Assembly-CSharp
-        m_MethodName: updateFireTextDisplay
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2824171341745939569}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: FireFlower
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6602441077929773191

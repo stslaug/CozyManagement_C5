@@ -5,22 +5,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DataModels;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     // Singleton Instance
     public static GameManager Instance;
-    public GameObject pauseMenu;
 
     private List<string> sceneNames = new List<string> { "mainMenu", "morning_shop", "night_shop", "rooftop_garden" };
     public int currentSceneIndex = 0;
 
-    public InventoryData inventoryData;
+    public SaveData saveData = new SaveData();
     public List<GameObject> allFlowers = new List<GameObject>();
 
-    // Reference to the season panel and its Image component
-    private GameObject seasonPanel;
-      
 
     private void Start()
     {
@@ -38,9 +35,67 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        currFireSeed = 0;
+        currWaterSeed = 0;
+        currWindSeed = 0;
     }
 
-//******************************************* SAVE FUNCTIONALITY CAN GO HERE
+
+    private int currFireSeed;
+    private int currWaterSeed;
+    private int currWindSeed;
+    public void Update()
+    {
+
+       
+    }
+
+
+
+
+    //******************************************* SAVE FUNCTIONALITY CAN GO HERE
+    public void SaveGame()
+    {
+        return;
+    }
+
+    public void LoadGame()
+    {
+        instatiateDefaultData();
+
+    }
+
+    // Creates a Default SaveData variable for saving to JSON
+    public void instatiateDefaultData()
+    {
+        saveData = new SaveData();
+
+        saveData.playerData = new PlayerData()
+        {
+            goldCount = 500,
+            currentDay = 1,
+            lastScene = SceneManager.GetSceneByName("morning_shop"),
+            spellCast = false
+        };
+
+        saveData.npcData = new List<NPCData>();
+
+        saveData.allFlowers = new List<GameObject>();
+
+        saveData.inventoryData = new InventoryData()
+        { // This needs to switch out with Item Objects
+            fire_seed = 3,
+            wind_seed = 3,
+            water_seed = 3,
+            fire_extract = 0,
+            wind_extract = 0,
+            water_extract = 0,
+            ice_extract = 0
+        };
+    }
+
+
+
     // Exit or return to main menu
     public void ExitFunction()
     {
