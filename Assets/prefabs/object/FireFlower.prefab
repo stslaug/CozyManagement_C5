@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4872450614249051709}
   - component: {fileID: 2428964040741221831}
   - component: {fileID: 565138933373023789}
-  - component: {fileID: 7023068521748457888}
   m_Layer: 0
   m_Name: FireFlower
   m_TagString: Untagged
@@ -153,25 +152,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
---- !u!114 &7023068521748457888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8343233864492638952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f33f50adc77808d4b999817bb3eec1ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flowerData:
-    flowerConfig: {fileID: 0}
-    position: {x: 0, y: 0, z: 0}
-    growthStep: 1
-    initialScale: {x: 0.6, y: 0.6, z: 0.6}
-    maxScale: {x: 1.5, y: 1.5, z: 1.5}
-    needSun: 0
-    needWater: 0
-    scene_name: 
-  flowerConfig: {fileID: 11400000, guid: 49831ba57a18985409818926a8cb6c62, type: 2}
