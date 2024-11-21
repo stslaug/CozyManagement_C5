@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Ensures flower placement can only happen in specified regions.
 public class PlacementPoint : MonoBehaviour
 {
     private GameObject currentFlower; // Tracks the placed flower

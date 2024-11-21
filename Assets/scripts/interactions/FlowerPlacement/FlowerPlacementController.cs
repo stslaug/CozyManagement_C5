@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Determines where on screen flowers will be placed
 public class FlowerPlacementController : MonoBehaviour
 {
     public FlowerSelectionManager selectionManager;

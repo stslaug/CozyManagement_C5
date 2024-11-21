@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Links configs with buttons. Will trigger on click
 public class FlowerSelectionManager : MonoBehaviour
 {
     public FlowerConfig fireFlowerConfig;
