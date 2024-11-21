@@ -5,38 +5,36 @@ using UnityEngine;
 // Ensures flower placement can only happen in specified regions.
 public class PlacementPoint : MonoBehaviour
 {
-    private GameObject currentFlower; // Tracks the placed flower
-    private FlowerManager flowerManager;
+    public SpriteRenderer highlightSprite; // Sprite renderer to show the highlight
+    private bool isOccupied = false; // Track if the point is occupied
 
-    private void Start()
+    // Enable or disable highlighting for this point
+    public void SetHighlight(bool isActive)
+{
+    if (highlightSprite != null)
     {
-        // Find the FlowerManager in the scene
-        flowerManager = FindObjectOfType<FlowerManager>();
+        highlightSprite.enabled = isActive && !isOccupied; // Only enable if not occupied
+    }
+}
+
+    // Mark the point as occupied
+    public void OccupyPoint()
+    {
+        isOccupied = true;
+        SetHighlight(false); // Disable highlight when occupied
+        Debug.Log($"Point at {transform.position} is now occupied."); // Debug: point occupied
     }
 
-    public bool IsOccupied => currentFlower != null;
-
-    public bool TryPlaceFlower(Vector3 position, FlowerConfig flowerConfig)
+    // Mark the point as available
+    public void FreePoint()
     {
-        if (!IsOccupied && flowerManager != null)
-        {
-            // Use FlowerManager to spawn the flower
-            currentFlower = flowerManager.SpawnFlower(position, flowerConfig);
-            return currentFlower != null;
-        }
-        else
-        {
-            Debug.Log("Placement point is already occupied or FlowerManager is missing.");
-            return false;
-        }
+        isOccupied = false;
+        Debug.Log($"Point at {transform.position} is now free."); // Debug: point free
     }
 
-    public void RemoveFlower()
+    // Check if this point is available for placement
+    public bool IsAvailable()
     {
-        if (currentFlower != null && flowerManager != null)
-        {
-            flowerManager.RemoveFlower(currentFlower);
-            currentFlower = null;
-        }
+        return !isOccupied;
     }
 }

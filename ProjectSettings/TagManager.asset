@@ -42,3 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1575320411
+    locked: 0
+  - name: Pots
+    uniqueID: 1655351261
+    locked: 0
+  - name: Flowers
+    uniqueID: 4153782095
+    locked: 0
+  - name: HUD
+    uniqueID: 1766238847
+    locked: 0
+  - name: Menu
+    uniqueID: 1784469851
+    locked: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FireFlowerConfig
   m_EditorClassIdentifier: 
   flowerType: FireFlower
+  prefab: {fileID: 8343233864492638952, guid: 50812ac4b9850ac42906f0d07fa3dece, type: 3}
   maxGrowthStage: 3
   growthRate: 1
   diesIfWinter: 1

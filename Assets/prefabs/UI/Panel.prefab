@@ -400,7 +400,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2458344380524323835}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 88cea2afe9133284b8af30b2983d18f5, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &997321389628958826
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +534,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3152920866696952408}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 88cea2afe9133284b8af30b2983d18f5, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1611518524289669798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,9 +1189,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3290665904654809887, guid: f5638f6f1b4a2b547b1b4e03384cdd53, type: 3}
+      - m_Target: {fileID: 11500000, guid: 88cea2afe9133284b8af30b2983d18f5, type: 3}
         m_TargetAssemblyTypeName: InventoryAndPlacing, Assembly-CSharp
-        m_MethodName: FireFlowerPlanter
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

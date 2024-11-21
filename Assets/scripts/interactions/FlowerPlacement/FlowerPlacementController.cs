@@ -5,46 +5,60 @@ using UnityEngine;
 //Determines where on screen flowers will be placed
 public class FlowerPlacementController : MonoBehaviour
 {
-    public FlowerSelectionManager selectionManager;
-    private Camera mainCamera;
+    public FlowerManager flowerManager; // Reference to FlowerManager
+    public PlacementManager placementManager; // Reference to PlacementManager
+    private FlowerConfig selectedFlowerConfig; // Currently selected flower type
 
-    private void Start()
+    // Called by FlowerSelectionManager to set the selected flower type
+    public void SetSelectedFlower(FlowerConfig flowerConfig)
     {
-        mainCamera = Camera.main;
+        selectedFlowerConfig = flowerConfig;
+        Debug.Log($"Selected flower configuration: {selectedFlowerConfig.flowerType}"); // Debug: show selected flower
+        placementManager.HighlightValidPoints(); // Highlight valid points for placement
     }
 
+    // Called every frame to detect player clicks
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Left mouse button
+        if (Input.GetMouseButtonDown(0) && selectedFlowerConfig != null)
         {
-            PlaceFlowerAtMousePosition();
+            Debug.Log("Mouse clicked for flower placement."); // Debug: log mouse click
+            HandleFlowerPlacement();
         }
     }
 
-    private void PlaceFlowerAtMousePosition()
+    // Handle flower placement logic
+    private void HandleFlowerPlacement()
     {
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
+        // Convert mouse position to world position
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        worldPosition.z = 0f;
 
-        if (hit.collider != null)
+        Debug.Log($"Mouse clicked at: {worldPosition}");
+
+        // Find the placement point at the clicked position
+        PlacementPoint placementPoint = placementManager.GetPointAtPosition(worldPosition);
+
+        if (placementPoint != null && placementPoint.IsAvailable())
         {
-            PlacementPoint placementPoint = hit.collider.GetComponent<PlacementPoint>();
-            if (placementPoint != null)
-            {
-                FlowerConfig selectedFlower = selectionManager.GetSelectedFlowerConfig();
-                if (selectedFlower != null)
-                {
-                    bool success = placementPoint.TryPlaceFlower(placementPoint.transform.position, selectedFlower);
-                    if (success)
-                    {
-                        Debug.Log("Flower placed successfully.");
-                    }
-                }
-                else
-                {
-                    Debug.Log("No flower type selected.");
-                }
-            }
+            Debug.Log($"Valid placement point found at: {placementPoint.transform.position}");
+
+            // Place the flower
+            flowerManager.SpawnFlower(placementPoint.transform.position, selectedFlowerConfig);
+            placementPoint.OccupyPoint();
+
+            Debug.Log("Flower placed, and point marked as occupied.");
         }
+        else
+        {
+            if (placementPoint == null)
+                Debug.LogWarning("No placement point found at the clicked position.");
+            else
+                Debug.LogWarning("Placement point is already occupied.");
+        }
+
+        // Clear all highlights regardless of the result
+        placementManager.ClearHighlights();
+        Debug.Log("All highlights cleared after mouse click.");
     }
 }

@@ -5,18 +5,13 @@ using UnityEngine;
 // Links configs with buttons. Will trigger on click
 public class FlowerSelectionManager : MonoBehaviour
 {
-    public FlowerConfig fireFlowerConfig;
-    public FlowerConfig waterFlowerConfig;
-    public FlowerConfig windFlowerConfig;
+    public FlowerPlacementController placementController; // Reference to FlowerPlacementController
 
-    private FlowerConfig selectedFlowerConfig;
-
-    public void SelectFireFlower() => selectedFlowerConfig = fireFlowerConfig;
-    public void SelectWaterFlower() => selectedFlowerConfig = waterFlowerConfig;
-    public void SelectWindFlower() => selectedFlowerConfig = windFlowerConfig;
-
-    public FlowerConfig GetSelectedFlowerConfig()
+    // Called when a UI button for a specific flower is clicked
+    public void SelectFlower(FlowerConfig flowerConfig)
     {
-        return selectedFlowerConfig;
+        Debug.Log($"Flower selected: {flowerConfig.flowerType}"); // Debug: show selected flower
+        // Pass the selected flower configuration to FlowerPlacementController
+        placementController.SetSelectedFlower(flowerConfig);
     }
 }

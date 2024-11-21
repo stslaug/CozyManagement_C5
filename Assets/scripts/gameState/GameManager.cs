@@ -17,9 +17,6 @@ public class GameManager : MonoBehaviour
 
     public InventoryData inventoryData;
     public List<GameObject> allFlowers = new List<GameObject>();
-
-    // Reference to the season panel and its Image component
-    private GameObject seasonPanel;
       
 
     private void Start()
