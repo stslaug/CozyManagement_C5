@@ -35,15 +35,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        currFireSeed = 0;
-        currWaterSeed = 0;
-        currWindSeed = 0;
     }
 
 
-    private int currFireSeed;
-    private int currWaterSeed;
-    private int currWindSeed;
+
     public void Update()
     {
 
@@ -61,6 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame()
     {
+        Debug.Log("Loading Game.");
         instatiateDefaultData();
 
     }
@@ -68,9 +64,10 @@ public class GameManager : MonoBehaviour
     // Creates a Default SaveData variable for saving to JSON
     public void instatiateDefaultData()
     {
-        saveData = new SaveData();
+        Debug.Log("Instantiating new data...");
+        Instance.saveData = new SaveData();
 
-        saveData.playerData = new PlayerData()
+        Instance.saveData.playerData = new PlayerData()
         {
             goldCount = 500,
             currentDay = 1,
@@ -78,11 +75,11 @@ public class GameManager : MonoBehaviour
             spellCast = false
         };
 
-        saveData.npcData = new List<NPCData>();
+        Instance.saveData.npcData = new List<NPCData>();
 
-        saveData.allFlowers = new List<GameObject>();
+        Instance.saveData.allFlowers = new List<GameObject>();
 
-        saveData.inventoryData = new InventoryData()
+        Instance.saveData.inventoryData = new InventoryData()
         { // This needs to switch out with Item Objects
             fire_seed = 3,
             wind_seed = 3,
