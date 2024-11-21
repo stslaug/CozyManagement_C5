@@ -7,7 +7,6 @@ public class InventoryManagement : MonoBehaviour
 {
     private GameManager gameManager;
 
-
     public int fireFlowerCount;
     public int waterFlowerCount; 
     void Start()
