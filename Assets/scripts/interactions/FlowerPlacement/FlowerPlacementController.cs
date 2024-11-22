@@ -22,7 +22,6 @@ public class FlowerPlacementController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && selectedFlowerConfig != null)
         {
-            Debug.Log("Mouse clicked for flower placement."); // Debug: log mouse click
             HandleFlowerPlacement();
         }
     }

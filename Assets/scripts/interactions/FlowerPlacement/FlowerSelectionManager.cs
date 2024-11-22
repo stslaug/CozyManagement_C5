@@ -10,7 +10,6 @@ public class FlowerSelectionManager : MonoBehaviour
     // Called when a UI button for a specific flower is clicked
     public void SelectFlower(FlowerConfig flowerConfig)
     {
-        Debug.Log($"Flower selected: {flowerConfig.flowerType}"); // Debug: show selected flower
         // Pass the selected flower configuration to FlowerPlacementController
         placementController.SetSelectedFlower(flowerConfig);
     }

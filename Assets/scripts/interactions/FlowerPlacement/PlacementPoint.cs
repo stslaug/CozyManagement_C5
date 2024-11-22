@@ -21,20 +21,19 @@ public class PlacementPoint : MonoBehaviour
     public void OccupyPoint()
     {
         isOccupied = true;
-        SetHighlight(false); // Disable highlight when occupied
-        Debug.Log($"Point at {transform.position} is now occupied."); // Debug: point occupied
+        Debug.Log($"Point at {transform.position} is now occupied.");
+        SetHighlight(false);
     }
 
-    // Mark the point as available
     public void FreePoint()
     {
         isOccupied = false;
-        Debug.Log($"Point at {transform.position} is now free."); // Debug: point free
+        Debug.Log($"Point at {transform.position} is now free.");
     }
 
-    // Check if this point is available for placement
     public bool IsAvailable()
     {
+        Debug.Log($"Point at {transform.position} is " + (isOccupied ? "not available" : "available") + ".");
         return !isOccupied;
     }
 }

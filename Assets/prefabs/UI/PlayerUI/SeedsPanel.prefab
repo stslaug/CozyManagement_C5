@@ -258,11 +258,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FlowerSelectionManager, Assembly-CSharp
-        m_MethodName: SelectFireFlower
-        m_Mode: 1
+        m_MethodName: SelectFlower
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 49831ba57a18985409818926a8cb6c62, type: 2}
+          m_ObjectArgumentAssemblyTypeName: FlowerConfig, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -430,7 +430,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9216964701116402546}
   - {fileID: 5162017734288671744}
@@ -506,10 +506,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3237583930633469640}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6, y: -3.4, z: -1}
-  m_LocalScale: {x: 1.9739836, y: 1.9739836, z: 1.9739836}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -27.9, z: -1}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 9216964701116402546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -554,7 +554,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7385b93ed58192a4190270963c01133b, type: 3}
+  m_Sprite: {fileID: 2144661948, guid: 162f229425bdc554bbb1a226bb03bccc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -591,9 +591,9 @@ Transform:
   m_GameObject: {fileID: 4247037276033069349}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.4, y: 2.4, z: -1}
-  m_LocalScale: {x: 2.1812296, y: 2.1812296, z: 2.1812296}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4399713168738833163}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -918,11 +918,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FlowerSelectionManager, Assembly-CSharp
-        m_MethodName: SelectWindFlower
-        m_Mode: 1
+        m_MethodName: SelectFlower
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 0add57930e4f6a9438ff14b3be09c4d5, type: 2}
+          m_ObjectArgumentAssemblyTypeName: FlowerConfig, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1052,11 +1052,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FlowerSelectionManager, Assembly-CSharp
-        m_MethodName: SelectWaterFlower
-        m_Mode: 1
+        m_MethodName: SelectFlower
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 60103a516a743884492b1bf750a5fb0d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: FlowerConfig, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1088,8 +1088,8 @@ Transform:
   m_GameObject: {fileID: 7581824470860838493}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2, y: -0.1, z: -1}
-  m_LocalScale: {x: 2.324308, y: 2.324308, z: 2.324308}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5162017734288671744}

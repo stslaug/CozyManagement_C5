@@ -23,7 +23,7 @@ public class FlowerManager : MonoBehaviour
                 Debug.Log($"Flower instantiated successfully");
 
                 // Add a custom offset to the Y-axis to adjust the placement
-                float yOffset = 5.0f; // Adjust this value as needed
+                float yOffset = 15.0f; // Adjust this value as needed
                 newFlower.transform.position = new Vector3(position.x, position.y + yOffset, position.z);
 
                 // Initialize FlowerDataManager
@@ -56,6 +56,7 @@ public class FlowerManager : MonoBehaviour
             return null;
         }
     }
+    
 
     // Remove the flower from the scene
     public void RemoveFlower(GameObject flower)
