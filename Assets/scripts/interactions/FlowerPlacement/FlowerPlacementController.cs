@@ -13,7 +13,6 @@ public class FlowerPlacementController : MonoBehaviour
     public void SetSelectedFlower(FlowerConfig flowerConfig)
     {
         selectedFlowerConfig = flowerConfig;
-        Debug.Log($"Selected flower configuration: {selectedFlowerConfig.flowerType}"); // Debug: show selected flower
         placementManager.HighlightValidPoints(); // Highlight valid points for placement
     }
 
