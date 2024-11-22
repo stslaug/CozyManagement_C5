@@ -4,27 +4,13 @@ using UnityEngine.SceneManagement;
 public class PauseMenuController : MonoBehaviour
 {
     private static bool isPaused = false;
-    public static PauseMenuController Instance;
 
     private GameObject pauseMenuUI;
     private CanvasGroup pauseMenuCanvasGroup;
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
 
-            isPaused = false;
-
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
     }
 
     private void OnDestroy()

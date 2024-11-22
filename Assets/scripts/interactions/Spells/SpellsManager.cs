@@ -8,22 +8,11 @@ using Image = UnityEngine.UI.Image;
 public class SpellsManager : MonoBehaviour
 {
 
-    public static SpellsManager Instance;
-
-    public static int seasonTimeRemaining; // Put remaining time. At 0 reset panel and update all flowers.
 
     private void Awake()
     {
 
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // Persist instance across scenes
-        }
-        else
-        {
-            Destroy(gameObject); // Destroy duplicate instance
-        }
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -45,7 +34,7 @@ public class SpellsManager : MonoBehaviour
     public void setWinterBiome()
     {
 
-        Debug.Log("Setting Wintertime");
+        Debug.Log("Setting Wintertime // NOT IMPLEMENTED SpellsManager.cs");
         //gameManager.playerData.spellCast = true;
         //gameManager.UpdateAllFlowers(flowerData => flowerData.growthStep = 100);
         //ChangeSeason();

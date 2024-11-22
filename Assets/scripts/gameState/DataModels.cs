@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace DataModels
 {
@@ -12,7 +13,7 @@ public class PlayerData
     public int currentDay = 1;
     public string lastTimePlayed;
     public string creationDate;
-    public string lastScene;
+    public Scene lastScene;
     public bool spellCast;
 
     public PlayerData()
@@ -21,7 +22,6 @@ public class PlayerData
         this.currentDay = 1;
         this.lastTimePlayed = DateTime.Today.ToString();
         this.creationDate = DateTime.Today.ToString();
-        this.lastScene = "temp_shop";
         this.spellCast = false;
     }
 }
@@ -44,42 +44,42 @@ public class FlowerData
 }
 
 [System.Serializable]
-public class InventoryData
-{ // These are sort of like seeds.
-    public int fireFlowerCount = 0;
-    public int windFlowerCount = 0;
-    public int iceFlowerCount = 0;
-    public int waterFlowerCount = 0;
+    public class InventoryData
+    { // Primary Seeds
+        public int fire_seed = 0;
+        public int wind_seed = 0;
+        public int water_seed = 0;
 
-    public InventoryData()
-    {
-        this.fireFlowerCount = 0;
-        this.windFlowerCount = 0;
-        this.iceFlowerCount = 0;
-        this.waterFlowerCount = 0;
+
+        public int fire_extract = 0;
+        public int wind_extract = 0;
+        public int water_extract = 0;
+
+        public int ice_extract = 0;
+
+        public override bool Equals(object obj)
+        {
+            return obj is InventoryData data &&
+                   fire_seed == data.fire_seed &&
+                   wind_seed == data.wind_seed &&
+                   water_seed == data.water_seed &&
+                   fire_extract == data.fire_extract &&
+                   wind_extract == data.wind_extract &&
+                   water_extract == data.water_extract &&
+                   ice_extract == data.ice_extract;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(fire_seed, wind_seed, water_seed, fire_extract, wind_extract, water_extract, ice_extract);
+        }
+
+
+
+        //We will add more.
     }
 
-    public override bool Equals(object obj)
-    {
-        if (obj == null || !(obj is InventoryData))
-            return false;
-
-        InventoryData other = (InventoryData)obj;
-        return this.fireFlowerCount == other.fireFlowerCount 
-            && this.windFlowerCount == other.windFlowerCount
-            && this.iceFlowerCount == other.iceFlowerCount
-            && this.waterFlowerCount == other.waterFlowerCount;
-    }
-
-    public override int GetHashCode()
-    {
-        return HashCode.Combine(fireFlowerCount, windFlowerCount, iceFlowerCount, waterFlowerCount);
-    }
-
-    //We will add more.
-}
-
-[System.Serializable]
+    [System.Serializable]
 public class SaveData
 {
     public PlayerData playerData;

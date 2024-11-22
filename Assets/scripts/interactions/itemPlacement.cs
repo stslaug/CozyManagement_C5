@@ -40,51 +40,49 @@ public class itemPlacement : MonoBehaviour
     {
         if (gameManager == null) return;
 
-        switch (itemType)
+        if (itemType == "FireFlower")
         {
-            case "FireFlower":
-                if (gameManager.inventoryData.fireFlowerCount > 0)
-                {
-                    itemToPlace = fireFlowerPrefab;
-                    isPlacingItem = true;
-                }
-                else
-                {
-                    Debug.Log("Out of Fire Flowers.");
-                }
-                break;
-
-            case "WaterFlower":
-                if (gameManager.inventoryData.waterFlowerCount > 0)
-                {
-                    itemToPlace = waterFlowerPrefab;
-                    isPlacingItem = true;
-                }
-                else
-                {
-                    Debug.Log("Out of Water Flowers.");
-                }
-                break;
-
-            case "WindFlower":
-                if (gameManager.inventoryData.windFlowerCount > 0)
-                {
-                    itemToPlace = windFlowerPrefab;
-                    isPlacingItem = true;
-                }
-                else
-                {
-                    Debug.Log("Out of Wind Flowers.");
-                }
-                break;
-
-            default:
-                Debug.LogWarning("Unknown item type.");
-                break;
+            if (gameManager.saveData.inventoryData.fire_seed > 0)
+            {
+                itemToPlace = fireFlowerPrefab;
+                isPlacingItem = true;
+            }
+            else
+            {
+                Debug.Log("Out of Fire Flowers.");
+            }
+        }
+        else if (itemType == "WaterFlower")
+        {
+            if (gameManager.saveData.inventoryData.water_seed > 0)
+            {
+                itemToPlace = waterFlowerPrefab;
+                isPlacingItem = true;
+            }
+            else
+            {
+                Debug.Log("Out of Water Flowers.");
+            }
+        }
+        else if (itemType == "WindFlower")
+        {
+            if (gameManager.saveData.inventoryData.wind_seed > 0)
+            {
+                itemToPlace = windFlowerPrefab;
+                isPlacingItem = true;
+            }
+            else
+            {
+                Debug.Log("Out of Wind Flowers.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Unknown item type.");
         }
     }
 
-    private void HandleItemPlacement()
+private void HandleItemPlacement()
     {
         if (isPlacingItem && Input.GetMouseButtonDown(0))
         {
@@ -122,15 +120,15 @@ public class itemPlacement : MonoBehaviour
     {
         if (itemToPlace == fireFlowerPrefab)
         {
-            gameManager.inventoryData.fireFlowerCount--;
+            gameManager.saveData.inventoryData.fire_seed--;
         }
         else if (itemToPlace == waterFlowerPrefab)
         {
-            gameManager.inventoryData.waterFlowerCount--;
+            gameManager.saveData.inventoryData.water_seed--;
         }
         else if (itemToPlace == windFlowerPrefab)
         {
-            gameManager.inventoryData.windFlowerCount--;
+            gameManager.saveData.inventoryData.wind_seed--;
         }
     }
 }

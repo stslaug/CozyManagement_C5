@@ -5,17 +5,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DataModels;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     // Singleton Instance
     public static GameManager Instance;
-    public GameObject pauseMenu;
 
     private List<string> sceneNames = new List<string> { "mainMenu", "morning_shop", "night_shop", "rooftop_garden" };
     public int currentSceneIndex = 0;
 
-    public InventoryData inventoryData;
+    public SaveData saveData = new SaveData();
     public List<GameObject> allFlowers = new List<GameObject>();
       
 
@@ -37,7 +37,62 @@ public class GameManager : MonoBehaviour
         }
     }
 
-//******************************************* SAVE FUNCTIONALITY CAN GO HERE
+
+
+    public void Update()
+    {
+
+       
+    }
+
+
+
+
+    //******************************************* SAVE FUNCTIONALITY CAN GO HERE
+    public void SaveGame()
+    {
+        return;
+    }
+
+    public void LoadGame()
+    {
+        Debug.Log("Loading Game.");
+        instatiateDefaultData();
+
+    }
+
+    // Creates a Default SaveData variable for saving to JSON
+    public void instatiateDefaultData()
+    {
+        Debug.Log("Instantiating new data...");
+        Instance.saveData = new SaveData();
+
+        Instance.saveData.playerData = new PlayerData()
+        {
+            goldCount = 500,
+            currentDay = 1,
+            lastScene = SceneManager.GetSceneByName("morning_shop"),
+            spellCast = false
+        };
+
+        Instance.saveData.npcData = new List<NPCData>();
+
+        Instance.saveData.allFlowers = new List<GameObject>();
+
+        Instance.saveData.inventoryData = new InventoryData()
+        { // This needs to switch out with Item Objects
+            fire_seed = 3,
+            wind_seed = 3,
+            water_seed = 3,
+            fire_extract = 0,
+            wind_extract = 0,
+            water_extract = 0,
+            ice_extract = 0
+        };
+    }
+
+
+
     // Exit or return to main menu
     public void ExitFunction()
     {
