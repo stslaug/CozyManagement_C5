@@ -37,7 +37,7 @@ public class SpellsManager : MonoBehaviour
         Debug.Log("Setting Wintertime // NOT IMPLEMENTED SpellsManager.cs");
         //gameManager.playerData.spellCast = true;
         //gameManager.UpdateAllFlowers(flowerData => flowerData.growthStep = 100);
-       
+        //ChangeSeason();
        
     }
 }

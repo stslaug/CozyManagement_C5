@@ -15,7 +15,6 @@ public class PlayerData
     public string creationDate;
     public Scene lastScene;
     public bool spellCast;
-    //public Season rooftopSeason; // Season not implemented yet?
 
     public PlayerData()
     {
@@ -24,7 +23,6 @@ public class PlayerData
         this.lastTimePlayed = DateTime.Today.ToString();
         this.creationDate = DateTime.Today.ToString();
         this.spellCast = false;
-        //this.rooftopSeason = Season.Spring; // Season not implemented yet?
     }
 }
 
