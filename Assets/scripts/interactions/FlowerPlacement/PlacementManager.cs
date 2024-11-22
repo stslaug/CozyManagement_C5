@@ -37,34 +37,26 @@ public class PlacementManager : MonoBehaviour
     public PlacementPoint GetPointAtPosition(Vector3 position)
     {
         Vector2 point2D = new Vector2(position.x, position.y);
-        Collider2D hitCollider = Physics2D.OverlapPoint(point2D);
+        Collider2D[] hitColliders = Physics2D.OverlapPointAll(point2D);
 
-        if (hitCollider != null)
+        foreach (var hitCollider in hitColliders)
         {
             PlacementPoint placementPoint = hitCollider.GetComponent<PlacementPoint>();
             if (placementPoint != null)
             {
-                Debug.Log($"Placement point detected at {placementPoint.transform.position}");
                 if (placementPoint.IsAvailable())
                 {
-                    Debug.Log($"Point at {placementPoint.transform.position} is available.");
+                    Debug.Log($"Placement point detected at {placementPoint.transform.position}, and it is available.");
                     return placementPoint;
                 }
                 else
                 {
-                    Debug.LogWarning($"Point at {placementPoint.transform.position} is occupied.");
+                    Debug.LogWarning($"Placement point at {placementPoint.transform.position} is occupied.");
                 }
             }
-            else
-            {
-                Debug.LogWarning($"Collider found at {position}, but no PlacementPoint component.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning($"No collider found at: {position}");
         }
 
-        return null;
+        Debug.LogWarning($"No valid placement point found at: {position}");
+        return null; // No valid point found
     }
 }

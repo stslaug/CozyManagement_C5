@@ -1212,10 +1212,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placementPoints:
+  - {fileID: 1403488366}
   - {fileID: 744423748}
   - {fileID: 1915861918}
   - {fileID: 8535631866604590384}
-  - {fileID: 1403488366}
 --- !u!224 &934262415
 RectTransform:
   m_ObjectHideFlags: 0

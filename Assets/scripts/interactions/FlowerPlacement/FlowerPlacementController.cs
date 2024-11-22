@@ -29,6 +29,12 @@ public class FlowerPlacementController : MonoBehaviour
     // Handle flower placement logic
     private void HandleFlowerPlacement()
     {
+        if (selectedFlowerConfig == null)
+        {
+            Debug.LogWarning("No flower selected for placement!");
+            return;
+        }
+
         // Convert mouse position to world position
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         worldPosition.z = 0f;
@@ -42,22 +48,25 @@ public class FlowerPlacementController : MonoBehaviour
         {
             Debug.Log($"Valid placement point found at: {placementPoint.transform.position}");
 
-            // Place the flower
-            flowerManager.SpawnFlower(placementPoint.transform.position, selectedFlowerConfig);
-            placementPoint.OccupyPoint();
+            // Place the flower using FlowerManager
+            GameObject flower = flowerManager.SpawnFlower(placementPoint.transform.position, selectedFlowerConfig);
 
-            Debug.Log("Flower placed, and point marked as occupied.");
+            if (flower != null)
+            {
+                placementPoint.OccupyPoint();
+                Debug.Log($"Flower placed: {selectedFlowerConfig.name} at {placementPoint.transform.position}");
+            }
+            else
+            {
+                Debug.LogWarning("Failed to spawn flower! Check FlowerConfig prefab.");
+            }
+
+            placementManager.ClearHighlights();
+            Debug.Log("All highlights cleared after placement.");
         }
         else
         {
-            if (placementPoint == null)
-                Debug.LogWarning("No placement point found at the clicked position.");
-            else
-                Debug.LogWarning("Placement point is already occupied.");
+            Debug.LogWarning("Invalid placement point or point is occupied.");
         }
-
-        // Clear all highlights regardless of the result
-        placementManager.ClearHighlights();
-        Debug.Log("All highlights cleared after mouse click.");
     }
 }
