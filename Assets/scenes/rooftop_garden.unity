@@ -2194,6 +2194,42 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 731089743}
+    - target: {fileID: 238969486246831433, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 238969486246831433, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 238969486246831433, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -42
+      objectReference: {fileID: 0}
+    - target: {fileID: 238969486246831433, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023453637915215954, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023453637915215954, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023453637915215954, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023453637915215954, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023453637915215954, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3256610327966406321, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2333,6 +2369,30 @@ PrefabInstance:
     - target: {fileID: 6974237343495024347, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200679887001734644, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200679887001734644, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200679887001734644, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200679887001734644, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200679887001734644, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -39
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200679887001734644, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7393122001012505711, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2496,7 +2556,7 @@ SpriteRenderer:
   m_SortingLayerID: 1784469851
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f9ea012c93e73a743a2bf5fd505abb1d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 553fd5869e797ec419268c97e6676639, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2601,7 +2661,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5, y: -3.4, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 70, y: 70, z: 70}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1413150447533480471}

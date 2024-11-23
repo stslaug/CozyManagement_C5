@@ -38,22 +38,18 @@ public class FlowerPlacementController : MonoBehaviour
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         worldPosition.z = 0f;
 
-        Debug.Log($"Mouse clicked at: {worldPosition}");
 
         // Find the placement point at the clicked position
         PlacementPoint placementPoint = placementManager.GetPointAtPosition(worldPosition);
 
         if (placementPoint != null && placementPoint.IsAvailable())
         {
-            Debug.Log($"Valid placement point found at: {placementPoint.transform.position}");
-
             // Place the flower using FlowerManager
             GameObject flower = flowerManager.SpawnFlower(placementPoint.transform.position, selectedFlowerConfig);
 
             if (flower != null)
             {
                 placementPoint.OccupyPoint();
-                Debug.Log($"Flower placed: {selectedFlowerConfig.name} at {placementPoint.transform.position}");
             }
             else
             {
@@ -61,7 +57,7 @@ public class FlowerPlacementController : MonoBehaviour
             }
 
             placementManager.ClearHighlights();
-            Debug.Log("All highlights cleared after placement.");
+            
         }
         else
         {

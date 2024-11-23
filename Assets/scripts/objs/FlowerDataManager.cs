@@ -30,7 +30,7 @@ public class FlowerDataManager : MonoBehaviour
 
     public void Initialize()
     {
-        flowerData.growthStep = 1;
+        flowerData.growthStep = flowerConfig.startGrowthStage;
         flowerData.flowerType = flowerConfig.flowerType;
         Debug.Log($"Initialize a flower of type {flowerData.flowerType}");
     }
