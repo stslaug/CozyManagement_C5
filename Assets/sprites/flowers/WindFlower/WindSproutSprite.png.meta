@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 162f229425bdc554bbb1a226bb03bccc
+guid: 9574480c206ea4147bae090cdb0fd130
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,9 +48,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,165 +93,152 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprS_fireflower_0
+      name: WindSproutSprite_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1024
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e17c9838833d8154c84bfef6e9c65a55
-      internalID: 2144661948
+      spriteID: b36814405dc281246acb9595d2ef2d92
+      internalID: -1806625767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprS_fireflower_1
+      name: WindSproutSprite_1
       rect:
         serializedVersion: 2
-        x: 512
-        y: 1024
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fad4832bf0eac6c429a3fd54559d6da6
-      internalID: -1504543421
+      spriteID: a4cd8a92be1ec0941a3e4bc0beea668c
+      internalID: -641416369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprS_fireflower_2
+      name: WindSproutSprite_2
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 1024
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc70a4c93ae656b49afe4de3414ccee2
-      internalID: -2099257082
+      spriteID: 96440eff496995540b07d70130babbb0
+      internalID: -1172443430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprS_fireflower_3
+      name: WindSproutSprite_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 788de05ee50bbf041be7344cb95d76ff
-      internalID: 1923580459
+      spriteID: fb65df45d0191614f880e21cc7b56bc3
+      internalID: 724563561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprS_fireflower_4
+      name: WindSproutSprite_4
       rect:
         serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28fae9be6904cd946903ac23b269060e
-      internalID: -1307761751
+      spriteID: 775e8d7a08e113840a28ba99c60795aa
+      internalID: 95950095
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprS_fireflower_5
+      name: WindSproutSprite_5
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60241f8c5e7d30e40b3b0697b753d56c
-      internalID: -2001679896
+      spriteID: 2feafb5d435e559489c5a2092cdf0cfe
+      internalID: -231225052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprS_fireflower_6
+      name: WindSproutSprite_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 590f5c3472028df4fa20a6926cb85fa9
-      internalID: -758477413
+      spriteID: 34372bb315946114ab012d07387f966b
+      internalID: 1844120119
       vertices: []
       indices: 
       edges: []
@@ -267,13 +254,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sprS_fireflower_0: 2144661948
-      sprS_fireflower_1: -1504543421
-      sprS_fireflower_2: -2099257082
-      sprS_fireflower_3: 1923580459
-      sprS_fireflower_4: -1307761751
-      sprS_fireflower_5: -2001679896
-      sprS_fireflower_6: -758477413
+      WindSproutSprite_0: -1806625767
+      WindSproutSprite_1: -641416369
+      WindSproutSprite_2: -1172443430
+      WindSproutSprite_3: 724563561
+      WindSproutSprite_4: 95950095
+      WindSproutSprite_5: -231225052
+      WindSproutSprite_6: 1844120119
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

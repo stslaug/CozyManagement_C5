@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: WaterFlowerConfig
   m_EditorClassIdentifier: 
   flowerType: WaterFlower
-  prefab: {fileID: 8629867525900162357, guid: 5a34837b02394f942b842f349bc8f37b, type: 3}
+  prefab: {fileID: 338251313018761464, guid: 5a34837b02394f942b842f349bc8f37b, type: 3}
   maxGrowthStage: 3
-  growthRate: 1
+  startGrowthStage: 1
   diesIfWinter: 0
   cost: 5

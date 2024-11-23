@@ -9,17 +9,15 @@ public class PlacementManager : MonoBehaviour
     // Highlight all valid placement points
     public void HighlightValidPoints()
     {
-        Debug.Log("Highlighting valid placement points...");
+        
         foreach (var point in placementPoints)
         {
             if (point.IsAvailable())
             {
-                Debug.Log($"Highlight enabled at: {point.transform.position}");
                 point.SetHighlight(true);
             }
             else
             {
-                Debug.Log($"Highlight skipped for occupied point at: {point.transform.position}");
                 point.SetHighlight(false);
             }
         }
@@ -46,7 +44,6 @@ public class PlacementManager : MonoBehaviour
             {
                 if (placementPoint.IsAvailable())
                 {
-                    Debug.Log($"Placement point detected at {placementPoint.transform.position}, and it is available.");
                     return placementPoint;
                 }
                 else

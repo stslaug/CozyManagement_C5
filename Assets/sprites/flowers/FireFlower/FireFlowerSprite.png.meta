@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b917d5b59b417dc418184b3348ffc2c7
+guid: b3600b5c08ab1a9418d4b8307f8cbcb2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,211 +97,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WindFlowerSprite_0
+      name: FireFlowerSprite_0
       rect:
         serializedVersion: 2
         x: 0
         y: 64
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdb455bf4e9376a45ae576d265db3a18
-      internalID: -240209404
+      spriteID: d8b3cf91c77ebad43aa08a7aabbf6f90
+      internalID: 1170592496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WindFlowerSprite_1
+      name: FireFlowerSprite_1
       rect:
         serializedVersion: 2
         x: 32
         y: 64
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a9f39392a3b5fc48be1241f29e27879
-      internalID: -1556189097
+      spriteID: f68fc79b34f1abc4ebee6ce464e2dec2
+      internalID: -2059672448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WindFlowerSprite_2
+      name: FireFlowerSprite_2
       rect:
         serializedVersion: 2
         x: 64
         y: 64
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd185c01d23fc5940aed7df09959e88f
-      internalID: -612250309
+      spriteID: dd2d5b34ea9246641a0c642556ddd2df
+      internalID: -1360069913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WindFlowerSprite_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b5ac1a503205be4ab65ea9e8233e2e3
-      internalID: -133355494
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WindFlowerSprite_4
+      name: FireFlowerSprite_3
       rect:
         serializedVersion: 2
         x: 0
         y: 32
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 756abdfd820ffbd4f91c9b7bfaf7c7be
-      internalID: -1246152649
+      spriteID: b9f5b4bdaf650f040959240d38f0b9eb
+      internalID: 948010942
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WindFlowerSprite_5
+      name: FireFlowerSprite_4
       rect:
         serializedVersion: 2
         x: 32
         y: 32
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bab57985216487b4d9d847b7bc5c51c1
-      internalID: -688427265
+      spriteID: 59926dd200cf59947b062ccf8ac65120
+      internalID: 27619402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WindFlowerSprite_6
+      name: FireFlowerSprite_5
       rect:
         serializedVersion: 2
         x: 64
         y: 32
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da2e5e7731a42234a9e6a0a99a87b42e
-      internalID: -1720976959
+      spriteID: 57e846d0ff7d13f45bac2b9fa4669c77
+      internalID: 2074403693
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WindFlowerSprite_7
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: efcfb566c58e477458ae258f856294bd
-      internalID: -792555437
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WindFlowerSprite_8
+      name: FireFlowerSprite_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f17b86a413976874d8a95a7cb05b573f
-      internalID: 2003840064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WindFlowerSprite_9
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c26d787c780f0b848a6b4f51c5d7b5e8
-      internalID: -690478409
+      spriteID: 32315c8acf6d44e42acdea163aaaa4a6
+      internalID: -1155909990
       vertices: []
       indices: 
       edges: []
@@ -317,16 +254,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WindFlowerSprite_0: -240209404
-      WindFlowerSprite_1: -1556189097
-      WindFlowerSprite_2: -612250309
-      WindFlowerSprite_3: -133355494
-      WindFlowerSprite_4: -1246152649
-      WindFlowerSprite_5: -688427265
-      WindFlowerSprite_6: -1720976959
-      WindFlowerSprite_7: -792555437
-      WindFlowerSprite_8: 2003840064
-      WindFlowerSprite_9: -690478409
+      FireFlowerSprite_0: 1170592496
+      FireFlowerSprite_1: -2059672448
+      FireFlowerSprite_2: -1360069913
+      FireFlowerSprite_3: 948010942
+      FireFlowerSprite_4: 27619402
+      FireFlowerSprite_5: 2074403693
+      FireFlowerSprite_6: -1155909990
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

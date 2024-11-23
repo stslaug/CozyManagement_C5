@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18bf97ed167d8d94f9b23a2e6a17c0a1, type: 3}
-  m_Name: WinterFlowerConfig
+  m_Name: IceFlower
   m_EditorClassIdentifier: 
-  flowerType: WinterFlower
+  flowerType: IceFlower
+  prefab: {fileID: 5505034863348855587, guid: 3b9a5b3ee71db024295dbd12f71226e8, type: 3}
   maxGrowthStage: 1
-  growthRate: 1
+  startGrowthStage: 1
   diesIfWinter: 0
   cost: 20

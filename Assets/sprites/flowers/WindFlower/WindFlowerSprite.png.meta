@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fbe9dc36d11f7da41aa5f1e8ba0d575c
+guid: b917d5b59b417dc418184b3348ffc2c7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,11 +44,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FireSproutSprite_0
+      name: WindFlowerSprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2deb917b9af3aa4388ee710ae45e09f
-      internalID: 593275317
+      spriteID: bdb455bf4e9376a45ae576d265db3a18
+      internalID: -240209404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireSproutSprite_1
+      name: WindFlowerSprite_1
       rect:
         serializedVersion: 2
         x: 32
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d8ba81bf3fcf214fae02c1584615057
-      internalID: -1812789037
+      spriteID: 3a9f39392a3b5fc48be1241f29e27879
+      internalID: -1556189097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireSproutSprite_2
+      name: WindFlowerSprite_2
       rect:
         serializedVersion: 2
         x: 64
@@ -153,14 +153,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7b170434b76486408292d155f66f90e
-      internalID: 136315395
+      spriteID: bd185c01d23fc5940aed7df09959e88f
+      internalID: -612250309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireSproutSprite_3
+      name: WindFlowerSprite_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5ac1a503205be4ab65ea9e8233e2e3
+      internalID: -133355494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindFlowerSprite_4
       rect:
         serializedVersion: 2
         x: 0
@@ -174,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44ebb77b147dd724f94e86eef12ab601
-      internalID: 796344777
+      spriteID: 756abdfd820ffbd4f91c9b7bfaf7c7be
+      internalID: -1246152649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireSproutSprite_4
+      name: WindFlowerSprite_5
       rect:
         serializedVersion: 2
         x: 32
@@ -195,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c03ad087a219084d8d556b5a70cc4ee
-      internalID: -1700237549
+      spriteID: bab57985216487b4d9d847b7bc5c51c1
+      internalID: -688427265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireSproutSprite_5
+      name: WindFlowerSprite_6
       rect:
         serializedVersion: 2
         x: 64
@@ -216,14 +237,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fa026d40c93e004a8a2dc4599886657
-      internalID: 595446680
+      spriteID: da2e5e7731a42234a9e6a0a99a87b42e
+      internalID: -1720976959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireSproutSprite_6
+      name: WindFlowerSprite_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efcfb566c58e477458ae258f856294bd
+      internalID: -792555437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindFlowerSprite_8
       rect:
         serializedVersion: 2
         x: 0
@@ -237,8 +279,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edbe370a7a9fd1941a6d488cc1bcc312
-      internalID: 1530950336
+      spriteID: f17b86a413976874d8a95a7cb05b573f
+      internalID: 2003840064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindFlowerSprite_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c26d787c780f0b848a6b4f51c5d7b5e8
+      internalID: -690478409
       vertices: []
       indices: 
       edges: []
@@ -254,13 +317,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FireSproutSprite_0: 593275317
-      FireSproutSprite_1: -1812789037
-      FireSproutSprite_2: 136315395
-      FireSproutSprite_3: 796344777
-      FireSproutSprite_4: -1700237549
-      FireSproutSprite_5: 595446680
-      FireSproutSprite_6: 1530950336
+      WindFlowerSprite_0: -240209404
+      WindFlowerSprite_1: -1556189097
+      WindFlowerSprite_2: -612250309
+      WindFlowerSprite_3: -133355494
+      WindFlowerSprite_4: -1246152649
+      WindFlowerSprite_5: -688427265
+      WindFlowerSprite_6: -1720976959
+      WindFlowerSprite_7: -792555437
+      WindFlowerSprite_8: 2003840064
+      WindFlowerSprite_9: -690478409
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
