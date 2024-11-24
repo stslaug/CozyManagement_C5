@@ -61,8 +61,23 @@ public class InventoryManagement : MonoBehaviour
 
     }
 
-    public void addFireFlower(int num)
+    public void AddFire_Seed(int num)
     {
-        gameManager.saveData.inventoryData.fire_seed += num;
+        if (GameManager.Instance != null) { 
+        GameManager.Instance.saveData.inventoryData.fire_seed += num;
+        }
+    }
+
+    public void SubFire_Seed(int num)
+    {
+        if (GameManager.Instance != null)
+        {
+            if((GameManager.Instance.saveData.inventoryData.fire_seed - num) < 0)
+            {
+                Debug.Log("Can't subtract seed. No seeds available!");
+                return;
+            }
+            GameManager.Instance.saveData.inventoryData.fire_seed -= num;
+        }
     }
 }

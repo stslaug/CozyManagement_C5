@@ -18,6 +18,7 @@ public class CurrencyTracker : MonoBehaviour
 
     private void Update()
     {
+       
         UpdateGoldDisplay();
 
     }
@@ -88,8 +89,7 @@ public class CurrencyTracker : MonoBehaviour
     {
         if (gameManager != null)
         {
-            if (gameManager.saveData.playerData.goldCount != currGold)
-            {
+            
                 if (goldText == null)
                 {
                     goldText = GameObject.Find("goldText").GetComponent<TextMeshProUGUI>();
@@ -97,13 +97,15 @@ public class CurrencyTracker : MonoBehaviour
                     {
                         Debug.LogError("goldText not found in the scene. Make sure the TextMeshProUGUI component is assigned.");
                         return;
-
                     }
-                }
-                currGold = gameManager.saveData.playerData.goldCount;
+                    if (goldText.text != ("Gold: " + (gameManager.saveData.playerData.goldCount).ToString()))
+                    {
+                        currGold = gameManager.saveData.playerData.goldCount;
 
-                goldText.text = "Gold: " + gameManager.saveData.playerData.goldCount; // Update the displayed text
+                        goldText.text = "Gold: " + gameManager.saveData.playerData.goldCount; // Update the displayed text
+                    }
             }
+               
         }
     }
 

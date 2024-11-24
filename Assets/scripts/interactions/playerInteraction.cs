@@ -24,7 +24,7 @@ public class playerInteraction : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // Only proceed if the current scene is "temp_rooftop"
-            if (SceneManager.GetActiveScene().name == "temp_rooftop")
+            if (SceneManager.GetActiveScene().name == "rooftop_garden")
             {
                     // Get the mouse position in world coordinates
                     Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(new Vector3(

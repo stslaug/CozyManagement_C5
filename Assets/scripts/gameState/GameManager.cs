@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public int currentSceneIndex = 0;
 
     public SaveData saveData = new SaveData();
-    public List<GameObject> allFlowers = new List<GameObject>();
+    
       
 
     private void Start()
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void Update()
+    void Update()
     {
 
        
@@ -122,13 +122,13 @@ public class GameManager : MonoBehaviour
     // Add a new flower instance to the list
     public void AddFlower(GameObject newFlower)
     {
-        allFlowers.Add(newFlower);
+        Instance.saveData.allFlowers.Add(newFlower);
         Debug.Log("Flower added to the garden.");
     }
     // Find the flower in the list and remove it
     public void RemoveFlower(GameObject flower)
     {
-        allFlowers.Remove(flower);
+        Instance.saveData.allFlowers.Remove(flower);
         Debug.Log("Flower removed from the garden.");
     }
 

@@ -34,7 +34,7 @@ public class PlacementManager : MonoBehaviour
     // Get the placement point at the specific world position
     public PlacementPoint GetPointAtPosition(Vector3 position)
     {
-        Vector2 point2D = new Vector2(position.x, position.y);
+        Vector2 point2D = new(position.x, position.y);
         Collider2D[] hitColliders = Physics2D.OverlapPointAll(point2D);
 
         foreach (var hitCollider in hitColliders)

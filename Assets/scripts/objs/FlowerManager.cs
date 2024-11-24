@@ -1,3 +1,4 @@
+using DataModels;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,10 @@ public class FlowerManager : MonoBehaviour
 {
     public GameManager gameManager; // Reference to GameManager
 
+    private void Update()
+    {
+        
+    }
     // Add a new flower of the specified type at the specified position
     public GameObject SpawnFlower(Vector3 position, FlowerConfig flowerConfig)
     {
@@ -30,31 +35,40 @@ public class FlowerManager : MonoBehaviour
                 FlowerDataManager flowerDataManager = newFlower.GetComponent<FlowerDataManager>();
                 if (flowerDataManager != null)
                 {
-                    flowerDataManager.flowerConfig = flowerConfig;
-                    flowerDataManager.Initialize();
-                    Debug.Log("FlowerDataManager initialized.");
+                    if (flowerDataManager.flowerData == null)
+                    {
+                        flowerDataManager.flowerData = new FlowerData();
+                        flowerDataManager.flowerData.position = position;
+                        flowerDataManager.flowerData.flowerType = flowerConfig.flowerType;
+                        flowerDataManager.Initialize();
+                    }
+                    else
+                    {
+                        Debug.Log("FlowerDataManager script missing on prefab!  Creating one...");
+                        return null;
+
+                    }
+
+                    // Add flower to GameManager tracking
+                    gameManager.AddFlower(newFlower);
+                    Debug.Log("Flower added to GameManager.");
                 }
                 else
                 {
-                    Debug.LogWarning("FlowerDataManager script missing on prefab!");
+                    Debug.LogError("Flower instantiation failed!");
+                    return null;
                 }
 
-                // Add flower to GameManager tracking
-                gameManager.AddFlower(newFlower);
-                Debug.Log("Flower added to GameManager.");
+                return newFlower;
             }
             else
             {
-                Debug.LogError("Flower instantiation failed!");
+                Debug.LogError("FlowerConfig prefab is null!");
+                return null;
             }
-
-            return newFlower;
         }
-        else
-        {
-            Debug.LogError("FlowerConfig prefab is null!");
-            return null;
-        }
+        Debug.LogWarning("Prefab = null | Flower Manager");
+        return null;
     }
     
 
@@ -63,8 +77,9 @@ public class FlowerManager : MonoBehaviour
     {
         if (flower != null)
         {
-            Debug.Log($"Removing flower from the scene."); // Debug: removing flower
-            gameManager.RemoveFlower(flower);
+         
+                    gameManager.RemoveFlower(flower);
+                    Debug.Log($"Removing flower from the scene."); // Debug: removing flower 
             Destroy(flower);
         }
         else

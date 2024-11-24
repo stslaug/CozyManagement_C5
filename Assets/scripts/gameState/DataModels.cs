@@ -40,11 +40,11 @@ public class FlowerData
 {
     public Vector3 position;
     public int growthStep = 1; // Tracks the growth step for each flower instance
-    public string flowerType = "";
+    public string flowerType;
 }
 
 [System.Serializable]
-    public class InventoryData
+public class InventoryData
     { // Primary Seeds
         public int fire_seed = 0;
         public int wind_seed = 0;
@@ -79,7 +79,7 @@ public class FlowerData
         //We will add more.
     }
 
-    [System.Serializable]
+[System.Serializable]
 public class SaveData
 {
     public PlayerData playerData;
