@@ -1,93 +1,83 @@
+using DataModels;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
-
-//Manages flower types, and update counts
-public class inventoryManagement : MonoBehaviour
+public class InventoryManagement : MonoBehaviour
 {
-    public static GameManager gameManager;
-    
-    public TextMeshProUGUI FireFlowerText;
-    public TextMeshProUGUI WaterFlowerText;
-    public TextMeshProUGUI WindFlowerText;
-    
-    public enum ItemType {
-        FireFlower,
-        WaterFlower,
-        WindFlower
-    }
+    private GameManager gameManager;
 
-    [System.Serializable]
-    public class Item {
-        public ItemType itemType;
-        public Sprite itemSprite;
-        public int count;
-        public TextMeshProUGUI itemCountText;
-    }
 
-    // Start is called before the first frame update
-    public List<Item> items;
-
+    public int currFireSeed;
+    public int currWaterSeed;
+    public int currWindSeed;
     void Start()
     {
-        // Initialize item count text for each item
-        foreach (Item item in items)
+        if(gameManager == null)
         {
-            UpdateItemText(item);
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
+        currFireSeed = 0;
+        currWaterSeed = 0;
+        currWindSeed = 0;
     }
 
+    private void Awake()
+    {
+        if (gameManager == null)
+        {
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        }
+    }
+    // Update is called once per frame
     void Update()
     {
-        //
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("rooftop_garden"))
+        {
+
+                if (currFireSeed != gameManager.saveData.inventoryData.fire_seed)
+                {
+                    TextMeshProUGUI textTemp = GameObject.Find("FirePlanter_text").GetComponent<TextMeshProUGUI>();
+                    textTemp.text = gameManager.saveData.inventoryData.fire_seed.ToString();
+                    currFireSeed = gameManager.saveData.inventoryData.fire_seed;
+                }
+                if (currWaterSeed != gameManager.saveData.inventoryData.water_seed)
+                {
+                    TextMeshProUGUI textTemp = GameObject.Find("WaterPlanter_text").GetComponent<TextMeshProUGUI>();
+                    textTemp.text = gameManager.saveData.inventoryData.water_seed.ToString();
+                    currWaterSeed = gameManager.saveData.inventoryData.water_seed;
+                }
+                if (currWindSeed != gameManager.saveData.inventoryData.wind_seed)
+                {
+                    TextMeshProUGUI textTemp = GameObject.Find("WindPlanter_text").GetComponent<TextMeshProUGUI>();
+                    textTemp.text = gameManager.saveData.inventoryData.wind_seed.ToString();
+                    currWindSeed = gameManager.saveData.inventoryData.wind_seed;
+                }
+            
+
+        }
+
     }
 
-    public void AddItem(ItemType itemType, int num)
+    public void AddFire_Seed(int num)
     {
-        Item item = items.Find(i => i.itemType == itemType);
-        if (item != null)
-        {
-            item.count += num;
-            UpdateItemText(item);
-        }
-        else
-        {
-            Debug.LogWarning($"Item of type {itemType} not found in the inventory.");
+        if (GameManager.Instance != null) { 
+        GameManager.Instance.saveData.inventoryData.fire_seed += num;
         }
     }
 
-    public void UseItem(ItemType itemType, int num)
+    public void SubFire_Seed(int num)
     {
-        Item item = items.Find(i => i.itemType == itemType);
-        if (item != null)
+        if (GameManager.Instance != null)
         {
-            if (item.count >= num)
+            if((GameManager.Instance.saveData.inventoryData.fire_seed - num) < 0)
             {
-                item.count -= num;
-                UpdateItemText(item);
+                Debug.Log("Can't subtract seed. No seeds available!");
+                return;
             }
-            else
-            {
-                Debug.Log("Not enough items to use.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning($"Item of type {itemType} not found in the inventory.");
-        }
-    }
-
-    private void UpdateItemText(Item item)
-    {
-        if (item.itemCountText != null)
-        {
-            item.itemCountText.text = item.count.ToString();
-        }
-        else
-        {
-            Debug.LogWarning($"Text component for {item.itemType} is not assigned.");
+            GameManager.Instance.saveData.inventoryData.fire_seed -= num;
         }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement; 
 
 public class PlayerDialogue : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class PlayerDialogue : MonoBehaviour
     public string[] lines; // Shop owner’s response line
     public float textSpeed;
 
+    public bool finishedDialogue = false;
+
     private bool isTriggered = false;
 
-    private int index;
 
+    private int index;
 
 
     void Update()
@@ -34,12 +37,16 @@ public class PlayerDialogue : MonoBehaviour
     //start dialogue
     public void TriggerResponse()
     {
+
+        textComponent.text = string.Empty;
         isTriggered = true;
         StartPlayerDialogue();
     }
 
     void StartPlayerDialogue()
     {   
+        index = 0;
+        gameObject.SetActive(true);
         StartCoroutine(TypePlayerLines());
     }
 
@@ -62,7 +69,14 @@ public class PlayerDialogue : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false); //hide shop owner dialgoue    
+           // gameObject.SetActive(false); //hide shop owner dialgoue    
+            finishedDialogue = true;
+            LoadNextScene();
         }
+    }
+    void LoadNextScene()
+    {
+        // Replace "NextScene" with the name of your next scene
+        SceneManager.LoadScene("temp_shop"); 
     }
 }

@@ -7,7 +7,7 @@ public class FlowerConfig : ScriptableObject
     public string flowerType;
     public GameObject prefab;
     public int maxGrowthStage;
-    public float growthRate;
+    public int startGrowthStage;
     public bool diesIfWinter;
     public int cost;
 }

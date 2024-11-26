@@ -1,40 +1,25 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
 {
     private static bool isPaused = false;
-    public static PauseMenuController Instance;
 
-    private GameObject pauseMenuUI;
-    private CanvasGroup pauseMenuCanvasGroup;
+    [SerializeField] private GameObject pauseMenuUI; // Assign via Inspector
+
 
     private void Awake()
     {
-        if (Instance == null)
+        if (pauseMenuUI != null)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
 
-            isPaused = false;
 
-            SceneManager.sceneLoaded += OnSceneLoaded;
+            // Ensure the pause menu starts hidden
+            pauseMenuUI.SetActive(false);
         }
         else
         {
-            Destroy(gameObject);
-            return;
+            Debug.LogError("PauseMenuUI is not assigned in the Inspector.");
         }
-    }
-
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        FindPauseMenuUI();
     }
 
     private void Update()
@@ -49,63 +34,29 @@ public class PauseMenuController : MonoBehaviour
     {
         if (pauseMenuUI == null)
         {
-            FindPauseMenuUI();
-            if (pauseMenuUI == null)
-            {
-                Debug.LogWarning("PauseMenu not found in the current scene. Cannot toggle pause menu.");
-                return;
-            }
+            return;
         }
 
         isPaused = !isPaused;
 
         if (isPaused)
         {
-            pauseMenuUI.transform.localScale = Vector3.one;
-            if (pauseMenuCanvasGroup != null)
-            {
-                pauseMenuCanvasGroup.interactable = true;
-                pauseMenuCanvasGroup.blocksRaycasts = true;
-            }
+            pauseMenuUI.SetActive(true);
+
+            Time.timeScale = 0f;
         }
         else
         {
-            pauseMenuUI.transform.localScale = Vector3.zero;
-            if (pauseMenuCanvasGroup != null)
-            {
-                pauseMenuCanvasGroup.interactable = false;
-                pauseMenuCanvasGroup.blocksRaycasts = false;
-            }
+            pauseMenuUI.SetActive(false);
+
+            Time.timeScale = 1f;
         }
 
-        Time.timeScale = isPaused ? 0f : 1f;
+        Debug.Log($"Pause Menu is now {(isPaused ? "Active" : "Inactive")}");
     }
 
-    public bool getPause()
+    public bool GetPauseState()
     {
         return isPaused;
-    }
-
-    private void FindPauseMenuUI()
-    {
-        pauseMenuUI = GameObject.Find("PauseMenu");
-
-        if (pauseMenuUI == null)
-        {
-            Debug.Log("PauseMenu panel not found in the current scene.");
-        }
-        else
-        {
-            pauseMenuUI.transform.localScale = Vector3.zero;
-
-            pauseMenuCanvasGroup = pauseMenuUI.GetComponent<CanvasGroup>();
-            if (pauseMenuCanvasGroup == null)
-            {
-                pauseMenuCanvasGroup = pauseMenuUI.AddComponent<CanvasGroup>();
-            }
-
-            pauseMenuCanvasGroup.interactable = false;
-            pauseMenuCanvasGroup.blocksRaycasts = false;
-        }
     }
 }
