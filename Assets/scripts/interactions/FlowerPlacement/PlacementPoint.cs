@@ -9,19 +9,18 @@ public class PlacementPoint : MonoBehaviour
     private bool isOccupied = false; // Track if the point is occupied
 
     // Enable or disable highlighting for this point
-    public void SetHighlight(bool isActive)
-{
-    if (highlightSprite != null)
+    public void SetHighlight(bool isVisible)
     {
-        highlightSprite.enabled = isActive && !isOccupied; // Only enable if not occupied
+        if (highlightSprite != null)
+        {
+            highlightSprite.enabled = isVisible; // Only enable if not occupied
+        }
     }
-}
 
     // Mark the point as occupied
     public void OccupyPoint()
     {
         isOccupied = true;
-        SetHighlight(false);
     }
 
     public void FreePoint()

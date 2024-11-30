@@ -19,9 +19,9 @@ public class InventoryManagement : MonoBehaviour
         {
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
-        currFireSeed = 0;
-        currWaterSeed = 0;
-        currWindSeed = 0;
+        currFireSeed = 1;
+        currWaterSeed = 1;
+        currWindSeed = 1;
     }
 
     private void Awake()
