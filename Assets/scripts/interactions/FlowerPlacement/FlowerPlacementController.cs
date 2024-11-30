@@ -12,7 +12,7 @@ public class FlowerPlacementController : MonoBehaviour
     public FlowerManager flowerManager; // Reference to FlowerManager
     public PlacementManager placementManager; // Reference to PlacementManager
     private FlowerConfig selectedFlowerConfig; // Currently selected flower type
-    public InventoryManagement inventoryManager;
+    public Inventory inventoryManager;
 
     // Called by FlowerSelectionManager to set the selected flower type
     public void SetSelectedFlower(FlowerConfig flowerConfig)
@@ -49,36 +49,44 @@ public class FlowerPlacementController : MonoBehaviour
             return;
         }
 
-        // Convert mouse position to world position
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         worldPosition.z = 0f;
 
-
-        // Find the placement point at the clicked position
         PlacementPoint placementPoint = placementManager.GetPointAtPosition(worldPosition);
-
         if (placementPoint != null && placementPoint.IsAvailable())
         {
-            FlowerConfig tempConfig = selectedFlowerConfig;
-     
-            placementManager.ClearHighlights();
+            // Get a Flower instance from the inventory
+            Flower flowerToPlant = (inventoryManager.GetUnplantedFlowerOfType(selectedFlowerConfig) );
 
-            GameObject flower = flowerManager.SpawnFlower(placementPoint.transform.position, selectedFlowerConfig);
-            selectedFlowerConfig = null;
-            if (flower != null)
+            if (flowerToPlant == null)
             {
-                placementPoint.OccupyPoint();
-            }
-            else
-            {
-                Debug.LogWarning("Failed to spawn flower! Check FlowerConfig prefab.");
+                Debug.LogWarning("No unplanted flower of selected type in inventory!");
                 return;
             }
 
-            inventoryManager.SubFire_Seed(1);
+            // Remove the flower from unplantedFlowers
+            inventoryManager.unplantedFlowers.Remove(flowerToPlant);
 
+            // Update the flower instance
+            flowerToPlant.isPlanted = true;
+            flowerToPlant.position = (placementPoint.transform.position); // With Offset for Pots)
+          
+            // Add the flower to plantedFlowers
+            inventoryManager.plantedFlowers.Add(flowerToPlant);
 
+            // Instantiate the flower GameObject in the scene
+            GameObject flowerObject = Instantiate(selectedFlowerConfig.prefab, (placementPoint.transform.position + (Vector3.up * 5)), Quaternion.identity);
 
+            // Assign the flower instance to the GameObject (e.g., via a FlowerComponent)
+            FlowerDataManager flowerComponent = flowerObject.GetComponent<FlowerDataManager>();
+            if (flowerComponent == null)
+            {
+                Debug.Log("Couldn't set flower instance. FlowerPlacementControler.cs");
+            }
+
+            selectedFlowerConfig = null;
+            placementManager.ClearHighlights();
+            placementPoint.OccupyPoint();
         }
         else
         {
@@ -103,6 +111,8 @@ public class FlowerPlacementController : MonoBehaviour
             }
         } 
      }
+
+
 
 
 

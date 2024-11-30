@@ -10,16 +10,6 @@ public class FlowerDataManager : MonoBehaviour
     public FlowerConfig flowerConfig; //holds shared data
     public FlowerData flowerData; //holds instance specific data
 
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
-
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
-    }
-
     private void Start()
     {
         if (flowerData == null)

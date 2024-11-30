@@ -37,9 +37,6 @@ public class DaysTracker : MonoBehaviour
         {
             currDay = gameManager.getSaveData().playerData.currentDay;
             UpdateDayDisplay(currDay);
-
-            // Subscribe to the day change event
-            gameManager.OnDayChanged += HandleDayChanged;
         }
         else
         {
@@ -49,10 +46,6 @@ public class DaysTracker : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (gameManager != null)
-        {
-            gameManager.OnDayChanged -= HandleDayChanged;
-        }
     }
 
     // Event handler for day changes

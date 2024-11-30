@@ -18,8 +18,6 @@ public class GameManager : MonoBehaviour
     public SaveData saveData;
 
 
-    public event Action<int> OnDayChanged;
-
 
     private void Start()
     {
