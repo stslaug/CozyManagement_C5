@@ -6,6 +6,7 @@ public class Flower : MonoBehaviour
 {
     [Header("Flower Configuration")]
     public FlowerData flowerData;
+    public FlowerConfig config;
 
     [Header("Growth Settings")]
     public int maxGrowthStage = 10;

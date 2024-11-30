@@ -13,7 +13,7 @@ public class PlayerData
     public int currentDay = 1;
     public string lastTimePlayed;
     public string creationDate;
-    public Scene lastScene;
+    public string lastScene;
     public bool spellCast;
 
     public PlayerData()
@@ -84,7 +84,7 @@ public class SaveData
 {
     public PlayerData playerData;
     public List<NPCData> npcData;
-    public List<GameObject> allFlowers;
+    public List<FlowerConfig> allFlowers;
     public InventoryData inventoryData;
 }
 }

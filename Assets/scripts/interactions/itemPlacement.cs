@@ -38,11 +38,11 @@ public class itemPlacement : MonoBehaviour
 
     public void PrepareToPlaceItem(string itemType)
     {
-        if (gameManager == null) return;
+        if (GameManager.Instance == null) return;
 
         if (itemType == "FireFlower")
         {
-            if (gameManager.saveData.inventoryData.fire_seed > 0)
+            if (gameManager.getSaveData().inventoryData.fire_seed > 0)
             {
                 itemToPlace = fireFlowerPrefab;
                 isPlacingItem = true;
@@ -54,7 +54,7 @@ public class itemPlacement : MonoBehaviour
         }
         else if (itemType == "WaterFlower")
         {
-            if (gameManager.saveData.inventoryData.water_seed > 0)
+            if (gameManager.getSaveData().inventoryData.water_seed > 0)
             {
                 itemToPlace = waterFlowerPrefab;
                 isPlacingItem = true;
@@ -66,7 +66,7 @@ public class itemPlacement : MonoBehaviour
         }
         else if (itemType == "WindFlower")
         {
-            if (gameManager.saveData.inventoryData.wind_seed > 0)
+            if (gameManager.getSaveData().inventoryData.wind_seed > 0)
             {
                 itemToPlace = windFlowerPrefab;
                 isPlacingItem = true;
@@ -120,15 +120,15 @@ private void HandleItemPlacement()
     {
         if (itemToPlace == fireFlowerPrefab)
         {
-            gameManager.saveData.inventoryData.fire_seed--;
+            gameManager.getSaveData().inventoryData.fire_seed--;
         }
         else if (itemToPlace == waterFlowerPrefab)
         {
-            gameManager.saveData.inventoryData.water_seed--;
+            gameManager.getSaveData().inventoryData.water_seed--;
         }
         else if (itemToPlace == windFlowerPrefab)
         {
-            gameManager.saveData.inventoryData.wind_seed--;
+            gameManager.getSaveData().inventoryData.wind_seed--;
         }
     }
 }

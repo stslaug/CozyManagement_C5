@@ -42,7 +42,7 @@ public class CurrencyTracker : MonoBehaviour
         }
         if (gameManager != null)
         {
-            gameManager.saveData.playerData.goldCount += amount; // Save gold to GameManager
+            gameManager.getSaveData().playerData.goldCount += amount; // Save gold to GameManager
         }
         UpdateGoldDisplay();
     }
@@ -66,9 +66,9 @@ public class CurrencyTracker : MonoBehaviour
         }
         if (gameManager != null)
         {
-            if (gameManager.saveData.playerData.goldCount >= amount)
+            if (gameManager.getSaveData().playerData.goldCount >= amount)
             {
-                gameManager.saveData.playerData.goldCount -= amount; // Save gold to GameManager
+                gameManager.getSaveData().playerData.goldCount -= amount; // Save gold to GameManager
 
             }
             else
@@ -98,11 +98,11 @@ public class CurrencyTracker : MonoBehaviour
                         Debug.LogError("goldText not found in the scene. Make sure the TextMeshProUGUI component is assigned.");
                         return;
                     }
-                    if (goldText.text != ("Gold: " + (gameManager.saveData.playerData.goldCount).ToString()))
+                    if (goldText.text != ("Gold: " + (gameManager.getSaveData().playerData.goldCount).ToString()))
                     {
-                        currGold = gameManager.saveData.playerData.goldCount;
+                        currGold = gameManager.getSaveData().playerData.goldCount;
 
-                        goldText.text = "Gold: " + gameManager.saveData.playerData.goldCount; // Update the displayed text
+                        goldText.text = "Gold: " + gameManager.getSaveData().playerData.goldCount; // Update the displayed text
                     }
             }
                

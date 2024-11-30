@@ -36,25 +36,32 @@ public class InventoryManagement : MonoBehaviour
     {
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("rooftop_garden"))
         {
-
-                if (currFireSeed != gameManager.saveData.inventoryData.fire_seed)
+            if (gameManager == null)
+            {
+                gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            }
+            if (gameManager != null)
+            {
+                if (currFireSeed != gameManager.getSaveData().inventoryData.fire_seed)
                 {
                     TextMeshProUGUI textTemp = GameObject.Find("FirePlanter_text").GetComponent<TextMeshProUGUI>();
-                    textTemp.text = gameManager.saveData.inventoryData.fire_seed.ToString();
-                    currFireSeed = gameManager.saveData.inventoryData.fire_seed;
+                    textTemp.text = gameManager.getSaveData().inventoryData.fire_seed.ToString();
+                    currFireSeed = gameManager.getSaveData().inventoryData.fire_seed;
                 }
-                if (currWaterSeed != gameManager.saveData.inventoryData.water_seed)
+                if (currWaterSeed != gameManager.getSaveData().inventoryData.water_seed)
                 {
                     TextMeshProUGUI textTemp = GameObject.Find("WaterPlanter_text").GetComponent<TextMeshProUGUI>();
-                    textTemp.text = gameManager.saveData.inventoryData.water_seed.ToString();
-                    currWaterSeed = gameManager.saveData.inventoryData.water_seed;
+                    textTemp.text = gameManager.getSaveData().inventoryData.water_seed.ToString();
+                    currWaterSeed = gameManager.getSaveData().inventoryData.water_seed;
                 }
-                if (currWindSeed != gameManager.saveData.inventoryData.wind_seed)
+                if (currWindSeed != gameManager.getSaveData().inventoryData.wind_seed)
                 {
                     TextMeshProUGUI textTemp = GameObject.Find("WindPlanter_text").GetComponent<TextMeshProUGUI>();
-                    textTemp.text = gameManager.saveData.inventoryData.wind_seed.ToString();
-                    currWindSeed = gameManager.saveData.inventoryData.wind_seed;
+                    textTemp.text = gameManager.getSaveData().inventoryData.wind_seed.ToString();
+                    currWindSeed = gameManager.getSaveData().inventoryData.wind_seed;
                 }
+            }
+            
             
 
         }
@@ -63,21 +70,18 @@ public class InventoryManagement : MonoBehaviour
 
     public void AddFire_Seed(int num)
     {
-        if (GameManager.Instance != null) { 
-        GameManager.Instance.saveData.inventoryData.fire_seed += num;
+        if (gameManager != null) {
+            gameManager.getSaveData().inventoryData.fire_seed += num;
         }
     }
 
     public void SubFire_Seed(int num)
     {
-        if (GameManager.Instance != null)
-        {
-            if((GameManager.Instance.saveData.inventoryData.fire_seed - num) < 0)
+            if((gameManager.getSaveData().inventoryData.fire_seed - num) < 0)
             {
                 Debug.Log("Can't subtract seed. No seeds available!");
                 return;
             }
-            GameManager.Instance.saveData.inventoryData.fire_seed -= num;
-        }
+            gameManager.getSaveData().inventoryData.fire_seed -= num;
     }
 }

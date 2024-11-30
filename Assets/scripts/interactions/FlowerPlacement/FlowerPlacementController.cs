@@ -28,6 +28,8 @@ public class FlowerPlacementController : MonoBehaviour
         {
             HandleFlowerPlacement();
         }
+
+
         if (Input.GetKeyDown(KeyCode.Escape) && selectedFlowerConfig != null)
         {
             Debug.LogWarning("Flower Placement Canceled!");
@@ -35,7 +37,7 @@ public class FlowerPlacementController : MonoBehaviour
             placementManager.ClearHighlights();
         }
 
-        placeAllFlowers();
+      
     }
 
     // Handle flower placement logic
@@ -58,10 +60,11 @@ public class FlowerPlacementController : MonoBehaviour
         if (placementPoint != null && placementPoint.IsAvailable())
         {
             FlowerConfig tempConfig = selectedFlowerConfig;
-            selectedFlowerConfig = null; // This ensures that once something is placed.. It stops placing.
-            // Place the flower using FlowerManager
-            GameObject flower = flowerManager.SpawnFlower(placementPoint.transform.position, tempConfig);
+     
+            placementManager.ClearHighlights();
 
+            GameObject flower = flowerManager.SpawnFlower(placementPoint.transform.position, selectedFlowerConfig);
+            selectedFlowerConfig = null;
             if (flower != null)
             {
                 placementPoint.OccupyPoint();
@@ -72,9 +75,9 @@ public class FlowerPlacementController : MonoBehaviour
                 return;
             }
 
-            placementManager.ClearHighlights();
-
             inventoryManager.SubFire_Seed(1);
+
+
 
         }
         else
@@ -91,8 +94,8 @@ public class FlowerPlacementController : MonoBehaviour
         {
             if (GameManager.Instance != null)
             {
-
-                if (GameManager.Instance.saveData.allFlowers.Count != 0)
+                GameManager gameManager = GameManager.Instance;
+                if (gameManager.getSaveData().allFlowers.Count != 0)
                 {
 
                     //place all flowers in from allFlowers in the scene

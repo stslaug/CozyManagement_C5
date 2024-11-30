@@ -15,9 +15,11 @@ public class GameManager : MonoBehaviour
     private List<string> sceneNames = new List<string> { "mainMenu", "morning_shop", "night_shop", "rooftop_garden" };
     public int currentSceneIndex = 0;
 
-    public SaveData saveData = new SaveData();
-    
-      
+    public SaveData saveData;
+
+
+    public event Action<int> OnDayChanged;
+
 
     private void Start()
     {
@@ -30,6 +32,8 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            saveData = new SaveData();
+            instantiateDefaultData();
         }
         else
         {
@@ -51,36 +55,47 @@ public class GameManager : MonoBehaviour
     //******************************************* SAVE FUNCTIONALITY CAN GO HERE
     public void SaveGame()
     {
+        string json = JsonUtility.ToJson(saveData);
+        File.WriteAllText(Application.persistentDataPath + "/savegame.json", json);
         return;
     }
 
     public void LoadGame()
     {
-        Debug.Log("Loading Game.");
-        instatiateDefaultData();
-
+        string path = Application.persistentDataPath + "/savegame.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            saveData = JsonUtility.FromJson<SaveData>(json);
+            Debug.Log("Game Loaded.");
+        }
+        else
+        {
+            Debug.LogWarning("Save file not found. Creating new data.");
+            instantiateDefaultData();
+        }
     }
 
     // Creates a Default SaveData variable for saving to JSON
-    public void instatiateDefaultData()
+    public void instantiateDefaultData()
     {
         Debug.Log("Instantiating new data...");
-        Instance.saveData = new SaveData();
+        saveData = new SaveData();
 
-        Instance.saveData.playerData = new PlayerData()
+        saveData.playerData = new PlayerData()
         {
             goldCount = 500,
             currentDay = 1,
-            lastScene = SceneManager.GetSceneByName("morning_shop"),
+            lastScene = "morning_shop", // Use scene name as string
             spellCast = false
         };
 
-        Instance.saveData.npcData = new List<NPCData>();
+        saveData.npcData = new List<NPCData>();
 
-        Instance.saveData.allFlowers = new List<GameObject>();
+        saveData.allFlowers = new List<FlowerConfig>(); // Initialize as FlowerData list
 
-        Instance.saveData.inventoryData = new InventoryData()
-        { // This needs to switch out with Item Objects
+        saveData.inventoryData = new InventoryData()
+        {
             fire_seed = 3,
             wind_seed = 3,
             water_seed = 3,
@@ -122,14 +137,22 @@ public class GameManager : MonoBehaviour
     // Add a new flower instance to the list
     public void AddFlower(GameObject newFlower)
     {
-        Instance.saveData.allFlowers.Add(newFlower);
+        FlowerConfig t_flower = newFlower.GetComponent<FlowerConfig>();
+        saveData.allFlowers.Add(t_flower);
         Debug.Log("Flower added to the garden.");
     }
     // Find the flower in the list and remove it
     public void RemoveFlower(GameObject flower)
     {
-        Instance.saveData.allFlowers.Remove(flower);
+        FlowerConfig t_flower = flower.GetComponent<FlowerConfig>();
+        saveData.allFlowers.Remove(t_flower);
         Debug.Log("Flower removed from the garden.");
     }
+
+    public SaveData getSaveData()
+    { return saveData; }
+
+    public void setSaveData(SaveData data)
+    { saveData = data; }
 
 }

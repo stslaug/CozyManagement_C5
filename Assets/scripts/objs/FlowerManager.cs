@@ -41,6 +41,10 @@ public class FlowerManager : MonoBehaviour
                         flowerDataManager.flowerData.position = position;
                         flowerDataManager.flowerData.flowerType = flowerConfig.flowerType;
                         flowerDataManager.Initialize();
+                        // Add flower to GameManager tracking
+                        gameManager.AddFlower(newFlower);
+                        Debug.Log("Flower added to GameManager.");
+                        return newFlower;
                     }
                     else
                     {
@@ -49,9 +53,6 @@ public class FlowerManager : MonoBehaviour
 
                     }
 
-                    // Add flower to GameManager tracking
-                    gameManager.AddFlower(newFlower);
-                    Debug.Log("Flower added to GameManager.");
                 }
                 else
                 {
@@ -59,7 +60,6 @@ public class FlowerManager : MonoBehaviour
                     return null;
                 }
 
-                return newFlower;
             }
             else
             {
