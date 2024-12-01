@@ -5,17 +5,20 @@ using UnityEngine.UIElements;
 using UnityEngine.UI;
 using Image = UnityEngine.UI.Image;
 
+// Implements the winter spell
 public class SpellsManager : MonoBehaviour
 {   
     public SpriteRenderer backgroundRenderer;
     public Sprite winterBackgroundSprite;
+    public FlowerManager flowerManager; // Reference to FlowerManager
 
-    public GameObject iceFlowerPrefab;
+    public FlowerConfig iceFlowerConfig;
     public FlowerConfig fireFlowerConfig;
     public FlowerConfig waterFlowerConfig;
      public Inventory inventory;
     private bool spellIsCast = false;
 
+    //chenges the background sprite
     public void SetWinterBiome()
     {
         Debug.Log("Setting Wintertime");
@@ -55,29 +58,20 @@ public class SpellsManager : MonoBehaviour
 
         foreach (var flower in inventory.plantedFlowers.ToArray()) // Avoid collection modification issues
         {
-            if (flower.flowerType == waterFlowerConfig.flowerType && flower.IsMature())
+            if (flower.flowerConfig.flowerType == waterFlowerConfig.flowerType && flower.IsMature())
             {
                 // Replace water flower with ice flower
                 Vector3 position = flower.position;
 
-                GameObject iceFlower = Instantiate(iceFlowerPrefab, position, Quaternion.identity);
+                // Use SpawnFlower to create the ice flower
+                GameObject iceFlower = flowerManager.SpawnFlower(position, iceFlowerConfig, inventory);
                 if (iceFlower != null)
                 {
-                    Debug.Log($"Replaced a water flower with an ice flower at {position}.");
-
-                    // Create a new Flower instance for the ice flower
-                    FlowerConfig iceFlowerConfig = iceFlowerPrefab.GetComponent<FlowerDataManager>().flowerConfig;
-                    Flower iceFlowerData = new Flower(iceFlowerConfig)
-                    {
-                        position = position,
-                        isPlanted = true
-                    };
-
-                    inventory.AddPlantedFlower(iceFlowerData);
+                    Debug.Log($"Replaced a water flower with an ice flower at {position}");
                 }
 
                 // Remove the original water flower
-                inventory.RemoveFlower(flower);
+                flowerManager.RemoveFlower(flower, inventory); // Pass the Flower data, not flowerData
             }
         }
     }
@@ -96,7 +90,7 @@ public class SpellsManager : MonoBehaviour
             if (flower.flowerType == fireFlowerConfig.flowerType && flower.IsMature())
             {
                 Debug.Log($"Removed a mature fire flower at {flower.position}.");
-                inventory.RemoveFlower(flower);
+                flowerManager.RemoveFlower(flower,inventory);
             }
         }
     }

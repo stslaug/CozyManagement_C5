@@ -9,10 +9,17 @@ public class FlowerManager : MonoBehaviour
 {
     public GameManager gameManager; // Reference to GameManager
 
-    private void Update()
+    private Dictionary<Flower, GameObject> flowerGameObjectMap = new Dictionary<Flower, GameObject>();
+
+    // Add Flower and GameObject mapping
+    public void RegisterFlowerWithGameObject(Flower flower, GameObject flowerGameObject)
     {
-        
+        if (!flowerGameObjectMap.ContainsKey(flower))
+        {
+            flowerGameObjectMap.Add(flower, flowerGameObject);
+        }
     }
+
     // Add a new flower of the specified type at the specified position
     public GameObject SpawnFlower(Vector3 position, FlowerConfig flowerConfig, Inventory inventory)
     {
@@ -32,11 +39,11 @@ public class FlowerManager : MonoBehaviour
             return null;
         }
 
-        Debug.Log("Flower instantiated successfully.");
-
         // Add offset to the Y-axis to adjust the placement
-        float yOffset = 5.0f; // Adjust this value as needed
-        newFlower.transform.position = new Vector3(position.x, position.y + yOffset, position.z);
+        float yOffset = 5.0f; // Adjust this value as needed\
+        newFlower.transform.position = new Vector3(position.x, position.y+yOffset, position.z);
+
+        Debug.Log($"Placed flower: {flowerConfig.flowerType} at {newFlower.transform.position}");
 
         // Initialize FlowerDataManager
         FlowerDataManager flowerDataManager = newFlower.GetComponent<FlowerDataManager>();
@@ -63,11 +70,17 @@ public class FlowerManager : MonoBehaviour
 
         // Perform additional initialization
         flowerDataManager.Initialize();
-
-        // Create a Flower object and add it to the inventory as a planted flower
-        Flower flower = new Flower(flowerConfig);
-        flower.isPlanted = true; // Mark the flower as planted
+        // Create a Flower object with the specified FlowerConfig and add it to the inventory as a planted flower
+        Flower flower = new Flower(flowerConfig)
+        {
+            position = position,
+            isPlanted = true // Mark the flower as planted
+        };
         inventory.AddPlantedFlower(flower);
+
+        // Register the flower and its GameObject with FlowerManager
+        RegisterFlowerWithGameObject(flower, newFlower);
+
 
         Debug.Log("Flower added to inventory as a planted flower.");
         return newFlower;
@@ -89,33 +102,21 @@ public class FlowerManager : MonoBehaviour
         return null;
     }
 
-    // Remove the flower from the scene
-    public void RemoveFlower(GameObject flower, Inventory inventory)
+    // Remove Flower and GameObject mapping
+    public void RemoveFlower(Flower flower, Inventory inventory)
     {
-        if (flower == null)
+        if (flower != null && flowerGameObjectMap.ContainsKey(flower))
         {
-            Debug.LogWarning("Attempted to remove a null flower.");
-            return;
-        }
+            GameObject flowerGameObject = flowerGameObjectMap[flower];
+            
+            // Remove the flower logically from the inventory
+            inventory.RemoveFlower(flower);
 
-        // Find the corresponding Flower object in the inventory
-        FlowerConfig flowerConfig = flower.GetComponent<FlowerConfig>();
-        Flower flowerToRemove = inventory.plantedFlowers.Find(flower => flower.flowerConfig == flowerConfig);
+            // Destroy the corresponding GameObject
+            Destroy(flowerGameObject);
 
-        if (flowerToRemove != null)
-        {
-            // Remove from inventory
-            inventory.RemoveFlower(flowerToRemove);
-            Debug.Log($"Removed flower of type {flowerToRemove.flowerConfig.flowerType} from the inventory.");
+            // Optionally, remove the mapping
+            flowerGameObjectMap.Remove(flower);
         }
-        else
-        {
-            Debug.LogWarning("The flower to remove was not found in the inventory.");
-        }
-
-        // Destroy the flower GameObject
-        Debug.Log($"Destroying flower GameObject: {flower.name}");
-        Destroy(flower);
     }
-
 }
