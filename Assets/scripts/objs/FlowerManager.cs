@@ -9,66 +9,81 @@ public class FlowerManager : MonoBehaviour
 {
     public GameManager gameManager; // Reference to GameManager
 
-    private void Update()
+    private Dictionary<Flower, GameObject> flowerGameObjectMap = new Dictionary<Flower, GameObject>();
+
+    // Add Flower and GameObject mapping
+    public void RegisterFlowerWithGameObject(Flower flower, GameObject flowerGameObject)
     {
-        
-    }
-    // Add a new flower of the specified type at the specified position
-    public GameObject SpawnFlower(Vector3 position, FlowerConfig flowerConfig)
-    {
-        if (flowerConfig.prefab != null)
+        if (!flowerGameObjectMap.ContainsKey(flower))
         {
-            Debug.Log($"Spawning flower: {flowerConfig.flowerType} at {position}");
-
-            // Instantiate the flower prefab
-            GameObject newFlower = Instantiate(flowerConfig.prefab, position, Quaternion.identity);
-
-            if (newFlower != null)
-            {
-                Debug.Log($"Flower instantiated successfully");
-
-                // Add offset to the Y-axis to adjust the placement
-                float yOffset = 5.0f; // Adjust this value as needed
-                newFlower.transform.position = new Vector3(position.x, position.y + yOffset, position.z);
-
-                // Initialize FlowerDataManager
-                FlowerDataManager flowerDataManager = newFlower.GetComponent<FlowerDataManager>();
-                if (flowerDataManager != null)
-                {
-                    if (flowerDataManager.flowerData == null)
-                    {
-                        flowerDataManager.flowerData = new FlowerData();
-                        flowerDataManager.flowerData.position = position;
-                        flowerDataManager.flowerData.flowerType = flowerConfig.flowerType;
-                        flowerDataManager.Initialize();
-                        // Add flower to GameManager tracking
-                        gameManager.AddFlower(newFlower);
-                        Debug.Log("Flower added to GameManager.");
-                        return newFlower;
-                    }
-                    else
-                    {
-                        Debug.Log("FlowerDataManager script missing on prefab!  Creating one...");
-                        return null;
-
-                    }
-
-                }
-                else
-                {
-                    Debug.LogError("Flower instantiation failed!");
-                    return null;
-                }
-
-            }
-            else
-            {
-                Debug.LogError("FlowerConfig prefab is null!");
-                return null;
-            }
+            flowerGameObjectMap.Add(flower, flowerGameObject);
         }
-        Debug.LogWarning("Prefab = null | Flower Manager");
-        return null;
+    }
+
+    // Add a new flower of the specified type at the specified position
+    public GameObject SpawnFlower(Vector3 position, FlowerConfig flowerConfig, Inventory inventory)
+    {
+        if (flowerConfig == null || flowerConfig.prefab == null)
+        {
+            Debug.LogWarning("FlowerConfig or prefab is null. Cannot spawn flower.");
+            return null;
+        }
+
+        Debug.Log($"Spawning flower: {flowerConfig.flowerType} at {position}");
+
+        // Instantiate the flower prefab
+        GameObject newFlower = Instantiate(flowerConfig.prefab, position, Quaternion.identity);
+        if (newFlower == null)
+        {
+            Debug.LogError("Failed to instantiate flower prefab.");
+            return null;
+        }
+
+        // Add offset to the Y-axis to adjust the placement
+        float yOffset = 5.0f; // Adjust this value as needed\
+        newFlower.transform.position = new Vector3(position.x, position.y+yOffset, position.z);
+
+        Debug.Log($"Placed flower: {flowerConfig.flowerType} at {newFlower.transform.position}");
+
+        // Initialize FlowerDataManager
+        FlowerDataManager flowerDataManager = newFlower.GetComponent<FlowerDataManager>();
+        if (flowerDataManager == null)
+        {
+            Debug.LogError("FlowerDataManager component is missing on the prefab!");
+            Destroy(newFlower); // Cleanup to prevent orphaned GameObjects
+            return null;
+        }
+
+        // Initialize FlowerData
+        if (flowerDataManager.flowerData == null)
+        {
+            flowerDataManager.flowerData = new FlowerData
+            {
+                position = position,
+                flowerType = flowerConfig.flowerType
+            };
+        }
+        else
+        {
+            Debug.LogWarning("FlowerData was already initialized. Reusing existing data.");
+        }
+
+        // Perform additional initialization
+        flowerDataManager.Initialize();
+        // Create a Flower object with the specified FlowerConfig and add it to the inventory as a planted flower
+        Flower flower = new Flower(flowerConfig)
+        {
+            position = position,
+            isPlanted = true // Mark the flower as planted
+        };
+        inventory.AddPlantedFlower(flower);
+
+        // Register the flower and its GameObject with FlowerManager
+        RegisterFlowerWithGameObject(flower, newFlower);
+
+
+        Debug.Log("Flower added to inventory as a planted flower.");
+        return newFlower;
     }
 
 
@@ -87,19 +102,21 @@ public class FlowerManager : MonoBehaviour
         return null;
     }
 
-    // Remove the flower from the scene
-    public void RemoveFlower(GameObject flower)
+    // Remove Flower and GameObject mapping
+    public void RemoveFlower(Flower flower, Inventory inventory)
     {
-        if (flower != null)
+        if (flower != null && flowerGameObjectMap.ContainsKey(flower))
         {
-         
-                    gameManager.RemoveFlower(flower);
-                    Debug.Log($"Removing flower from the scene."); // Debug: removing flower 
-            Destroy(flower);
-        }
-        else
-        {
-            Debug.LogWarning("Attempted to remove null flower."); // Debug: trying to remove null flower
+            GameObject flowerGameObject = flowerGameObjectMap[flower];
+            
+            // Remove the flower logically from the inventory
+            inventory.RemoveFlower(flower);
+
+            // Destroy the corresponding GameObject
+            Destroy(flowerGameObject);
+
+            // Optionally, remove the mapping
+            flowerGameObjectMap.Remove(flower);
         }
     }
 }

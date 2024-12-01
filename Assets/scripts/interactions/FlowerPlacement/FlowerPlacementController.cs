@@ -30,7 +30,7 @@ public class FlowerPlacementController : MonoBehaviour
     public void SetSelectedFlower(FlowerConfig flowerConfig)
     {
         selectedFlowerConfig = flowerConfig;
-        Debug.Log($"Set flower type: {selectedFlowerConfig.flowerType}");
+        //Debug.Log($"Set flower type: {selectedFlowerConfig.flowerType}");
     }
 
     // Called every frame to detect player clicks
@@ -43,19 +43,19 @@ public class FlowerPlacementController : MonoBehaviour
                 PlacementPoint placementPoint = placementManager.GetPointUnderMouse();
                 if (placementPoint != null)
                 {
-                    Debug.Log("Have a placement point.");
+                    //Debug.Log("Have a placement point.");
                     PlaceFlower(placementPoint);
                 }
                 else
                 {
-                    Debug.Log("Not a valid placement point.");
+                    //Debug.Log("Not a valid placement point.");
                 }
                 selectedFlowerConfig = null;
                 FlowerSelectionManager.Instance.ExitPlacementMode();
             }
             else if (Input.GetKeyDown(KeyCode.Escape) && selectedFlowerConfig != null)
             {
-                Debug.LogWarning("Flower Placement Canceled!");
+                Debug.Log("Flower Placement Canceled!");
                 selectedFlowerConfig = null;
                 FlowerSelectionManager.Instance.ExitPlacementMode();
             }
@@ -64,15 +64,16 @@ public class FlowerPlacementController : MonoBehaviour
 
     private void PlaceFlower(PlacementPoint placementPoint)
     {
-        Debug.Log("Placing flower.");
+        //Debug.Log("Placing flower.");
         if (selectedFlowerConfig == null)
         {
             Debug.LogWarning("No flower selected for placement!");
             return;
         }
-        Debug.Log($"Placing a {selectedFlowerConfig.flowerType}");
+        //Debug.Log($"Placing a {selectedFlowerConfig.flowerType}");
+        
         // Place the flower using FlowerManager
-        GameObject flower = flowerManager.SpawnFlower(placementPoint.transform.position, selectedFlowerConfig);
+        GameObject flower = flowerManager.SpawnFlower(placementPoint.transform.position, selectedFlowerConfig, inventoryManager);
         placementPoint.OccupyPoint();
         //subtract seed of type
         //IMPLEMENT: inventoryManager.SubFire_Seed(1);  //for any type
