@@ -1375,8 +1375,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1575320411
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2853fba3109f1f04f9b1871f63b00ad8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2812,7 +2812,7 @@ Transform:
   m_Children:
   - {fileID: 731089742}
   - {fileID: 934262415}
-  - {fileID: 5408998128981742097}
+  - {fileID: 2576494955095243689}
   - {fileID: 191621153}
   - {fileID: 932869004}
   m_Father: {fileID: 0}
@@ -3276,6 +3276,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1449883220}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2576494955095243689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7273215265779936251}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 250.764, y: 157.61414, z: -106.94553}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1854208971}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2611979359068777930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3320,9 +3335,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8564095982495420666, guid: 19e0973b8230d6f4db499fdd44bd193a, type: 3}
+      - m_Target: {fileID: 4452187322888798954}
         m_TargetAssemblyTypeName: SpellsManager, Assembly-CSharp
-        m_MethodName: setWinterBiome
+        m_MethodName: SetWinterBiome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3702,6 +3717,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4452187322888798954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7273215265779936251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79479b887e1e91c43b5ab9e0c8e6c31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundRenderer: {fileID: 803932076}
+  winterBackgroundSprite: {fileID: 21300000, guid: c94118c356ced68438cfed332313a285, type: 3}
+  flowerManager: {fileID: 191621152}
+  iceFlowerConfig: {fileID: 11400000, guid: b4ca40bdc281d35439b19d3ced13bc41, type: 2}
+  fireFlowerConfig: {fileID: 11400000, guid: 49831ba57a18985409818926a8cb6c62, type: 2}
+  waterFlowerConfig: {fileID: 11400000, guid: 60103a516a743884492b1bf750a5fb0d, type: 2}
+  inventory: {fileID: 1709329194}
 --- !u!1 &4622010042930735313
 GameObject:
   m_ObjectHideFlags: 0
@@ -3829,68 +3863,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &5408998128981742096
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1854208971}
-    m_Modifications:
-    - target: {fileID: 3458546381683653099, guid: 19e0973b8230d6f4db499fdd44bd193a, type: 3}
-      propertyPath: m_Name
-      value: SpellsManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552839632836897209, guid: 19e0973b8230d6f4db499fdd44bd193a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 250.764
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552839632836897209, guid: 19e0973b8230d6f4db499fdd44bd193a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 157.61414
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552839632836897209, guid: 19e0973b8230d6f4db499fdd44bd193a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -106.94553
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552839632836897209, guid: 19e0973b8230d6f4db499fdd44bd193a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552839632836897209, guid: 19e0973b8230d6f4db499fdd44bd193a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552839632836897209, guid: 19e0973b8230d6f4db499fdd44bd193a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552839632836897209, guid: 19e0973b8230d6f4db499fdd44bd193a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552839632836897209, guid: 19e0973b8230d6f4db499fdd44bd193a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552839632836897209, guid: 19e0973b8230d6f4db499fdd44bd193a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552839632836897209, guid: 19e0973b8230d6f4db499fdd44bd193a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 19e0973b8230d6f4db499fdd44bd193a, type: 3}
---- !u!4 &5408998128981742097 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7552839632836897209, guid: 19e0973b8230d6f4db499fdd44bd193a, type: 3}
-  m_PrefabInstance: {fileID: 5408998128981742096}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5464537689377274879 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6974237343495024347, guid: fd7d733962583e04891d877ea0de1eca, type: 3}
@@ -4002,6 +3974,23 @@ GameObject:
   - component: {fileID: 5378800839479493495}
   m_Layer: 0
   m_Name: SetWinter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &7273215265779936251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2576494955095243689}
+  - component: {fileID: 4452187322888798954}
+  m_Layer: 0
+  m_Name: SpellsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
