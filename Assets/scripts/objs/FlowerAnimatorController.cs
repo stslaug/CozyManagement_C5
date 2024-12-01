@@ -10,10 +10,6 @@ public class FlowerAnimatorController : MonoBehaviour
     public FlowerConfig flowerConfig; // Link your flower ScriptableObject
     private int growthStage; // The flower's current growth stage
 
-    [Header("Growth Settings")]
-    public Vector3 initialScale = Vector3.one * 0.6f;
-    public Vector3 maxScale = Vector3.one * 1.5f;
-
     private SpriteRenderer spriteRenderer;
 
     void Start()
@@ -25,25 +21,26 @@ public class FlowerAnimatorController : MonoBehaviour
         // Initialize components
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-
-
-        maxScale = initialScale * 1.5f;
+        animator.SetInteger("growthStage", growthStage);
     }
-
-
-    public void UpdateAppearance()
+    
+    void Update()
     {
-        // Scale the flower based on growth progress
-        float scaleProgress = (float)growthStage / flowerConfig.maxGrowthStage;
-        transform.localScale = Vector3.Lerp(initialScale, maxScale, scaleProgress);
-
-        // Update animation parameter if Animator is present
-        if (animator != null)
+        // Check if the growth stage has reached maxGrowthStage
+        if (growthStage < flowerConfig.maxGrowthStage)
         {
-            animator.SetInteger("GrowthStep", growthStage);
+            // Trigger the sprout animation while the growth stage is below max
+            animator.SetInteger("growthStage", growthStage);
+            
+            // Simulate growth over time (this can be tied to time or an external trigger)
+            // You can increment the growth stage for the purpose of this example.
+            growthStage++;
+            
+            // Update the growth stage in the Animator
+            animator.SetInteger("growthStage", growthStage);
         }
     }
+
 
 
     // Call this function whenever the flower grows
@@ -51,6 +48,6 @@ public class FlowerAnimatorController : MonoBehaviour
     {
         growthStage++;
         animator.SetInteger("growthStage", growthStage);
-        UpdateAppearance();
+        
     }
 }
