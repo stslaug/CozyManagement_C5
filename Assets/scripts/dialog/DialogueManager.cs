@@ -1,6 +1,6 @@
 using TMPro;  
-using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine;  
+using UnityEngine.UI;  
 using System.Collections;
 
 public class DialogueManager : MonoBehaviour
@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
 
     private DialogueNode currentNode;           // Current dialogue node the player is on
     private bool isTyping = false;              // To prevent skipping the text during typing
+    private int currentLineIndex = 0;           // To track the current line being displayed
 
     void Start()
     {
@@ -28,118 +29,157 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(true);             // Show dialogue box
         ShowDialogue();
     }
+
     void Update()
-{
-    if (isTyping && Input.anyKeyDown)  // Check for any key press while typing
     {
-        StopAllCoroutines();  // Stop the current typing coroutine
-        npcText.text = currentNode.dialogueText;  // Show the full dialogue text immediately
-        isTyping = false;  // Set typing flag to false
-    }
-}
-void ShowDialogue()
-{
-    if (currentNode == null)
-        return;
-
-    StopAllCoroutines();  // Stop any ongoing coroutine before starting a new one
-    StartCoroutine(TypeDialogue(currentNode.dialogueText));  // Start typing dialogue
-
-    // Hide all buttons first
-    foreach (Button button in choiceButtons)
-    {
-        button.gameObject.SetActive(false);
-    }
-
-    // Show choices if they exist
-    if (currentNode.choices.Count > 0)
-    {
-        for (int i = 0; i < currentNode.choices.Count; i++)
+        if (isTyping && Input.anyKeyDown)  // Check for any key press while typing
         {
-            if (i < choiceButtons.Length)
-            {
-                choiceButtons[i].gameObject.SetActive(true);
-                choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = currentNode.choices[i].choiceText;
-
-                int choiceIndex = i;
-                choiceButtons[i].onClick.RemoveAllListeners();
-                choiceButtons[i].onClick.AddListener(() => OnChoiceMade(choiceIndex));
-            }
+            StopAllCoroutines();  // Stop the current typing coroutine
+            npcText.text = currentNode.dialogueText.Split('\n')[currentLineIndex];  // Show the full line immediately
+            isTyping = false;  // Set typing flag to false
+        }
+        else if (!isTyping && Input.anyKeyDown)
+        {
+            ShowNextLine();  // Show the next line when a key is pressed
         }
     }
-}
 
-
-IEnumerator TypeDialogue(string dialogue)
-{
-    npcText.text = "";  // Clear existing text
-    isTyping = true;    // Set typing flag to true
-
-    string[] lines = dialogue.Split('\n');  // Split the dialogue into lines
-
-    foreach (string line in lines)
+    void ShowDialogue()
     {
-        // Type out each line character by character
+        if (currentNode == null)
+            return;
+
+        StopAllCoroutines();  // Stop any ongoing coroutine before starting a new one
+        currentLineIndex = 0;  // Reset the line index
+        StartCoroutine(TypeDialogue(currentNode.dialogueText.Split('\n')[currentLineIndex]));  // Start typing first line
+
+        // Hide all buttons first
+        foreach (Button button in choiceButtons)
+        {
+            button.gameObject.SetActive(false);
+        }
+
+        // Show choices if they exist
+        if (currentNode.choices.Count > 0)
+        {
+            for (int i = 0; i < currentNode.choices.Count; i++)
+            {
+                if (i < choiceButtons.Length)
+                {
+                    choiceButtons[i].gameObject.SetActive(true);
+                    choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = currentNode.choices[i].choiceText;
+
+                    int choiceIndex = i;
+                    choiceButtons[i].onClick.RemoveAllListeners();
+                    choiceButtons[i].onClick.AddListener(() => OnChoiceMade(choiceIndex));
+                }
+            }
+        }
+        else
+        {
+            // If no choices exist, end the dialogue
+            EndDialogue();
+        }
+    }
+
+    IEnumerator TypeDialogue(string line)
+    {
+        npcText.text = "";  // Clear existing text
+        isTyping = true;    // Set typing flag to true
+
         foreach (char letter in line.ToCharArray())
         {
-            if (!isTyping)  // If typing was skipped, break immediately
-                break;
-
             npcText.text += letter;  // Add each character
             yield return new WaitForSeconds(typingSpeed);  // Wait for typing speed
         }
 
-        if (isTyping)  // Pause at the end of each line
-        {
-            npcText.text += "\n";  // Add a newline character after each line
-            yield return new WaitForSeconds(0.5f);  // Small pause after each line
-        }
+        isTyping = false;  // Typing is complete
     }
 
-    isTyping = false;  // Typing is complete
-}
-
-void OnChoiceMade(int choiceIndex)
-{
-    Debug.Log("Choice made: " + choiceIndex);  // Log which choice was made
-
-    // Ensure the choiceIndex is within valid range
-    if (choiceIndex >= 0 && choiceIndex < currentNode.choices.Count)
+    void ShowNextLine()
     {
-        DialogueNode nextNode = currentNode.choices[choiceIndex].nextNode;
-
-        if (nextNode != null)
+        if (currentLineIndex < currentNode.dialogueText.Split('\n').Length - 1)
         {
-            Debug.Log("Next Node: " + nextNode.name);  // Log the next node
-            currentNode = nextNode;  // Move to the next node
-            ShowDialogue();  // Show the next part of the dialogue
+            currentLineIndex++;  // Move to the next line
+            StartCoroutine(TypeDialogue(currentNode.dialogueText.Split('\n')[currentLineIndex]));  // Start typing next line
         }
         else
         {
-            // If no nextNode, end the dialogue
-            Debug.Log("No next node, ending dialogue.");
-            EndDialogue();
+            // No more lines to show, proceed with choices
+            ShowChoices();
         }
     }
-    else
+
+    void ShowChoices()
     {
-        Debug.LogError("Choice index out of bounds! Index: " + choiceIndex);
-        EndDialogue();  // End dialogue in case of invalid choice
+        // Show choices after dialogue is complete
+        foreach (Button button in choiceButtons)
+        {
+            button.gameObject.SetActive(false); // Hide all buttons initially
+        }
+
+        if (currentNode.choices.Count > 0)
+        {
+            for (int i = 0; i < currentNode.choices.Count; i++)
+            {
+                if (i < choiceButtons.Length)
+                {
+                    choiceButtons[i].gameObject.SetActive(true);
+                    choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = currentNode.choices[i].choiceText;
+
+                    int choiceIndex = i;
+                    choiceButtons[i].onClick.RemoveAllListeners();
+                    choiceButtons[i].onClick.AddListener(() => OnChoiceMade(choiceIndex));
+                }
+            }
+        }
+    }
+
+    void OnChoiceMade(int choiceIndex)
+    {
+        Debug.Log("Choice made: " + choiceIndex);  // Log which choice was made
+
+        // Ensure the choiceIndex is within valid range
+        if (choiceIndex >= 0 && choiceIndex < currentNode.choices.Count)
+        {
+            DialogueNode nextNode = currentNode.choices[choiceIndex].nextNode;
+
+            if (nextNode != null)
+            {
+                Debug.Log("Next Node: " + nextNode.name);  // Log the next node
+                currentNode = nextNode;  // Move to the next node
+                ShowDialogue();  // Show the next part of the dialogue
+            }
+            else
+            {
+                // If no nextNode, end the dialogue
+                Debug.Log("No next node, ending dialogue.");
+                EndDialogue();
+            }
+        }
+        else
+        {
+            Debug.LogError("Choice index out of bounds! Index: " + choiceIndex);
+            EndDialogue();  // End dialogue in case of invalid choice
+        }
+    }
+
+    void EndDialogue()
+    {
+        dialogueBox.SetActive(false);  // Hide the dialogue box
+        foreach (var button in choiceButtons)
+        {
+            button.gameObject.SetActive(false);  // Hide all buttons
+        }
+
+        // Disable the Yeti NPC (or any other NPC)
+        GameObject yeti = GameObject.Find("Yeti");  // Replace "Yeti" with your NPC's GameObject name
+        if (yeti != null)
+        {
+            yeti.SetActive(false);  // Disable the Yeti NPC
+        }
+
+        Debug.Log("Dialogue ended");
+        currentNode = null;  // Reset currentNode to ensure no further dialogue is processed
     }
 }
-
-
-
-void EndDialogue()
-{
-    dialogueBox.SetActive(false);  // Hide the dialogue box
-    foreach (var button in choiceButtons)
-    {
-        button.gameObject.SetActive(false);  // Hide all buttons
-    }
-    Debug.Log("Dialogue ended");
-    currentNode = null;  // Reset currentNode to ensure no further dialogue is processed
-}
-
-}
-

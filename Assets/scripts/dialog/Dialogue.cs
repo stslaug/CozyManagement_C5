@@ -1,9 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using System.Collections.Generic;
+using UnityEngine;
+
 [CreateAssetMenu(fileName = "New Dialogue Node", menuName = "Dialogue/Dialogue Node")]
 public class DialogueNode : ScriptableObject
 {
+    [TextArea(1, 10)]  // Make this field a multiline text field in the Inspector (3-10 lines)
     public string dialogueText;  // The text for the NPC's dialogue
     public List<DialogueChoice> choices = new List<DialogueChoice>();  // Choices the player can make
 }
