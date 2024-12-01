@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerType: WindFlower
   prefab: {fileID: 6173927086352718675, guid: 484d28f3b35baf84ea9fe916f0ca0836, type: 3}
-  maxGrowthStage: 3
+  maxGrowthStage: 1
   startGrowthStage: 1
   diesIfWinter: 0
   cost: 10

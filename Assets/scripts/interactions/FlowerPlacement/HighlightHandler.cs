@@ -14,7 +14,7 @@ public class HighlightHandler : MonoBehaviour
     // Highlight all valid placement points
     public void HighlightValidPoints()
     {
-        Debug.Log("Highlights added.");
+        //Debug.Log("Highlights added.");
         foreach (var point in placementPoints)
         {
             if (point.IsAvailable())
