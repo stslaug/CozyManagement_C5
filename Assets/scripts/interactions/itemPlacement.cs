@@ -6,13 +6,15 @@ using DataModels;
 
 //manages flower placing logic
 public class itemPlacement : MonoBehaviour
-{
+{   
+    
     public FlowerData selectedFlowerData;
     public GameObject fireFlowerPrefab;
     public GameObject waterFlowerPrefab;
     public GameObject windFlowerPrefab;
 
-    private GameManager gameManager;
+    private FlowerManager flowerManager;
+    private Inventory inventory;
     private bool isPlacingItem = false;
     private GameObject itemToPlace;
 
@@ -20,13 +22,9 @@ public class itemPlacement : MonoBehaviour
     void Start()
     {
         // Get a reference to the GameManager instance
-        if (GameManager.Instance != null)
+        if (inventory == null)
         {
-            gameManager = GameManager.Instance;
-        }
-        else
-        {
-            Debug.LogError("GameManager instance not found! Ensure GameManager is initialized.");
+            inventory = GameObject.Find("inventoryData").GetComponent<Inventory>();
         }
     }
 
@@ -38,11 +36,12 @@ public class itemPlacement : MonoBehaviour
 
     public void PrepareToPlaceItem(string itemType)
     {
-        if (gameManager == null) return;
+        if (GameManager.Instance == null) return;
 
         if (itemType == "FireFlower")
         {
-            if (gameManager.saveData.inventoryData.fire_seed > 0)
+            if (inventory.GetUnplantedFlowerCount(flowerManager.GetFlowerConfigByType("Fire")) > 0)
+
             {
                 itemToPlace = fireFlowerPrefab;
                 isPlacingItem = true;
@@ -54,7 +53,7 @@ public class itemPlacement : MonoBehaviour
         }
         else if (itemType == "WaterFlower")
         {
-            if (gameManager.saveData.inventoryData.water_seed > 0)
+            if (inventory.GetUnplantedFlowerCount(flowerManager.GetFlowerConfigByType("water")) > 0)
             {
                 itemToPlace = waterFlowerPrefab;
                 isPlacingItem = true;
@@ -66,7 +65,7 @@ public class itemPlacement : MonoBehaviour
         }
         else if (itemType == "WindFlower")
         {
-            if (gameManager.saveData.inventoryData.wind_seed > 0)
+            if (inventory.GetUnplantedFlowerCount(flowerManager.GetFlowerConfigByType("wind")) > 0)
             {
                 itemToPlace = windFlowerPrefab;
                 isPlacingItem = true;
@@ -98,7 +97,6 @@ private void HandleItemPlacement()
                 if (hit.collider == null)
                 {
                     Instantiate(itemToPlace, spawnPosition, Quaternion.identity);
-                    UpdateInventoryCount();
                     Debug.Log($"Item {itemToPlace.name} placed at: {spawnPosition}");
                     isPlacingItem = false;
                 }
@@ -113,22 +111,6 @@ private void HandleItemPlacement()
         {
             isPlacingItem = false;
             Debug.Log("Item placement cancelled.");
-        }
-    }
-
-    private void UpdateInventoryCount()
-    {
-        if (itemToPlace == fireFlowerPrefab)
-        {
-            gameManager.saveData.inventoryData.fire_seed--;
-        }
-        else if (itemToPlace == waterFlowerPrefab)
-        {
-            gameManager.saveData.inventoryData.water_seed--;
-        }
-        else if (itemToPlace == windFlowerPrefab)
-        {
-            gameManager.saveData.inventoryData.wind_seed--;
         }
     }
 }

@@ -10,6 +10,7 @@ public class FlowerSelectionManager : MonoBehaviour
 {
     public static FlowerSelectionManager Instance {get; private set;}
     public HighlightHandler highlightHandler;
+    public Inventory inventoryManager;
     private bool isPlacementModeActive = false;
 
     private void Awake()
@@ -22,6 +23,7 @@ public class FlowerSelectionManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if(inventoryManager == null) inventoryManager = GameObject.Find("inventoryData").GetComponent<Inventory>();
     }
 
     // Called when a UI button for a specific flower is clicked
@@ -30,12 +32,17 @@ public class FlowerSelectionManager : MonoBehaviour
         
         Debug.Log($"Flower selected of type {flowerConfig.flowerType}");
 
-        //IMPLEMENT THIS: check if the inventory has any seeds of that type
-        //if so
-        // Pass the selected flower configuration to FlowerPlacementController
-        isPlacementModeActive = true;
-        highlightHandler.HighlightValidPoints();
-        FlowerPlacementController.Instance.SetSelectedFlower(flowerConfig);
+        if(inventoryManager.GetUnplantedFlowerCount(flowerConfig) > 0)
+        {
+            isPlacementModeActive = true;
+            highlightHandler.HighlightValidPoints();
+            FlowerPlacementController.Instance.SetSelectedFlower(flowerConfig);
+        }
+        else
+        {
+            Debug.Log("Cannot Place Flowers. Out of Seeds");
+        }
+        
     }
 
     public bool IsPlacementModeActive()

@@ -1,63 +1,70 @@
 using UnityEngine;
 using TMPro;
 
-
 public class DaysTracker : MonoBehaviour
 {
-
-    public TextMeshProUGUI dayText; // Reference to the gold display text box
-
-
+    public TextMeshProUGUI dayText; // Reference to the day display text box
     private int currDay;
     public GameManager gameManager;
 
-    private void Awake()
-    {
-
-        UpdateDayDisplay();
-    }
-
     private void Start()
     {
+        // Initialize GameManager reference
         if (gameManager == null)
         {
-            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                Debug.LogError("GameManager not found in the scene!");
+            }
         }
 
+        // Initialize dayText reference
         if (dayText == null)
         {
-            dayText = GameObject.Find("dayText").GetComponent<TextMeshProUGUI>();
-        }
-        currDay = 0;
-    }
-
-    private void Update()
-    {
-        UpdateDayDisplay();
-    }
-
-    // Update the UI Text with the current gold amount
-    public void UpdateDayDisplay()
-    {
-        if (gameManager == null)
-        {
-            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        }
-        if (currDay != gameManager.saveData.playerData.goldCount)
-        {
-            if (dayText == null)
+            GameObject dayTextObject = GameObject.Find("dayText");
+            if (dayTextObject != null)
             {
-                dayText = GameObject.Find("dayText").GetComponent<TextMeshProUGUI>();
-            }
-            if (dayText != null)
-            {
-                dayText.text = "Day: " + gameManager.saveData.playerData.currentDay; // Update the displayed text
+                dayText = dayTextObject.GetComponent<TextMeshProUGUI>();
             }
             else
             {
-                Debug.Log("dayText reference is not assigned!");
+                Debug.LogError("dayText GameObject not found in the scene!");
             }
+        }
+
+        if (gameManager != null && gameManager.getSaveData().playerData != null)
+        {
+            currDay = gameManager.getSaveData().playerData.currentDay;
+            UpdateDayDisplay(currDay);
+        }
+        else
+        {
+            Debug.LogError("SaveData or PlayerData is null!");
         }
     }
 
+    private void OnDestroy()
+    {
+    }
+
+    // Event handler for day changes
+    private void HandleDayChanged(int newDay)
+    {
+        currDay = newDay;
+        UpdateDayDisplay(currDay);
+    }
+
+    // Update the UI Text with the current day
+    private void UpdateDayDisplay(int day)
+    {
+        if (dayText != null)
+        {
+            dayText.text = "Day: " + day.ToString(); // Update the displayed text
+        }
+        else
+        {
+            Debug.LogWarning("dayText reference is not assigned!");
+        }
+    }
 }

@@ -11,9 +11,6 @@ public class PauseMenuController : MonoBehaviour
     {
         if (pauseMenuUI != null)
         {
-
-
-            // Ensure the pause menu starts hidden
             pauseMenuUI.SetActive(false);
         }
         else

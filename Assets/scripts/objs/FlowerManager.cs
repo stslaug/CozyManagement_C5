@@ -41,6 +41,10 @@ public class FlowerManager : MonoBehaviour
                         flowerDataManager.flowerData.position = position;
                         flowerDataManager.flowerData.flowerType = flowerConfig.flowerType;
                         flowerDataManager.Initialize();
+                        // Add flower to GameManager tracking
+                        gameManager.AddFlower(newFlower);
+                        Debug.Log("Flower added to GameManager.");
+                        return newFlower;
                     }
                     else
                     {
@@ -49,9 +53,6 @@ public class FlowerManager : MonoBehaviour
 
                     }
 
-                    // Add flower to GameManager tracking
-                    gameManager.AddFlower(newFlower);
-                    Debug.Log("Flower added to GameManager.");
                 }
                 else
                 {
@@ -59,7 +60,6 @@ public class FlowerManager : MonoBehaviour
                     return null;
                 }
 
-                return newFlower;
             }
             else
             {
@@ -70,7 +70,22 @@ public class FlowerManager : MonoBehaviour
         Debug.LogWarning("Prefab = null | Flower Manager");
         return null;
     }
-    
+
+
+    public List<FlowerConfig> allFlowerConfigs = new List<FlowerConfig>();
+    //Finds Flower Config Types
+    public FlowerConfig GetFlowerConfigByType(string type)
+    {
+        foreach (var config in allFlowerConfigs)
+        {
+            if (config.flowerType.Equals(type, System.StringComparison.OrdinalIgnoreCase))
+            {
+                return config;
+            }
+        }
+        Debug.LogWarning($"FlowerConfig not found for type: {type}");
+        return null;
+    }
 
     // Remove the flower from the scene
     public void RemoveFlower(GameObject flower)

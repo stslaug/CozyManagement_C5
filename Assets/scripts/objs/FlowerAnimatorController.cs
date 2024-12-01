@@ -1,5 +1,7 @@
+using DataModels;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class FlowerAnimatorController : MonoBehaviour
@@ -8,24 +10,47 @@ public class FlowerAnimatorController : MonoBehaviour
     public FlowerConfig flowerConfig; // Link your flower ScriptableObject
     private int growthStage; // The flower's current growth stage
 
+    [Header("Growth Settings")]
+    public Vector3 initialScale = Vector3.one * 0.6f;
+    public Vector3 maxScale = Vector3.one * 1.5f;
+
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
         // Initialize growthStage from the ScriptableObject
         growthStage = flowerConfig.startGrowthStage;
+
+
+        // Initialize components
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+
+
+        maxScale = initialScale * 1.5f;
     }
-    // Call this function whenever the flower grows
-    public void Grow()
+
+
+    public void UpdateAppearance()
     {
-        // Increment growth stage
-        growthStage++;
+        // Scale the flower based on growth progress
+        float scaleProgress = (float)growthStage / flowerConfig.maxGrowthStage;
+        transform.localScale = Vector3.Lerp(initialScale, maxScale, scaleProgress);
 
-        // Update the Animator parameter
-        animator.SetInteger("growthStage", growthStage);
-
-        // Check if the max growth stage is reached
-        if (growthStage == flowerConfig.maxGrowthStage)
+        // Update animation parameter if Animator is present
+        if (animator != null)
         {
-            Debug.Log("Max growth reached! Transitioning to fireFlower animation.");
+            animator.SetInteger("GrowthStep", growthStage);
         }
+    }
+
+
+    // Call this function whenever the flower grows
+    public void increaseAnimationGrowthStep()
+    {
+        growthStage++;
+        animator.SetInteger("growthStage", growthStage);
+        UpdateAppearance();
     }
 }

@@ -9,11 +9,11 @@ using UnityEngine.SceneManagement;
 //Determines where on screen flowers will be placed
 public class FlowerPlacementController : MonoBehaviour
 {
-    public static FlowerPlacementController Instance {get; private set;}
+    public static FlowerPlacementController Instance { get; private set; }
     public FlowerManager flowerManager; // Reference to FlowerManager
     public PlacementManager placementManager; // Reference to PlacementManager
     private FlowerConfig selectedFlowerConfig; // Currently selected flower type
-    public InventoryManagement inventoryManager;
+    public Inventory inventoryManager;
 
     private void Awake()
     {
@@ -41,7 +41,7 @@ public class FlowerPlacementController : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 PlacementPoint placementPoint = placementManager.GetPointUnderMouse();
-                if (placementPoint != null) 
+                if (placementPoint != null)
                 {
                     Debug.Log("Have a placement point.");
                     PlaceFlower(placementPoint);
@@ -62,7 +62,6 @@ public class FlowerPlacementController : MonoBehaviour
         }
     }
 
-    // Handle flower placement logic
     private void PlaceFlower(PlacementPoint placementPoint)
     {
         Debug.Log("Placing flower.");
@@ -79,27 +78,52 @@ public class FlowerPlacementController : MonoBehaviour
         //IMPLEMENT: inventoryManager.SubFire_Seed(1);  //for any type
 
         if (flower == null)
-        {       
+        {
             Debug.LogWarning("Failed to spawn flower! Check FlowerConfig prefab.");
         }
     }
 
-    /*
+    // Function to place all planted flowers on the scene
     public void placeAllFlowers()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("rooftop_garden"))
+
+        // Ensure we're in the correct scene
+        if (SceneManager.GetActiveScene().name != "rooftop_garden")
         {
-            if (GameManager.Instance != null)
-            {
+            Debug.LogWarning("Current scene is not 'rooftop_garden'. Flowers will not be placed.");
+            return;
+        }
 
-                if (GameManager.Instance.saveData.allFlowers.Count != 0)
-                {
+        // Check if GameManager and SaveData are available
+        if (GameManager.Instance == null)
+        {
+            Debug.LogWarning("GameManager instance is null.");
+            return;
+        }
 
-                    //place all flowers in from allFlowers in the scene
-                }
-            }
-        } 
-     }
-    */
+        SaveData saveData = GameManager.Instance.getSaveData();
+        if (saveData == null)
+        {
+            Debug.LogWarning("SaveData is null.");
+            return;
+        }
 
+        // Check if there are flowers to place
+        if (inventoryManager.plantedFlowers.Count == 0)
+        {
+            Debug.Log("No planted flowers to place.");
+            return;
+        }
+
+        foreach (var flower in inventoryManager.plantedFlowers)
+        {
+            // Instantiate the prefab at the stored position with an upward offset
+            Vector3 spawnPosition = flower.position + Vector3.up * 5; // Adjust the offset as needed
+
+            GameObject flowerObject = Instantiate(flower.flowerConfig.prefab, spawnPosition, Quaternion.identity);
+
+        }
+
+        Debug.Log("All planted flowers have been placed on the scene.");
+    }
 }
