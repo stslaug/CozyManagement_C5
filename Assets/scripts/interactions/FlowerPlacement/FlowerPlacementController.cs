@@ -9,82 +9,82 @@ using UnityEngine.SceneManagement;
 //Determines where on screen flowers will be placed
 public class FlowerPlacementController : MonoBehaviour
 {
+    public static FlowerPlacementController Instance {get; private set;}
     public FlowerManager flowerManager; // Reference to FlowerManager
     public PlacementManager placementManager; // Reference to PlacementManager
     private FlowerConfig selectedFlowerConfig; // Currently selected flower type
     public InventoryManagement inventoryManager;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // Ensure only one instance exists
+        }
+    }
     // Called by FlowerSelectionManager to set the selected flower type
     public void SetSelectedFlower(FlowerConfig flowerConfig)
     {
         selectedFlowerConfig = flowerConfig;
-        placementManager.HighlightValidPoints(); // Highlight valid points for placement
+        Debug.Log($"Set flower type: {selectedFlowerConfig.flowerType}");
     }
 
     // Called every frame to detect player clicks
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && selectedFlowerConfig != null)
+        if (FlowerSelectionManager.Instance.IsPlacementModeActive())
         {
-            HandleFlowerPlacement();
+            if (Input.GetMouseButtonDown(0))
+            {
+                PlacementPoint placementPoint = placementManager.GetPointUnderMouse();
+                if (placementPoint != null) 
+                {
+                    Debug.Log("Have a placement point.");
+                    PlaceFlower(placementPoint);
+                }
+                else
+                {
+                    Debug.Log("Not a valid placement point.");
+                }
+                selectedFlowerConfig = null;
+                FlowerSelectionManager.Instance.ExitPlacementMode();
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape) && selectedFlowerConfig != null)
+            {
+                Debug.LogWarning("Flower Placement Canceled!");
+                selectedFlowerConfig = null;
+                FlowerSelectionManager.Instance.ExitPlacementMode();
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && selectedFlowerConfig != null)
-        {
-            Debug.LogWarning("Flower Placement Canceled!");
-            selectedFlowerConfig = null;
-            placementManager.ClearHighlights();
-        }
-
-        placeAllFlowers();
     }
 
     // Handle flower placement logic
-    private void HandleFlowerPlacement()
+    private void PlaceFlower(PlacementPoint placementPoint)
     {
+        Debug.Log("Placing flower.");
         if (selectedFlowerConfig == null)
         {
             Debug.LogWarning("No flower selected for placement!");
             return;
         }
+        Debug.Log($"Placing a {selectedFlowerConfig.flowerType}");
+        // Place the flower using FlowerManager
+        GameObject flower = flowerManager.SpawnFlower(placementPoint.transform.position, selectedFlowerConfig);
+        placementPoint.OccupyPoint();
+        //subtract seed of type
+        //IMPLEMENT: inventoryManager.SubFire_Seed(1);  //for any type
 
-        // Convert mouse position to world position
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        worldPosition.z = 0f;
-
-
-        // Find the placement point at the clicked position
-        PlacementPoint placementPoint = placementManager.GetPointAtPosition(worldPosition);
-
-        if (placementPoint != null && placementPoint.IsAvailable())
-        {
-            FlowerConfig tempConfig = selectedFlowerConfig;
-            selectedFlowerConfig = null; // This ensures that once something is placed.. It stops placing.
-            // Place the flower using FlowerManager
-            GameObject flower = flowerManager.SpawnFlower(placementPoint.transform.position, tempConfig);
-
-            if (flower != null)
-            {
-                placementPoint.OccupyPoint();
-            }
-            else
-            {
-                Debug.LogWarning("Failed to spawn flower! Check FlowerConfig prefab.");
-                return;
-            }
-
-            placementManager.ClearHighlights();
-
-            inventoryManager.SubFire_Seed(1);
-
-        }
-        else
-        {
-            Debug.LogWarning("Invalid placement point or point is occupied.");
-            return;
+        if (flower == null)
+        {       
+            Debug.LogWarning("Failed to spawn flower! Check FlowerConfig prefab.");
         }
     }
 
-
+    /*
     public void placeAllFlowers()
     {
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("rooftop_garden"))
@@ -100,7 +100,6 @@ public class FlowerPlacementController : MonoBehaviour
             }
         } 
      }
-
-
+    */
 
 }
