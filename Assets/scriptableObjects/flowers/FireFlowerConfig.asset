@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerType: FireFlower
   prefab: {fileID: 5712377014617062914, guid: 412ae1696922ca5499ed7747ba8894ea, type: 3}
-  maxGrowthStage: 3
+  maxGrowthStage: 1
   startGrowthStage: 1
   diesIfWinter: 1
   cost: 5
