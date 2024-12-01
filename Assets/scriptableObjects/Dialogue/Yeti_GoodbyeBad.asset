@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: I think I'll try somewhere else
   choices:
-  - choiceText: 
+  - choiceText: Goodbye
     nextNode: {fileID: 11400000, guid: 89bedfe0287fddc46b648a672fba7e32, type: 2}

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: Great! I'll be back here Monday to pick it up.
   choices:
-  - choiceText: 
+  - choiceText: Goodbye
     nextNode: {fileID: 11400000, guid: 89bedfe0287fddc46b648a672fba7e32, type: 2}

@@ -19,7 +19,7 @@ MonoBehaviour:
     something special to really freeze the flavor in, like the snow back home. \nYou
     got any plants \u2018round here that could help me with that? "
   choices:
-  - choiceText: I think I can make that happend!
+  - choiceText: I think I can make that happen!
     nextNode: {fileID: 11400000, guid: c6735653b50b86a47803b350da6f85b3, type: 2}
   - choiceText: Could you be more specific?
     nextNode: {fileID: 11400000, guid: 32da0719cba09d344b2cc3134cc111ec, type: 2}

@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueText: "Something icy, cold... something that will remind me of those frozen
     peaks I\u2019m used to. "
   choices:
-  - choiceText: Aha I think I know what you mean!
+  - choiceText: Aha! I think I know what you mean!
     nextNode: {fileID: 11400000, guid: c6735653b50b86a47803b350da6f85b3, type: 2}
   - choiceText: Sorry I'm not sure...
     nextNode: {fileID: 11400000, guid: 02e12013e491627459af3b0f9103b9fc, type: 2}

@@ -173,7 +173,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // Disable the Yeti NPC (or any other NPC)
-        GameObject yeti = GameObject.Find("Yeti");  // Replace "Yeti" with your NPC's GameObject name
+        GameObject yeti = GameObject.Find("yeti");  // Replace "Yeti" with your NPC's GameObject name
         if (yeti != null)
         {
             yeti.SetActive(false);  // Disable the Yeti NPC
