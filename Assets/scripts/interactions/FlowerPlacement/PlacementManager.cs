@@ -4,37 +4,15 @@ using UnityEngine;
 
 public class PlacementManager : MonoBehaviour
 {
-    public List<PlacementPoint> placementPoints; // List of all placement points
-
-    // Highlight all valid placement points
-    public void HighlightValidPoints()
-    {
-        
-        foreach (var point in placementPoints)
-        {
-            if (point.IsAvailable())
-            {
-                point.SetHighlight(true);
-            }
-            else
-            {
-                point.SetHighlight(false);
-            }
-        }
-    }
-
-    public void ClearHighlights()
-    {
-        foreach (var point in placementPoints)
-        {
-            point.SetHighlight(false); // Disable all highlights
-        }
-    }
-
     // Get the placement point at the specific world position
-    public PlacementPoint GetPointAtPosition(Vector3 position)
+    public PlacementPoint GetPointUnderMouse()
     {
-        Vector2 point2D = new(position.x, position.y);
+        // Convert mouse position from screen space to world space
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Create a 2D point using the world space (ignore Z-coordinate)
+        Vector2 point2D = new Vector2(worldPosition.x, worldPosition.y);
+
         Collider2D[] hitColliders = Physics2D.OverlapPointAll(point2D);
 
         foreach (var hitCollider in hitColliders)
@@ -53,7 +31,7 @@ public class PlacementManager : MonoBehaviour
             }
         }
 
-        Debug.LogWarning($"No valid placement point found at: {position}");
+        Debug.LogWarning($"No valid placement point found at: {worldPosition}");
         return null; // No valid point found
     }
 }

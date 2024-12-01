@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b7a222dd9356548a621151d9cc6202, type: 3}
   m_Name: Yeti_D3_Request
   m_EditorClassIdentifier: 
-  dialogueText: HEReS MY REQUEST
+  dialogueText: "I\u2019ve got myself a bit of a... chilly issue.\nSee, I\u2019m
+    from up north, far from here, where the snow's crisp and the air\u2019s sharp.
+    \nI\u2019ve been tryin' to make the perfect snowcones, the kind that taste like
+    fresh mountain air. \nBut down here, the snow just ain\u2019t right.\nI need
+    something special to really freeze the flavor in, like the snow back home. \nYou
+    got any plants \u2018round here that could help me with that? "
   choices:
-  - choiceText: YES2
+  - choiceText: I think I can make that happen!
     nextNode: {fileID: 11400000, guid: c6735653b50b86a47803b350da6f85b3, type: 2}
-  - choiceText: NO2
-    nextNode: {fileID: 11400000, guid: c6735653b50b86a47803b350da6f85b3, type: 2}
+  - choiceText: Could you be more specific?
+    nextNode: {fileID: 11400000, guid: 32da0719cba09d344b2cc3134cc111ec, type: 2}
