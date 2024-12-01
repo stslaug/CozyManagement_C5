@@ -179,6 +179,12 @@ public class DialogueManager : MonoBehaviour
             yeti.SetActive(false);  // Disable the Yeti NPC
         }
 
+        GameObject granny = GameObject.Find("granny");  // Replace "Yeti" with your NPC's GameObject name
+        if (granny != null)
+        {
+            granny.SetActive(false);  // Disable the Yeti NPC
+        }
+
         Debug.Log("Dialogue ended");
         currentNode = null;  // Reset currentNode to ensure no further dialogue is processed
     }

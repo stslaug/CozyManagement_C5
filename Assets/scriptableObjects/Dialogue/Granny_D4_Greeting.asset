@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b7a222dd9356548a621151d9cc6202, type: 3}
+  m_Name: Granny_D4_Greeting
+  m_EditorClassIdentifier: 
+  dialogueText: "Well now, what\u2019s this?A new face in this old shop!\n It\u2019s
+    been many years since anyone tended to the plants here.\n"
+  choices:
+  - choiceText: Hello!
+    nextNode: {fileID: 11400000, guid: 698c152014d974e479306d99ccf9cd0a, type: 2}
+  - choiceText: Please Leave...
+    nextNode: {fileID: 11400000, guid: 9ff6e50ee0b6e9a4d8c2607dbc42a8bd, type: 2}

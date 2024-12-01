@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b7a222dd9356548a621151d9cc6202, type: 3}
+  m_Name: Granny_D4Request
+  m_EditorClassIdentifier: 
+  dialogueText: "I don\u2019t know if you can help, dearie, but... lately,\n my pies
+    haven\u2019t been bringing the grandkids as much joy as they used too. \nSomething\u2019s
+    missing perhaps the old warmth they used to bring. "
+  choices:
+  - choiceText: I think I can help!
+    nextNode: {fileID: 11400000, guid: 23dff6e125444c244879de314b3f6eee, type: 2}
+  - choiceText: Could you explain a little more?
+    nextNode: {fileID: 11400000, guid: d423a4e57e63d0643b4ae69ecd078d2b, type: 2}
