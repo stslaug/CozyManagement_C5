@@ -26,6 +26,10 @@ public class InventoryUI : MonoBehaviour
         UpdateUI();
     }
 
+    private void Update()
+    {
+        UpdateUpdateUI();
+    }
 
     public void UpdateUI()
     {
@@ -48,6 +52,39 @@ public class InventoryUI : MonoBehaviour
         if (WindCount_Text != null && windConfig != null)
         {
             WindCount_Text.text = $"{inventory.GetUnplantedFlowerCount(windConfig)}";
+        }
+    }
+    public void UpdateUpdateUI()
+    {
+        try
+        {
+            inventory = GameObject.Find("inventoryData").GetComponent<Inventory>();
+        }
+        catch { }
+        if (FireCount_Text != null && fireConfig != null)
+        {
+            if(FireCount_Text.text != ($"{inventory.GetUnplantedFlowerCount(fireConfig)}"))
+            {
+                FireCount_Text.text = $"{inventory.GetUnplantedFlowerCount(fireConfig)}";
+            }
+           
+        }
+
+        if (WaterCount_Text != null && waterConfig != null)
+        {
+            if (WaterCount_Text.text != ($"{inventory.GetUnplantedFlowerCount(waterConfig)}"))
+            {
+                WaterCount_Text.text = $"{inventory.GetUnplantedFlowerCount(waterConfig)}";
+            }
+        }
+
+        if (WindCount_Text != null && windConfig != null)
+        {
+            if (WindCount_Text.text != ($"{inventory.GetUnplantedFlowerCount(windConfig)}"))
+            {
+                WindCount_Text.text = $"{inventory.GetUnplantedFlowerCount(windConfig)}";
+            }
+          
         }
     }
 }

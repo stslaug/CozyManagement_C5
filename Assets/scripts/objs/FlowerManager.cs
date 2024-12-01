@@ -70,7 +70,22 @@ public class FlowerManager : MonoBehaviour
         Debug.LogWarning("Prefab = null | Flower Manager");
         return null;
     }
-    
+
+
+    public List<FlowerConfig> allFlowerConfigs = new List<FlowerConfig>();
+    //Finds Flower Config Types
+    public FlowerConfig GetFlowerConfigByType(string type)
+    {
+        foreach (var config in allFlowerConfigs)
+        {
+            if (config.flowerType.Equals(type, System.StringComparison.OrdinalIgnoreCase))
+            {
+                return config;
+            }
+        }
+        Debug.LogWarning($"FlowerConfig not found for type: {type}");
+        return null;
+    }
 
     // Remove the flower from the scene
     public void RemoveFlower(GameObject flower)

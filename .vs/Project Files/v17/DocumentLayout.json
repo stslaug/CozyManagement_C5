@@ -3,32 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\tyler\\Unity\\Project Files\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\unity\\project files\\assets\\scripts\\inventory\\inventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory\\inventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\inventory\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\unity\\project files\\assets\\scripts\\objs\\flowerdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objs\\flowerdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\interactions\\flowerplacement\\flowerplacementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactions\\flowerplacement\\flowerplacementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\objs\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objs\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\objs\\flowerconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objs\\flowerconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\inventory\\inventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory\\inventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\unity\\project files\\assets\\scripts\\interactions\\flowerplacement\\placementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactions\\flowerplacement\\placementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\objs\\flowerdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objs\\flowerdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\objs\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objs\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\unity\\project files\\assets\\scripts\\inventory\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|C:\\Users\\tyler\\Unity\\Project Files\\assets\\scripts\\gamestate\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\unity\\project files\\assets\\scripts\\gamestate\\datamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestate\\datamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\unity\\project files\\assets\\scripts\\interactions\\itemplacement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactions\\itemplacement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|c:\\users\\tyler\\unity\\project files\\assets\\scripts\\objs\\flowermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{279C00DE-7FBE-E6F0-ADF8-345AD8F2F1C7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objs\\flowermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,37 +54,104 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\GameManager.cs",
+              "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\GameManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\gameState\\GameManager.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAD4v4sAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T20:38:57.731Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DataModels.cs",
+              "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\DataModels.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\DataModels.cs",
+              "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\DataModels.cs",
+              "RelativeToolTip": "Assets\\scripts\\gameState\\DataModels.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T01:16:37.983Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "itemPlacement.cs",
+              "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\interactions\\itemPlacement.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\interactions\\itemPlacement.cs",
+              "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\interactions\\itemPlacement.cs",
+              "RelativeToolTip": "Assets\\scripts\\interactions\\itemPlacement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T01:20:53.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FlowerManager.cs",
+              "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\objs\\FlowerManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\objs\\FlowerManager.cs",
+              "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\objs\\FlowerManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\objs\\FlowerManager.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowEwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T01:09:07.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlacementManager.cs",
+              "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\interactions\\FlowerPlacement\\PlacementManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\interactions\\FlowerPlacement\\PlacementManager.cs",
+              "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\interactions\\FlowerPlacement\\PlacementManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\interactions\\FlowerPlacement\\PlacementManager.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAmwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T00:58:09.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "InventoryUI.cs",
               "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\inventory\\InventoryUI.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\inventory\\InventoryUI.cs",
               "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\inventory\\InventoryUI.cs",
               "RelativeToolTip": "Assets\\scripts\\inventory\\InventoryUI.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwCMAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAB4AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T22:08:21.343Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "FlowerDataManager.cs",
               "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\objs\\FlowerDataManager.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\objs\\FlowerDataManager.cs",
               "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\objs\\FlowerDataManager.cs",
               "RelativeToolTip": "Assets\\scripts\\objs\\FlowerDataManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T21:37:42.736Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "FlowerConfig.cs",
               "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\objs\\FlowerConfig.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\objs\\FlowerConfig.cs",
@@ -76,54 +159,44 @@
               "RelativeToolTip": "Assets\\scripts\\objs\\FlowerConfig.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAcwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T20:47:48.001Z"
+              "WhenOpened": "2024-11-30T20:47:48.001Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Flower.cs",
               "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\objs\\Flower.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\objs\\Flower.cs",
               "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\objs\\Flower.cs",
               "RelativeToolTip": "Assets\\scripts\\objs\\Flower.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAQwBcAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T20:47:39.64Z"
+              "WhenOpened": "2024-11-30T20:47:39.64Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Inventory.cs",
               "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\inventory\\Inventory.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\inventory\\Inventory.cs",
               "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\inventory\\Inventory.cs",
               "RelativeToolTip": "Assets\\scripts\\inventory\\Inventory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T20:40:05.682Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\GameManager.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\gameState\\GameManager.cs",
-              "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\gameState\\GameManager.cs",
-              "RelativeToolTip": "Assets\\scripts\\gameState\\GameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T20:38:57.731Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "FlowerPlacementController.cs",
               "DocumentMoniker": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\interactions\\FlowerPlacement\\FlowerPlacementController.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\interactions\\FlowerPlacement\\FlowerPlacementController.cs",
               "ToolTip": "C:\\Users\\tyler\\Unity\\Project Files\\Assets\\scripts\\interactions\\FlowerPlacement\\FlowerPlacementController.cs",
               "RelativeToolTip": "Assets\\scripts\\interactions\\FlowerPlacement\\FlowerPlacementController.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAwwEgAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAIQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T20:38:26.75Z",
               "EditorCaption": ""

@@ -90,18 +90,8 @@ public class GameManager : MonoBehaviour
 
         saveData.npcData = new List<NPCData>();
 
-        saveData.allFlowers = new List<FlowerConfig>(); // Initialize as FlowerData list
+        saveData.allFlowers = new List<Flower>(); // Initialize as FlowerData list
 
-        saveData.inventoryData = new InventoryData()
-        {
-            fire_seed = 3,
-            wind_seed = 3,
-            water_seed = 3,
-            fire_extract = 0,
-            wind_extract = 0,
-            water_extract = 0,
-            ice_extract = 0
-        };
     }
 
 
@@ -135,14 +125,14 @@ public class GameManager : MonoBehaviour
     // Add a new flower instance to the list
     public void AddFlower(GameObject newFlower)
     {
-        FlowerConfig t_flower = newFlower.GetComponent<FlowerConfig>();
+        Flower t_flower = newFlower.GetComponent<Flower>();
         saveData.allFlowers.Add(t_flower);
         Debug.Log("Flower added to the garden.");
     }
     // Find the flower in the list and remove it
     public void RemoveFlower(GameObject flower)
     {
-        FlowerConfig t_flower = flower.GetComponent<FlowerConfig>();
+        Flower t_flower = flower.GetComponent<Flower>();
         saveData.allFlowers.Remove(t_flower);
         Debug.Log("Flower removed from the garden.");
     }

@@ -1,3 +1,4 @@
+using DataModels;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,12 +12,14 @@ public class Inventory : MonoBehaviour
     {
         Flower newFlower = new Flower(config);
         unplantedFlowers.Add(newFlower);
+        GameManager.Instance.saveData.allFlowers.Add(newFlower);
     }
 
     // Adds a planted flower to the inventory
     public void AddPlantedFlower(Flower flower)
     {
         plantedFlowers.Add(flower);
+        GameManager.Instance.saveData.allFlowers.Add(flower);
     }
 
     // Removes a flower from the inventory
@@ -25,10 +28,12 @@ public class Inventory : MonoBehaviour
         if (flower.isPlanted)
         {
             plantedFlowers.Remove(flower);
+            GameManager.Instance.saveData.allFlowers.Remove(flower);
         }
         else
         {
             unplantedFlowers.Remove(flower);
+            GameManager.Instance.saveData.allFlowers.Remove(flower);
         }
     }
 
