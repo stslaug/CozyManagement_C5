@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6b7a222dd9356548a621151d9cc6202, type: 3}
-  m_Name: Yeti_D3_Greeting
+  m_Name: Yeti_GoodByeGood
   m_EditorClassIdentifier: 
-  dialogueText: Hey there, tiny human ! Your sign says you work with magical plants,
-    right?
+  dialogueText: Great! I'll be back here Monday to pick it up.
   choices:
-  - choiceText: That's right!
-    nextNode: {fileID: 11400000, guid: d1a9d39457aa30547a9c04ac5b362380, type: 2}
-  - choiceText: Not exactly...
-    nextNode: {fileID: 11400000, guid: 02e12013e491627459af3b0f9103b9fc, type: 2}
+  - choiceText: Goodbye
+    nextNode: {fileID: 11400000, guid: 89bedfe0287fddc46b648a672fba7e32, type: 2}
